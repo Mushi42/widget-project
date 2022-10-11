@@ -1,6 +1,5 @@
-import UsersAPI from '../../apis/users';
+import UsersAPI from '../../api/users';
 import { userAction } from '../actions';
-import { notifyError } from '../../components/Toast';
 
 export const LOAD_USERS_LOADING = 'REDUX_THUNK_LOAD_USERS_LOADING';
 export const USER_LOGIN_SUCCESS = 'REDUX_THUNK_LOGIN_SUCCESS';
@@ -26,9 +25,5 @@ export const getLoginUser = () => (dispatch) => {
 };
 
 export const removeUser = () => (dispatch) => {
-  dispatch({ type: USER_LOGIN_SUCCESS, data: undefined, });
-  dispatch({ type: USER_SESSION_SUCCESS, data: "" });
-  const payload = { email: "", optEmailId: "" };
-  dispatch({ type: OTP_MAIL_SUCCESS, data: payload });
-  notifyError('Your session expired! Please login');
+ 
 };

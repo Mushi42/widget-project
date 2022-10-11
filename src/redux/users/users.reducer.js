@@ -12,7 +12,7 @@ const initialState = {
   data: [],
   loginData: {
     email: "",
-    optEmailId: ""
+    password: ""
   },
   user: undefined,
   user_session: "",
