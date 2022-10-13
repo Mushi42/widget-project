@@ -1,18 +1,26 @@
-import { BrowserRouter, Routes } from 'react-router-dom';
-import PrivateRoute from './components/routing/privateRoute';
-import PublicRoute from './components/routing/publicRoute';
-import Home from './screens/home-page/page';
-import Login from './screens/login/Login';
+import { ToastContainer } from 'react-toastify';
+import PrivateRoute from './components/routing/PrivateRoute';
+import PublicRoute from './components/routing/PublicRoute';
 
 
 function App() {
+  const user = true;
+
   return (
-    <BrowserRouter>
-      <Routes>
-        <PublicRoute restricted={false} component={Login} path="/signin" exact />
-        <PrivateRoute component={Home} path="/" exact />
-      </Routes>
-    </BrowserRouter>
+    <div className="App">
+      {user ? <PrivateRoute /> : <PublicRoute />}
+      <ToastContainer
+        position="bottom-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
+    </div>
   );
 }
 
