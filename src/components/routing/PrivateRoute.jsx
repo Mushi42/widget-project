@@ -1,13 +1,12 @@
 import React from 'react';
 import { Route, Routes, Navigate } from 'react-router-dom';
-
-const Profile = () => (<h1>Private</h1>)
+import SidebarLayout from '../layout/SidebarLayout/SidebarLayout';
 
 
 function PrivateRoute() {
     return (
         <Routes>
-            <Route path="/dashboard" element={<Profile />}></Route>
+            <Route path="/dashboard" element={<SidebarLayout />}></Route>
             <Route path="*" element={<Navigate to="/dashboard" replace />} />
         </Routes>
     );
