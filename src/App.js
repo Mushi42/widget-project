@@ -1,6 +1,6 @@
 import { ToastContainer } from 'react-toastify';
-import PrivateRoute from './components/routing/PrivateRoute';
-import PublicRoute from './components/routing/PublicRoute';
+import PrivateRoute from './components/Routing/PrivateRoute';
+import PublicRoute from './components/Routing/PublicRoute';
 
 
 function App() {

@@ -1,0 +1,30 @@
+$bgcolor: #f0f0f0;
+
+
+.search {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 40%;
+    background: $bgcolor;
+    border: 1px solid $bgcolor;
+
+    .search-icon {
+        padding: 10px 10px;
+    }
+
+    .search-input {
+        width: 95%;
+        input {
+            outline: none;
+            border: 1px solid $bgcolor;
+            width: 100%;
+            font-size: 14px;
+            background: $bgcolor;
+            font-family: 'Poppins', sans-serif;
+            appearance: none;
+        }
+
+    }
+
+}

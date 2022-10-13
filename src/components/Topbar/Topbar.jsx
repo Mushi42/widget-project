@@ -1,4 +1,5 @@
 import React from 'react'
+import Search from '../Shared/Search/Search'
 
 const Topbar = () => {
   return (
@@ -6,6 +7,7 @@ const Topbar = () => {
           <div className="container">
               <div className="navbar">
                   <div className="logo">Logo</div>
+                  <Search />
                   <div className="links">
                       <ul>
                           <li>
