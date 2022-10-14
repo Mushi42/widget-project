@@ -1,0 +1,88 @@
+.SignUp {
+    height: 100vh;
+    .innerContainer {
+        width: 450px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        h2 {
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+        .Input {
+            margin-bottom: 10px;
+            width: 100%;
+            .MuiFormControl-root, .MuiTextField-root, .css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
+                width: 100%;
+            }
+            input {
+                width: 100%;
+            }
+        }
+        .signupBtn {
+            padding: 8px 35px;
+            background-color: white;
+            border: 1px solid;
+            color: black;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+        .loginHere {
+            color: #87bfff;
+            a {
+                color: #87bfff;
+                text-decoration: underline;
+                &:hover {
+                    color: #2d85eb;
+                }
+            }
+        }
+        .rememberPassword {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            p {
+                margin-bottom: 0;
+            }
+        }
+        .cant-Login {
+            span {
+                color: #87bfff;
+                cursor: pointer;
+                &:hover {
+                    color: #4a9eff;
+                }
+            }
+        }
+    }
+}
+.MuiModal-root, .css-79ws1d-MuiModal-root {
+    .loginModal, .MuiBox-root, .css-1wnsr1i {
+        flex-direction: column;
+        p {
+            margin-bottom: 20px;
+        }
+        .Input {
+            margin-bottom: 20px;
+            width: 100%;
+            .MuiFormControl-root, .MuiTextField-root, .css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
+                width: 100%;
+            }
+            input {
+                width: 100%;
+            }
+        }
+        button {
+            padding: 8px 35px;
+            background-color: white;
+            border: 1px solid;
+            color: black;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            cursor: pointer;    
+        }
+    }
+}
