@@ -1,4 +1,4 @@
-import { Box, Checkbox, FormControlLabel, FormGroup, Modal, Typography } from '@mui/material'
+import { Box, Checkbox, FormControlLabel, FormGroup, Modal, Typography, TextField } from '@mui/material'
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Input from '../Shared/Input/Input'
@@ -18,18 +18,33 @@ function Login() {
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
+
+    const InputLabels = [
+        {
+            key: 1,
+            label: 'Account Name'
+        },
+        {
+            key: 2,
+            label: 'User Name'
+        },
+        {
+            key: 3,
+            label: 'Password'
+        },
+    ]
     return (
         <div className="SignUp Login flexCenter">
             <div className="innerContainer">
                 <h2>User Login</h2>
-                <Input />
-                <Input />
-                <Input />
+                {InputLabels.map((obj, index) =>
+                    <Input key={index} data={obj} />
+                )}
                 <div className="rememberPassword">
                     <FormGroup>
                         <FormControlLabel control={<Checkbox defaultChecked />} label="Remember me" />
                     </FormGroup>
-                    <p>Forgot your Password</p>
+                    <p className='forgotPass'>Forgot your Password</p>
                 </div>
                 <button className="signupBtn">Log in</button>
                 <div className="cant-Login">
@@ -43,12 +58,20 @@ function Login() {
                 aria-describedby="modal-modal-description"
             >
                 <Box sx={style} className="loginModal flexCenter">
-                    <h2>Can't Login</h2>
+                    <div className="loginModalTitle">
+                        <h2>Can't Login</h2>
+                    </div>
                     <Typography id="modal-modal-description" sx={{ mt: 1 }}>
                         We Will send a Recovery Link to
                     </Typography>
-                    <Input />
+                    <TextField
+                        id="outlined-basic"
+                        label="Enter Email"
+                        variant="outlined"
+                        type='email'
+                    />
                     <button>Send Recovery Link</button>
+                    <span onClick={handleClose}>Return To Login</span>
                 </Box>
             </Modal>
         </div>

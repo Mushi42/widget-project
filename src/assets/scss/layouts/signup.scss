@@ -1,7 +1,9 @@
 .SignUp {
     height: 100vh;
     .innerContainer {
+        padding: 0 20px;
         width: 450px;
+        min-width: 320px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -15,6 +17,9 @@
             width: 100%;
             .MuiFormControl-root, .MuiTextField-root, .css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
                 width: 100%;
+            }
+            .MuiInputBase-root, .MuiOutlinedInput-root, .MuiInputBase-colorPrimary, .MuiInputBase-formControl, .css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root {
+                border-radius: 8px;
             }
             input {
                 width: 100%;
@@ -47,6 +52,12 @@
             p {
                 margin-bottom: 0;
             }
+            .forgotPass {
+                &:hover {
+                    color: #2d85eb;
+                }
+                cursor: pointer;
+            }
         }
         .cant-Login {
             span {
@@ -62,18 +73,21 @@
 .MuiModal-root, .css-79ws1d-MuiModal-root {
     .loginModal, .MuiBox-root, .css-1wnsr1i {
         flex-direction: column;
+        .loginModalTitle {
+         display: flex;   
+         justify-content: flex-start;
+         width: 100%;
+         h2 {
+            font-weight: 700;
+            font-size: 24px;
+         }
+        }
         p {
             margin-bottom: 20px;
         }
-        .Input {
-            margin-bottom: 20px;
+        .MuiFormControl-root, .MuiTextField-root, .css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
             width: 100%;
-            .MuiFormControl-root, .MuiTextField-root, .css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
-                width: 100%;
-            }
-            input {
-                width: 100%;
-            }
+            margin-bottom: 20px;
         }
         button {
             padding: 8px 35px;
@@ -83,6 +97,10 @@
             border-radius: 10px;
             margin-bottom: 10px;
             cursor: pointer;    
+        }
+        span {
+            color: #2d85eb;
+            cursor: pointer;
         }
     }
 }

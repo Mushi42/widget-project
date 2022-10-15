@@ -3,14 +3,13 @@ import { TextField } from '@mui/material'
 
 
 function Input(props) {
-  const label = props
+  const {data} = props
   return (
     <div className='Input'>
       <TextField 
       id="outlined-basic" 
-      label='Sign Up' 
-      variant="outlined" 
-      borderRadius={10}
+      label={data.label}
+      variant="outlined"
       type='email'
       />
     </div>
