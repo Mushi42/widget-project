@@ -1,6 +1,5 @@
 $bgcolor: #f0f0f0;
 
-
 .search {
     display: flex;
     justify-content: space-between;
@@ -8,9 +7,11 @@ $bgcolor: #f0f0f0;
     width: 40%;
     background: $bgcolor;
     border: 1px solid $bgcolor;
+    border-radius: 6px;
 
     .search-icon {
-        padding: 10px 10px;
+        padding: 10px 14px;
+        display: flex;
     }
 
     .search-input {
@@ -24,7 +25,5 @@ $bgcolor: #f0f0f0;
             font-family: 'Poppins', sans-serif;
             appearance: none;
         }
-
     }
-
 }

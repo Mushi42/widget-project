@@ -1,3 +1,6 @@
 .sidebar-main {
-    display: flex;
+    .mainContainer {
+        display: flex;
+        grid-gap: 30px;
+    }
 }

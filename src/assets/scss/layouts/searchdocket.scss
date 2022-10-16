@@ -1,0 +1,19 @@
+.SearchDocket {
+    .SD-FilterPanel {
+        display: flex;
+        justify-content: space-between;
+        grid-gap: 20px;
+        border-bottom: 1px solid #e5e5e5;
+        padding-bottom: 15px;
+        .filterPanel {
+            display: flex;
+            grid-gap: 10px;
+        }
+    }
+}
+svg {
+    font-size: 18px;
+}
+.ant-pagination, .ant-table-pagination, .ant-table-pagination-right {
+    display: none   ;
+}

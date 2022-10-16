@@ -28,10 +28,12 @@ function Signup() {
         <div className="SignUp flexCenter">
             <div className="innerContainer">
                 <h2>Sign Up For Your Account</h2>
-                {InputLabels.map((obj,index) => 
+                {InputLabels.map((obj, index) =>
                     <Input key={index} data={obj} />
                 )}
-                <button className="signupBtn">Sign Up</button>
+                <Link to='/dashboard'>
+                    <button className="signupBtn">Sign Up</button>
+                </Link>
                 <p className="loginHere">Already have an EPAx account? <Link to='/login'>
                     <span>Login in</span>
                 </Link>

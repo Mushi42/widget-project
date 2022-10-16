@@ -46,7 +46,9 @@ function Login() {
                     </FormGroup>
                     <p className='forgotPass'>Forgot your Password</p>
                 </div>
-                <button className="signupBtn">Log in</button>
+                <Link to='/dashboard'>
+                    <button className="signupBtn">Log in</button>
+                </Link>
                 <div className="cant-Login">
                     <span onClick={handleOpen}>Can't Log in ?</span> | <Link to='/signup'><span>Sign up for account</span></Link>
                 </div>
