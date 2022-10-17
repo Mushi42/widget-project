@@ -8,7 +8,6 @@ function TabsLayout() {
             <Tabs
                 style={{width: "100%"}}
                 defaultActiveKey="1"
-                activeKey='1'
                 items={[
                     {
                         label: `SEARCH DOCKET`,

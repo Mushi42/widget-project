@@ -1,0 +1,104 @@
+@use "../layouts/colors";
+
+.dark {
+    // MAIN CONTAINER
+    .sidebar-main {
+        .wrapper {
+            .container {
+                .navbar {
+                    background-color: colors.$black;
+                    color: colors.$white;
+                    .logo {
+                        color: colors.$white;
+                    }
+                    .search {
+                        background-color: colors.$black;
+                        input {
+                            background-color: colors.$black;
+                            border-color: colors.$black;
+                        }
+                    }
+                    .links {
+                        ul {
+                            li {
+                                color: colors.$white;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .mainContainer {
+            background-color: colors.$black;
+            .sidebar {
+                background-color: colors.$black;
+                color: colors.$white;
+                .boxicon-container {
+                    .description {
+                        color: colors.$white;
+                    }
+                    
+                }
+            }
+            .TabsLayout {
+                .ant-tabs,
+                .ant-tabs-top {
+                    .ant-tabs-nav {
+                        .ant-tabs-nav-wrap {
+                            .ant-tabs-nav-list {
+                                .ant-tabs-tab {
+                                    .ant-tabs-tab-btn {
+                                        color: colors.$white;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .ant-tabs-content-holder {
+                        .ant-tabs-content,
+                        .ant-tabs-content-top {
+                            .SearchDocket {
+                                .SD-FilterPanel {
+                                    border-bottom: 1px solid colors.$white;
+                                    background-color: colors.$black;
+                                    .filterPanel {
+                                        color: white;
+                                    }
+                                }
+                                .ant-table-thead {
+                                    tr {
+                                        th {
+                                            background-color: colors.$black;
+                                            color: colors.$white;
+                                        }
+                                    }
+                                }
+                                .ant-table-tbody {
+                                    tr {
+                                        td,
+                                        .ant-table-cell {
+                                            background-color: colors.$black;
+                                            color: colors.$white;
+                                            span {
+                                                color: colors.$white;
+                                            }
+                                            &:hover {
+                                                background-color: colors.$light-black !important;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .ads {
+                background-color: colors.$black;
+                h2 {
+                    color: colors.$white;
+                }
+            }
+        }
+    }
+}

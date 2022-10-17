@@ -55,8 +55,8 @@ $bgcolor: #f0f0f0;
     top: 50%;
     transform: translateY(-50%);
     left: -0.25rem;
-    border-top-right-radius: 0.8rem;
-    border-bottom-right-radius: 0.8rem;
+    border-top-right-radius: 1.8rem;
+    border-bottom-right-radius: 1.8rem;
 }
 
 .boxicon::after {
@@ -70,8 +70,8 @@ $bgcolor: #f0f0f0;
     top: 50%;
     transform: translateY(-50%);
     left: -0.25rem;
-    border-top-right-radius: 0.8rem;
-    border-bottom-right-radius: 0.8rem;
+    border-top-right-radius: 1.8rem;
+    border-bottom-right-radius: 1.8rem;
 }
 
 .boxicon-container:hover>.boxicon::after {
