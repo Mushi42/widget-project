@@ -8,11 +8,13 @@
                 .navbar {
                     background-color: colors.$black;
                     color: colors.$white;
+                    border-bottom: 1px solid colors.$border-100;
                     .logo {
                         color: colors.$white;
                     }
                     .search {
                         background-color: colors.$black;
+                        border: 1px solid colors.$border-100;
                         input {
                             background-color: colors.$black;
                             border-color: colors.$black;
@@ -33,6 +35,7 @@
             .sidebar {
                 background-color: colors.$black;
                 color: colors.$white;
+                border-right: 1px solid colors.$border-100;
                 .boxicon-container {
                     .description {
                         color: colors.$white;
@@ -41,6 +44,7 @@
                 }
             }
             .TabsLayout {
+                border-right: 2px solid colors.$border-100;
                 .ant-tabs,
                 .ant-tabs-top {
                     .ant-tabs-nav {
@@ -61,6 +65,7 @@
                                 .SD-FilterPanel {
                                     border-bottom: 1px solid colors.$white;
                                     background-color: colors.$black;
+                                    border-bottom: 1px solid colors.$border-100;
                                     .filterPanel {
                                         color: white;
                                     }
@@ -70,6 +75,7 @@
                                         th {
                                             background-color: colors.$black;
                                             color: colors.$white;
+                                            border-bottom: 1px solid colors.$border-100;
                                         }
                                     }
                                 }
@@ -79,11 +85,9 @@
                                         .ant-table-cell {
                                             background-color: colors.$black;
                                             color: colors.$white;
+                                            border-bottom: 1px solid colors.$border-100;
                                             span {
                                                 color: colors.$white;
-                                            }
-                                            &:hover {
-                                                background-color: colors.$light-black !important;
                                             }
                                         }
                                     }
@@ -97,6 +101,315 @@
                 background-color: colors.$black;
                 h2 {
                     color: colors.$white;
+                }
+            }
+        }
+    }
+}
+
+.skyBlue {
+    .sidebar-main {
+        .wrapper {
+            .container {
+                .navbar {
+                    background-color: colors.$skyBlue;
+                    color: colors.$textSky;
+                    border-bottom: 1px solid colors.$borderSky;
+                    .logo {
+                        color: colors.$textSky;
+                    }
+                    .search {
+                        background-color: colors.$skyBlue;
+                        input {
+                            background-color: colors.$skyBlue;
+                            border-color: colors.$skyBlue;
+                            &::placeholder {
+                                color: colors.$textSky;
+                            }
+                        }
+                    }
+                    .links {
+                        ul {
+                            li {
+                                color: colors.$textSky;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .mainContainer {
+            background-color: colors.$skyBlue;
+            .sidebar {
+                background-color: colors.$skyBlue;
+                color: colors.$textSky;
+                .boxicon-container {
+                    .description {
+                        color: colors.$textSky;
+                    }
+                    
+                }
+            }
+            .TabsLayout {
+                .ant-tabs,
+                .ant-tabs-top {
+                    .ant-tabs-nav {
+                        .ant-tabs-nav-wrap {
+                            .ant-tabs-nav-list {
+                                .ant-tabs-tab {
+                                    .ant-tabs-tab-btn {
+                                        color: colors.$textSky;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .ant-tabs-content-holder {
+                        .ant-tabs-content,
+                        .ant-tabs-content-top {
+                            .SearchDocket {
+                                .SD-FilterPanel {
+                                    border-bottom: 1px solid colors.$borderSky;
+                                    background-color: colors.$skyBlue;
+                                    .filterPanel {
+                                        color: white;
+                                    }
+                                }
+                                .ant-table-thead {
+                                    tr {
+                                        th {
+                                            background-color: colors.$skyBlue;
+                                            color: colors.$textSky;
+                                        }
+                                    }
+                                }
+                                .ant-table-tbody {
+                                    tr {
+                                        td,
+                                        .ant-table-cell {
+                                            background-color: colors.$skyBlue;
+                                            color: colors.$textSky;
+                                            span {
+                                                color: colors.$textSky;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .ads {
+                background-color: colors.$skyBlue;
+                h2 {
+                    color: colors.$textSky;
+                }
+            }
+        }
+    }
+}
+
+.navyBlue {
+    .sidebar-main {
+        .wrapper {
+            .container {
+                .navbar {
+                    background-color: colors.$navyBlue;
+                    color: colors.$textNavy;
+                    border-bottom: 1px solid colors.$borderSky;
+                    .logo {
+                        color: colors.$textNavy;
+                    }
+                    .search {
+                        background-color: colors.$navyBlue;
+                        input {
+                            background-color: colors.$navyBlue;
+                            border-color: colors.$navyBlue;
+                            &::placeholder {
+                                color: colors.$textNavy;
+                            }
+                        }
+                    }
+                    .links {
+                        ul {
+                            li {
+                                color: colors.$textNavy;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .mainContainer {
+            background-color: colors.$navyBlue;
+            .sidebar {
+                background-color: colors.$navyBlue;
+                color: colors.$textNavy;
+                .boxicon-container {
+                    .description {
+                        color: colors.$textNavy;
+                    }
+                    
+                }
+            }
+            .TabsLayout {
+                .ant-tabs,
+                .ant-tabs-top {
+                    .ant-tabs-nav {
+                        .ant-tabs-nav-wrap {
+                            .ant-tabs-nav-list {
+                                .ant-tabs-tab {
+                                    .ant-tabs-tab-btn {
+                                        color: colors.$textNavy;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .ant-tabs-content-holder {
+                        .ant-tabs-content,
+                        .ant-tabs-content-top {
+                            .SearchDocket {
+                                .SD-FilterPanel {
+                                    border-bottom: 1px solid colors.$borderSky;
+                                    background-color: colors.$navyBlue;
+                                    .filterPanel {
+                                        color: white;
+                                    }
+                                }
+                                .ant-table-thead {
+                                    tr {
+                                        th {
+                                            background-color: colors.$navyBlue;
+                                            color: colors.$textNavy;
+                                        }
+                                    }
+                                }
+                                .ant-table-tbody {
+                                    tr {
+                                        td,
+                                        .ant-table-cell {
+                                            background-color: colors.$navyBlue;
+                                            color: colors.$textNavy;
+                                            span {
+                                                color: colors.$textNavy;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .ads {
+                background-color: colors.$navyBlue;
+                h2 {
+                    color: colors.$textNavy;
+                }
+            }
+        }
+    }
+}
+
+.sunny {
+    .sidebar-main {
+        .wrapper {
+            .container {
+                .navbar {
+                    background-color: colors.$sunny;
+                    color: colors.$textSunny;
+                    border-bottom: 1px solid colors.$borderSky;
+                    .logo {
+                        color: colors.$textSunny;
+                    }
+                    .search {
+                        background-color: colors.$sunny;
+                        input {
+                            background-color: colors.$sunny;
+                            border-color: colors.$sunny;
+                            &::placeholder {
+                                color: colors.$textSunny;
+                            }
+                        }
+                    }
+                    .links {
+                        ul {
+                            li {
+                                color: colors.$textSunny;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .mainContainer {
+            background-color: colors.$sunny;
+            .sidebar {
+                background-color: colors.$sunny;
+                color: colors.$textSunny;
+                .boxicon-container {
+                    .description {
+                        color: colors.$textSunny;
+                    }
+                    
+                }
+            }
+            .TabsLayout {
+                .ant-tabs,
+                .ant-tabs-top {
+                    .ant-tabs-nav {
+                        .ant-tabs-nav-wrap {
+                            .ant-tabs-nav-list {
+                                .ant-tabs-tab {
+                                    .ant-tabs-tab-btn {
+                                        color: colors.$textSunny;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .ant-tabs-content-holder {
+                        .ant-tabs-content,
+                        .ant-tabs-content-top {
+                            .SearchDocket {
+                                .SD-FilterPanel {
+                                    border-bottom: 1px solid colors.$borderSky;
+                                    background-color: colors.$sunny;
+                                    .filterPanel {
+                                        color: white;
+                                    }
+                                }
+                                .ant-table-thead {
+                                    tr {
+                                        th {
+                                            background-color: colors.$sunny;
+                                            color: colors.$textSunny;
+                                        }
+                                    }
+                                }
+                                .ant-table-tbody {
+                                    tr {
+                                        td,
+                                        .ant-table-cell {
+                                            background-color: colors.$sunny;
+                                            color: colors.$textSunny;
+                                            span {
+                                                color: colors.$textSunny;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .ads {
+                background-color: colors.$sunny;
+                h2 {
+                    color: colors.$textSunny;
                 }
             }
         }

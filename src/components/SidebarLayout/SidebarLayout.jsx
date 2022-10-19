@@ -9,7 +9,13 @@ const SidebarLayout = () => {
   const [theme, setTheme] = useState('light');
   return (
     <div className={theme}>
-      <button onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>Switch Theme</button>
+      <div className="themeBtns flexCenter ">
+        <button onClick={() => setTheme('light')}>Light</button>
+        <button onClick={() => setTheme('dark')}>Dark</button>
+        <button onClick={() => setTheme('navyBlue')}>NavyBlue</button>
+        <button onClick={() => setTheme('skyBlue')}>SkyBlue</button>
+        <button onClick={() => setTheme('sunny')}>Sunny</button>
+      </div>
       <div className='sidebar-main'>
         <Topbar />
         <div className="mainContainer">

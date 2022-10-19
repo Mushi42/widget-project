@@ -1,6 +1,16 @@
 .sidebar-main {
     .mainContainer {
         display: flex;
-        grid-gap: 30px;
+        grid-gap: 20px;
+        height: 88vh;
+    }
+}
+.themeBtns {
+    grid-gap: 20px;
+    margin: 10px;
+    button {
+        background-color: white;
+        padding: 6px 10px;
+        border: 1px solid black;
     }
 }

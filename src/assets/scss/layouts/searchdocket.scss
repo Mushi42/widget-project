@@ -6,13 +6,17 @@
         justify-content: space-between;
         grid-gap: 20px;
         padding-bottom: 15px;
-        border-bottom: 1px solid colors.$light-grey;
+        border-bottom: 1px solid #e5e5e5;
         padding: 0px 10px 15px 10px;
         .filterPanel {
             padding-top: 15px;
             display: flex;
             grid-gap: 10px;
         }
+    }
+    .SD-Table {
+        overflow-y: scroll;
+        height: 465px;
     }
     svg {
         font-size: 18px;
