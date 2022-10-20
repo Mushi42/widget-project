@@ -55,6 +55,9 @@
                                         color: colors.$white;
                                     }
                                 }
+                                .ant-tabs-ink-bar, .ant-tabs-ink-bar-animated {
+                                    background-color: colors.$white;
+                                }
                             }
                         }
                     }
@@ -161,6 +164,9 @@
                                         color: colors.$textSky;
                                     }
                                 }
+                                .ant-tabs-ink-bar, .ant-tabs-ink-bar-animated {
+                                    background-color: colors.$textSky;
+                                }
                             }
                         }
                     }
@@ -172,7 +178,7 @@
                                     border-bottom: 1px solid colors.$borderSky;
                                     background-color: colors.$skyBlue;
                                     .filterPanel {
-                                        color: white;
+                                        color: colors.$textSky;
                                     }
                                 }
                                 .ant-table-thead {
@@ -264,6 +270,9 @@
                                         color: colors.$textNavy;
                                     }
                                 }
+                                .ant-tabs-ink-bar, .ant-tabs-ink-bar-animated {
+                                    background-color: colors.$textNavy;
+                                }
                             }
                         }
                     }
@@ -275,7 +284,7 @@
                                     border-bottom: 1px solid colors.$borderSky;
                                     background-color: colors.$navyBlue;
                                     .filterPanel {
-                                        color: white;
+                                        color: colors.$textNavy;
                                     }
                                 }
                                 .ant-table-thead {
@@ -367,6 +376,9 @@
                                         color: colors.$textSunny;
                                     }
                                 }
+                                .ant-tabs-ink-bar, .ant-tabs-ink-bar-animated {
+                                    background-color: colors.$textSunny;
+                                }
                             }
                         }
                     }
@@ -378,7 +390,7 @@
                                     border-bottom: 1px solid colors.$borderSky;
                                     background-color: colors.$sunny;
                                     .filterPanel {
-                                        color: white;
+                                        color: colors.$textSunny;
                                     }
                                 }
                                 .ant-table-thead {

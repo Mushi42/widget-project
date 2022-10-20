@@ -1,6 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import { IoCaretForwardSharp } from 'react-icons/io5';
+import List from '@mui/material/List';
+import InfoPanel from './InfoPanel';
+import { AppstoreOutlined, MailOutlined, SettingOutlined } from '@ant-design/icons';
+import { Menu } from 'antd';
 import './styles.scss'
+import { AiOutlineSearch } from 'react-icons/ai';
+import { GrAdd } from 'react-icons/gr';
+
+function getItem(label, key, icon, children, type) {
+  return {
+    key,
+    icon,
+    children,
+    label,
+    type,
+  };
+}
 
 const Sidebar = () => {
   const useMediaQuery = (query) => {
@@ -18,16 +34,36 @@ const Sidebar = () => {
 
     return matches;
   };
+  const [open, setOpen] = React.useState(true);
+
+  const handleClick = () => {
+    setOpen(!open);
+  };
+  const [hovered, setHovered] = useState(null);
+  const [active, setActive] = useState(1);
+  const [animate, setAnimate] = useState(false);
+  const [expanded, setExpanded] = useState(true);
+  const changeSmall = useMediaQuery("(max-height: 550px)");
+  let delay = 1;
+  useEffect(() => {
+    setAnimate(true);
+    let timer = setTimeout(() => setAnimate(false), delay * 1000);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [active, delay]);
+
   let menuItems = [
-    {
-      name: "Look Up Taglet",
-      iconName: "menu",
-    },
-    {
-      name: "Add Taglet",
-      iconName: "home",
-      type: "solid",
-    },
+    // {
+    //   name: "Look Up Taglet",
+    //   iconName: "menu",
+    // },
+    // {
+    //   name: "Add Taglet",
+    //   iconName: "home",
+    //   type: "solid",
+    // },
     {
       name: "Chase Bank",
       iconName: "compass",
@@ -66,24 +102,27 @@ const Sidebar = () => {
       rotate: "180",
     },
   ];
-  const [hovered, setHovered] = useState(null);
-  const [active, setActive] = useState(1);
-  const [animate, setAnimate] = useState(false);
-  const [expanded, setExpanded] = useState(true);
-  const changeSmall = useMediaQuery("(max-height: 550px)");
-  let delay = 1;
-  useEffect(() => {
-    setAnimate(true);
-    let timer = setTimeout(() => setAnimate(false), delay * 1000);
 
-    return () => {
-      clearTimeout(timer);
-    };
-  }, [active, delay]);
+  const items = [
+    getItem('menuItems', 'sub2', <IoCaretForwardSharp size={15} />, [
+      getItem('Option 5', '5'),
+      getItem('Option 6', '6'),
+      getItem('Submenu', 'sub3', null, [getItem('Option 7', '7'), getItem('Option 8', '8')]),
+    ]),
+  ];
 
   return (
     <div className=''>
       <div className={`sidebar ${expanded && "expanded"}`}>
+        <div className="sideBarSearchbar">
+          <div className="SideBar-top">
+            <AiOutlineSearch />
+            <input type="text" placeholder='Look Up Taglet' />
+          </div>
+          <div className="SideBar-top addTaglet">
+            <span className='flexCenter GG-10'> <GrAdd /> Add Taglet</span>
+          </div>
+        </div>
         {menuItems.map((item, index) => {
           let middle = false;
           if (!(index === 0 || index === menuItems.length - 1)) {
@@ -113,9 +152,21 @@ const Sidebar = () => {
               }}
               key={index}
             >
+              {/* <Menu
+              className={`${middle && "boxicon"} 
+              ${!middle && "first-and-last-trash-fix"}
+              ${active === index && "active"}
+              `}
+                style={{
+                  width: 256,
+                }}
+                defaultSelectedKeys={['1']}
+                defaultOpenKeys={['sub1']}
+                mode="inline"
+                items={items}
+              /> */}
 
 
-              
               <div className={`${middle && "boxicon"} 
                       ${!middle && "first-and-last-trash-fix"}
                       ${active === index && "active"}
@@ -123,7 +174,7 @@ const Sidebar = () => {
 
                 {item.name !== "Eduhance" && (
 
-                <IoCaretForwardSharp size={15} />
+                  <IoCaretForwardSharp size={15} />
                 )}
               </div>
               {/* <box-icon
@@ -151,6 +202,7 @@ const Sidebar = () => {
           );
         })}
       </div>
+      <InfoPanel />
     </div>
   );
 };

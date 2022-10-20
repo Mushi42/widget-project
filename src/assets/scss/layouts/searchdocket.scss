@@ -17,7 +17,12 @@
     .SD-Table {
         overflow-y: scroll;
         height: 465px;
+        scrollbar-color: black;
     }
+    .SD-Table::-webkit-scrollbar {
+        display: none;
+    }
+    
     svg {
         font-size: 18px;
     }

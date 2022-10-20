@@ -4,6 +4,7 @@ import Sidebar from '../Sidebar/Sidebar';
 import Login from '../login/Login';
 import TabsLayout from '../mainTab/TabsLayout';
 import Ad from '../ad/Ad';
+import Ads from '../ad/Ads';
 
 const SidebarLayout = () => {
   const [theme, setTheme] = useState('light');
@@ -23,6 +24,7 @@ const SidebarLayout = () => {
           <TabsLayout />
           <Ad />
         </div>
+        {/* <Ads /> */}
       </div>
     </div>
   )
