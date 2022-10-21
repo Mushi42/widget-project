@@ -24,7 +24,9 @@ const SidebarLayout = () => {
           <TabsLayout />
           <Ad />
         </div>
-        {/* <Ads /> */}
+        <div className="lowerAd">
+          {/* <Ads /> */}
+        </div>  
       </div>
     </div>
   )

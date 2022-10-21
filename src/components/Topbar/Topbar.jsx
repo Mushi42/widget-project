@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from "react";
 import { DownOutlined } from '@ant-design/icons';
 import { Dropdown, Menu, Space } from 'antd';
 import Search from '../Shared/Search/Search'
 import { FaRegUserCircle } from 'react-icons/fa';
 import { AiOutlineQuestionCircle } from 'react-icons/ai';
 import { TbGridDots } from 'react-icons/tb';
-import { FiSettings } from 'react-icons/fi';
+import { BiUser, BiImageAdd, BiUserPlus } from 'react-icons/bi';
+import { FiSettings, FiMessageSquare, FiBell } from 'react-icons/fi';
 
 const Topbar = () => {
     const menu = (
@@ -119,6 +120,69 @@ const Topbar = () => {
             ]}
         />
     );
+    const GridBoxItems = (
+        <Menu
+            items={[
+                {
+                    key: '1',
+                    label: 'Config',
+                },
+                {
+                    key: '2',
+                    label: 'Disable',
+                },
+            ]}
+        />
+    );
+    const GridItems = [
+        {
+            key: 1,
+            label: 'WorkFlows'
+        },
+        {
+            key: 2,
+            label: 'News'
+        },
+        {
+            key: 3,
+            label: 'Newsletter'
+        },
+        {
+            key: 4,
+            label: 'Reminder'
+        },
+        {
+            key: 5,
+            label: 'Search'
+        },
+        {
+            key: 6,
+            label: 'Version'
+        },
+        {
+            key: 7,
+            label: 'Message'
+        },
+        {
+            key: 8,
+            label: 'Email'
+        },
+    ]
+
+    const [showGrid, setShowGrid] = useState('DotsGrid DisNone');
+    const [showProfile, setShowProfile] = useState('ProfileBar DisNone');
+
+    let ref = useRef();
+
+    useEffect(()=> {
+        document.addEventListener("mousedown", (event) =>{
+            if(!ref.current.contains(event.targer)) {
+                setShowProfile("ProfileBar DisNone")
+                setShowGrid("DotsGrid DisNone")
+            }
+        })
+    })
+
     return (
         <div className="wrapper">
             <div className="container">
@@ -126,48 +190,7 @@ const Topbar = () => {
                     <div className="logo">Logo</div>
                     <Search />
                     <div className="links">
-                        <ul>
-                            <li>
-                                <Dropdown overlay={menuInfo} trigger={['click']}>
-                                    <a onClick={(e) => e.preventDefault()}>
-                                        <Space>
-                                            <AiOutlineQuestionCircle />
-                                        </Space>
-                                    </a>
-                                </Dropdown>
-                            </li>
-                            <li>
-                                <TbGridDots />
-                                {/* <div className="DotsGrid">
-                                    <div className="GridBoxes">
-                                        <div className="GridBox flexCenter">
-                                            <span>WorkFlows</span>
-                                        </div>
-                                        <div className="GridBox flexCenter">
-                                            <span>News</span>
-                                        </div>
-                                        <div className="GridBox flexCenter">
-                                            <span>Newsletter</span>
-                                        </div>
-                                        <div className="GridBox flexCenter">
-                                            <span>Reminder</span>
-                                        </div>
-                                        <div className="GridBox flexCenter">
-                                            <span>Search</span>
-                                        </div>
-                                        <div className="GridBox flexCenter">
-                                            <span>Version</span>
-                                        </div>
-                                        <div className="GridBox flexCenter">
-                                            <span>Message</span>
-                                        </div>
-                                        <div className="GridBox flexCenter">
-                                            <span>Email</span>
-                                        </div>
-                                    </div>
-                                    <button>Add Module</button>
-                                </div> */}
-                            </li>
+                        <ul ref={ref}>
                             <li className="dropdown">
                                 Info
                                 <div className="menu">
@@ -261,6 +284,42 @@ const Topbar = () => {
                                 </div>
                             </li>
                             <li>
+                                <Dropdown overlay={menuInfo} trigger={['click']}>
+                                    <a onClick={(e) => e.preventDefault()}>
+                                        <Space>
+                                            <AiOutlineQuestionCircle />
+                                        </Space>
+                                    </a>
+                                </Dropdown>
+                            </li>
+                            <li className='GridsLi'>
+                                <TbGridDots onClick={() => setShowGrid(showGrid === 'DotsGrid DisNone' ? 'DotsGrid DisBlock' : 'DotsGrid DisNone')} />
+                                <div className={showGrid}>
+                                    <div className="GridBoxes">
+                                        {GridItems.map((obj, index) =>
+                                            <Dropdown overlay={GridBoxItems} trigger={['click']}>
+                                                <a onClick={(e) => e.preventDefault()}>
+                                                    <Space>
+                                                        <div className="GridBox flexCenter">
+                                                            <span>{obj.label}</span>
+                                                        </div>
+                                                    </Space>
+                                                </a>
+                                            </Dropdown>
+                                        )}
+                                    </div>
+                                    <div className="AddModuleBtn">
+                                        <button>Add Module</button>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <FiBell />
+                            </li>
+                            <li>
+                                <FiMessageSquare />
+                            </li>
+                            <li>
                                 <Dropdown overlay={menu} trigger={['click']}>
                                     <a onClick={(e) => e.preventDefault()}>
                                         <Space>
@@ -269,8 +328,34 @@ const Topbar = () => {
                                     </a>
                                 </Dropdown>
                             </li>
-                            <li>
-                                <FaRegUserCircle />
+                            <li className='ProfileLi'>
+                                <FaRegUserCircle onClick={() => setShowProfile(showProfile === 'ProfileBar DisNone' ? 'ProfileBar DisBlock' : 'ProfileBar DisNone')} />
+                                <div className={showProfile}>
+                                    <div className="UserProfileDrop">
+                                        <div className="userImg flexCenter">
+                                            <BiUser className='UserIcon' />
+                                            <BiImageAdd className='AddUserIcon' />
+                                        </div>
+                                        <h2>Joe Doe</h2>
+                                        <button>Manage Your Epax Users</button>
+                                    </div>
+                                    <div className="profileUsers">
+                                        <BiUser className='AccountUserIcon' />
+                                        <p>Joe Doe</p>
+                                    </div>
+                                    <div className="profileUsers">
+                                        <BiUser className='AccountUserIcon' />
+                                        <p>Jane Doe</p>
+                                    </div>
+                                    <div className="profileUsers">
+                                        <BiUser className='AccountUserIcon' />
+                                        <p>Smith Doe</p>
+                                    </div>
+                                    <div className="profileUsers">
+                                        <BiUserPlus />
+                                        <p>Add Another Account</p>
+                                    </div>
+                                </div>
                             </li>
                         </ul>
                     </div>

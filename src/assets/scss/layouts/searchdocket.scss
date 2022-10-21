@@ -12,11 +12,14 @@
             padding-top: 15px;
             display: flex;
             grid-gap: 10px;
+            svg {
+                color: black;
+            }
         }
     }
     .SD-Table {
         overflow-y: scroll;
-        height: 465px;
+        height: 456px;
         scrollbar-color: black;
     }
     .SD-Table::-webkit-scrollbar {

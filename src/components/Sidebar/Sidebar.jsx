@@ -6,7 +6,7 @@ import { AppstoreOutlined, MailOutlined, SettingOutlined } from '@ant-design/ico
 import { Menu } from 'antd';
 import './styles.scss'
 import { AiOutlineSearch } from 'react-icons/ai';
-import { GrAdd } from 'react-icons/gr';
+import { IoMdAdd } from 'react-icons/io';
 
 function getItem(label, key, icon, children, type) {
   return {
@@ -120,7 +120,7 @@ const Sidebar = () => {
             <input type="text" placeholder='Look Up Taglet' />
           </div>
           <div className="SideBar-top addTaglet">
-            <span className='flexCenter GG-10'> <GrAdd /> Add Taglet</span>
+            <span className='flexCenter GG-10'> <IoMdAdd /> Add Taglet</span>
           </div>
         </div>
         {menuItems.map((item, index) => {

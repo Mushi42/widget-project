@@ -1,5 +1,5 @@
-$gray0: #F6F8FF;
-$transition: all .3s;
+$gray0: #f6f8ff;
+$transition: all 0.3s;
 $primary: #636983;
 $borderRadius: 5px;
 
@@ -59,10 +59,10 @@ $borderRadius: 5px;
                 margin-right: 10px;
 
                 svg {
-                    font-size: 16px;
+                    font-size: 18px;
                     color: rgb(66, 66, 66);
                 }
-                 
+
                 &:hover {
                     color: #10c33e;
                 }
@@ -216,6 +216,128 @@ $borderRadius: 5px;
                             visibility: visible;
                             opacity: 1;
                             z-index: 19;
+                        }
+                    }
+                }
+            }
+            .GridsLi {
+                position: relative;
+                &:hover {
+                    color: black;
+                }
+                .DotsGrid {
+                    position: absolute;
+                    top: 24px;
+                    right: 0;
+                    z-index: 10;
+                    background: white;
+                    box-shadow: 0px 0px 10px rgb(206, 206, 206);
+                    padding: 20px;
+                    border-radius: 10px;
+                    .GridBoxes {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr 1fr;
+                        grid-gap: 10px;
+                        margin-bottom: 10px;
+                        .GridBox {
+                            width: 75px;
+                            height: 70px;
+                            background-color: #6750a4;
+                            span {
+                                font-size: 12px;
+                                color: white;
+                            }
+                        }
+                    }
+                    .AddModuleBtn {
+                        display: flex;
+                        justify-content: center;
+                        button {
+                            padding: 5px 20px;
+                            border-radius: 15px;
+                            background-color: white;
+                            border: 1px solid #6750a4;
+                            color: #6750a4;
+                        }
+                    }
+                }
+            }
+            .ProfileLi {
+                position: relative;
+                &:hover {
+                    color: black;
+                }
+                .ProfileBar {
+                    position: absolute;
+                    top: 24px;
+                    right: 0;
+                    z-index: 10;
+                    background: white;
+                    box-shadow: 0px 0px 10px rgb(206, 206, 206);
+                    padding: 20px;
+                    border-radius: 10px;
+                    width: max-content;
+                    .UserProfileDrop {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        margin-bottom: 20px;
+                        .userImg {
+                            position: relative;
+                            width: 60px;
+                            height: 60px;
+                            border-radius: 50px;
+                            background-color: #6750a4;
+                            .UserIcon {
+                                color: white;
+                            }
+                            .AddUserIcon {
+                                position: absolute;
+                                bottom: 0;
+                                right: 0;
+                                color: black;
+                                background: white;
+                                padding: 3px;
+                                border-radius: 30px;
+                            }
+                        }
+                        button {
+                            background-color: white;
+                            border: 1px solid #6750a4;
+                            border-radius: 14px;
+                            color: #6750a4;
+                            padding: 4px 10px;
+                            font-size: 14px;
+                        }
+                    }
+                    .profileUsers {
+                        display: flex;
+                        grid-gap: 30px;
+                        align-items: center;
+                        margin-bottom: 10px;
+                        &:nth-last-child(2){
+                            margin-bottom: 20px;
+                        }
+                        &:nth-child(2) {
+                            .AccountUserIcon {
+                                background-color: #10c33e;
+                            }
+                        }
+                        &:nth-child(3) {
+                            .AccountUserIcon {
+                                background-color: #c9ca59;
+                            }
+                        }
+                        .AccountUserIcon {
+                            padding: 7px;
+                            color: black;
+                            border-radius: 30px;
+                            background-color: #6750a4;
+                        }
+                        p {
+                            margin-bottom: 0;
+                            color: black;
                         }
                     }
                 }

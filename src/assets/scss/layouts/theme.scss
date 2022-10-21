@@ -24,6 +24,9 @@
                         ul {
                             li {
                                 color: colors.$white;
+                                svg {
+                                    color: colors.$white;
+                                }
                             }
                         }
                     }
@@ -36,12 +39,30 @@
                 background-color: colors.$black;
                 color: colors.$white;
                 border-right: 1px solid colors.$border-100;
+                .sideBarSearchbar {
+                    .SideBar-top {
+                        svg {
+                            color: colors.$white;
+                        }
+                        input {
+                            background-color: colors.$black;
+                            color: colors.$white;
+                            &::placeholder {
+                                color: colors.$white;
+                            } 
+                        }
+                    }
+                }
                 .boxicon-container {
                     .description {
                         color: colors.$white;
                     }
                     
                 }
+            }
+            .InfoPanel {
+                background-color: colors.$black;
+                color: colors.$white;
             }
             .TabsLayout {
                 border-right: 2px solid colors.$border-100;
@@ -70,7 +91,9 @@
                                     background-color: colors.$black;
                                     border-bottom: 1px solid colors.$border-100;
                                     .filterPanel {
-                                        color: white;
+                                        svg {
+                                            color: colors.$white;
+                                        }
                                     }
                                 }
                                 .ant-table-thead {
@@ -135,6 +158,9 @@
                         ul {
                             li {
                                 color: colors.$textSky;
+                                svg {
+                                    color: colors.$textSky;
+                                }
                             }
                         }
                     }
@@ -146,12 +172,30 @@
             .sidebar {
                 background-color: colors.$skyBlue;
                 color: colors.$textSky;
+                .sideBarSearchbar {
+                    .SideBar-top {
+                        svg {
+                            color: colors.$textSky;
+                        }
+                        input {
+                            background-color: colors.$skyBlue;
+                            color: colors.$textSky;
+                            &::placeholder {
+                                color: colors.$textSky;
+                            } 
+                        }
+                    }
+                }
                 .boxicon-container {
                     .description {
                         color: colors.$textSky;
                     }
                     
                 }
+            }
+            .InfoPanel {
+                background-color: colors.$skyBlue;
+                color: colors.$textSky;
             }
             .TabsLayout {
                 .ant-tabs,
@@ -178,7 +222,9 @@
                                     border-bottom: 1px solid colors.$borderSky;
                                     background-color: colors.$skyBlue;
                                     .filterPanel {
-                                        color: colors.$textSky;
+                                        svg {
+                                            color: colors.$textSky;
+                                        }
                                     }
                                 }
                                 .ant-table-thead {
@@ -241,6 +287,9 @@
                         ul {
                             li {
                                 color: colors.$textNavy;
+                                svg {
+                                    color: colors.$textNavy;
+                                }
                             }
                         }
                     }
@@ -252,12 +301,30 @@
             .sidebar {
                 background-color: colors.$navyBlue;
                 color: colors.$textNavy;
+                .sideBarSearchbar {
+                    .SideBar-top {
+                        svg {
+                            color: colors.$textNavy;
+                        }
+                        input {
+                            background-color: colors.$navyBlue;
+                            color: colors.$textNavy;
+                            &::placeholder {
+                                color: colors.$textNavy;
+                            } 
+                        }
+                    }
+                }
                 .boxicon-container {
                     .description {
                         color: colors.$textNavy;
                     }
                     
                 }
+            }
+            .InfoPanel {
+                background-color: colors.$navyBlue;
+                color: colors.$textNavy;
             }
             .TabsLayout {
                 .ant-tabs,
@@ -284,7 +351,9 @@
                                     border-bottom: 1px solid colors.$borderSky;
                                     background-color: colors.$navyBlue;
                                     .filterPanel {
-                                        color: colors.$textNavy;
+                                        svg {
+                                            color: colors.$textNavy;
+                                        }
                                     }
                                 }
                                 .ant-table-thead {
@@ -347,6 +416,9 @@
                         ul {
                             li {
                                 color: colors.$textSunny;
+                                svg {
+                                    color: colors.$textSunny;
+                                }
                             }
                         }
                     }
@@ -358,12 +430,30 @@
             .sidebar {
                 background-color: colors.$sunny;
                 color: colors.$textSunny;
+                .sideBarSearchbar {
+                    .SideBar-top {
+                        svg {
+                            color: colors.$textSunny;
+                        }
+                        input {
+                            background-color: colors.$sunny;
+                            color: colors.$textSunny;
+                            &::placeholder {
+                                color: colors.$textSunny;
+                            } 
+                        }
+                    }
+                }
                 .boxicon-container {
                     .description {
                         color: colors.$textSunny;
                     }
                     
                 }
+            }
+            .InfoPanel {
+                background-color: colors.$sunny;
+                color: colors.$textSunny;
             }
             .TabsLayout {
                 .ant-tabs,
@@ -390,7 +480,9 @@
                                     border-bottom: 1px solid colors.$borderSky;
                                     background-color: colors.$sunny;
                                     .filterPanel {
-                                        color: colors.$textSunny;
+                                        svg {
+                                            color: colors.$textSunny;
+                                        }
                                     }
                                 }
                                 .ant-table-thead {
