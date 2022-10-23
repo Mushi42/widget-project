@@ -6,7 +6,6 @@ import { Space, Table, Tag, Dropdown, Menu } from 'antd';
 import { AiOutlineFileText, AiOutlineFileDone, AiOutlineFileExcel, AiFillCaretRight, AiOutlineArrowDown } from 'react-icons/ai';
 
 function SearchDocket() {
-    const [theme, setTheme] = useState('light');
 
     const columns = [
         {
@@ -33,13 +32,68 @@ function SearchDocket() {
             key: 'option',
         },
     ];
+    const TableEdit = (
+        <Menu
+            items={[
+                {
+                    key: 1,
+                    label: 'Add Note'
+                },
+                {
+                    key: 2,
+                    label: 'Edit'
+                },
+                {
+                    key: 3,
+                    label: 'Delete'
+                },
+                {
+                    type: 'divider',
+                },
+                {
+                    key: 4,
+                    label: 'Preview'
+                },
+                {
+                    key: 5,
+                    label: 'Secure'
+                },
+                {
+                    key: 6,
+                    label: 'Encrypt'
+                },
+                {
+                    key: 7,
+                    label: 'Connect'
+                },
+                {
+                    type: 'divider',
+                },
+                {
+                    key: 8,
+                    label: 'Add Workflow'
+                },
+                {
+                    key: 9,
+                    label: 'Add Reminder'
+                },
+            ]}
+        />
+    );
     const data = [
         {
             key: '1',
             name: 'Chase Bank',
             dataModified: '21 September 2021 at 19:24',
             size: '1.8MB',
-            option: <><BsThreeDotsVertical /></>,
+            option:
+                <Dropdown overlay={TableEdit} trigger={['click']}>
+                    <a onClick={(e) => e.preventDefault()}>
+                        <Space>
+                            <BsThreeDotsVertical />
+                        </Space>
+                    </a>
+                </Dropdown>,
         },
         {
             key: '2',

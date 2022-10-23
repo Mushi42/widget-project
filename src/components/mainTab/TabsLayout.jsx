@@ -18,7 +18,7 @@ function TabsLayout() {
                         label: `MESSAGES`,
                         key: '2',
                         children: `Content of Tab Pane 2`,
-                        // disabled: true,
+                        disabled: true,
                     },
                 ]}
             />
