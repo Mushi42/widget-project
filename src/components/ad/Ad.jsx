@@ -3,9 +3,9 @@ import { AiOutlineArrowDown } from 'react-icons/ai';
 
 function Ad() {
     return (
-        <div className="ads" style={{ width: 300 }}>
+        <div className="ads flexCenter GG-10" style={{ width: 300 }}>
             <AiOutlineArrowDown />
-            <h2>Ads</h2>
+            <h2 style={{marginBottom: 0}}>Ads</h2>
         </div>
     )
 }

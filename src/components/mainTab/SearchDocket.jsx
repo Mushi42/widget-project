@@ -3,7 +3,7 @@ import { BsFilterRight } from 'react-icons/bs';
 import { FiFilter } from 'react-icons/fi';
 import { BsThreeDotsVertical } from 'react-icons/bs';
 import { Space, Table, Tag, Dropdown, Menu } from 'antd';
-import { AiOutlineFileText, AiOutlineFileDone, AiOutlineFileExcel, AiFillCaretRight,AiOutlineArrowDown } from 'react-icons/ai';
+import { AiOutlineFileText, AiOutlineFileDone, AiOutlineFileExcel, AiFillCaretRight, AiOutlineArrowDown } from 'react-icons/ai';
 
 function SearchDocket() {
     const [theme, setTheme] = useState('light');
@@ -124,60 +124,59 @@ function SearchDocket() {
             items={[
                 {
                     key: '1',
-                    label: <div className='flexCenter' style={{gridGap: 15,justifyContent: 'flex-start'}}><FiFilter /><span>Taglet Collection</span></div>,
+                    label: <div className='flexCenter' style={{ gridGap: 15, justifyContent: 'flex-start' }}><FiFilter /><span>Taglet Collection</span></div>,
                 },
                 {
                     key: '2',
-                    label: <div className='flexCenter' style={{gridGap: 15,justifyContent: 'flex-start'}}><FiFilter /><span>Target Shortcut</span></div>,
-
+                    label: <div className='flexCenter' style={{ gridGap: 15, justifyContent: 'flex-start' }}><FiFilter /><span>Target Shortcut</span></div>,
                 },
                 {
                     key: '3',
-                    label: <div className='flexCenter' style={{gridGap: 15,justifyContent: 'flex-start'}}><FiFilter /><span>Audios</span></div>,
+                    label: <div className='flexCenter' style={{ gridGap: 15, justifyContent: 'flex-start' }}><FiFilter /><span>Audios</span></div>,
                 },
                 {
                     key: '4',
-                    label: <div className='flexCenter' style={{gridGap: 15,justifyContent: 'flex-start'}}><FiFilter /><span>Videos</span></div>,
+                    label: <div className='flexCenter' style={{ gridGap: 15, justifyContent: 'flex-start' }}><FiFilter /><span>Videos</span></div>,
                 },
                 {
                     key: '5',
-                    label: <div className='flexCenter' style={{gridGap: 15,justifyContent: 'flex-start'}}><FiFilter /><span>Images</span></div>,
+                    label: <div className='flexCenter' style={{ gridGap: 15, justifyContent: 'flex-start' }}><FiFilter /><span>Images</span></div>,
                 },
                 {
                     key: '6',
-                    label: <div className='flexCenter' style={{gridGap: 15,justifyContent: 'flex-start'}}><FiFilter /><span>Repositories</span></div>,
+                    label: <div className='flexCenter' style={{ gridGap: 15, justifyContent: 'flex-start' }}><FiFilter /><span>Repositories</span></div>,
                 },
                 {
                     key: '7',
-                    label: <div className='flexCenter' style={{gridGap: 15,justifyContent: 'flex-start'}}><FiFilter /><span>Extension</span></div>,
+                    label: <div className='flexCenter' style={{ gridGap: 15, justifyContent: 'flex-start' }}><FiFilter /><span>Extension</span></div>,
                 },
                 {
                     key: '8',
-                    label: <div className='flexCenter' style={{gridGap: 15,justifyContent: 'flex-start'}}><FiFilter /><span>Bookmarks</span></div>,
+                    label: <div className='flexCenter' style={{ gridGap: 15, justifyContent: 'flex-start' }}><FiFilter /><span>Bookmarks</span></div>,
                 },
                 {
                     key: '9',
-                    label: <div className='flexCenter' style={{gridGap: 15,justifyContent: 'flex-start'}}><FiFilter /><span>Vault Entry</span></div>,
+                    label: <div className='flexCenter' style={{ gridGap: 15, justifyContent: 'flex-start' }}><FiFilter /><span>Vault Entry</span></div>,
                 },
                 {
                     key: '10',
-                    label: <div className='flexCenter' style={{gridGap: 15,justifyContent: 'flex-start'}}><FiFilter /><span>Tags</span></div>,
+                    label: <div className='flexCenter' style={{ gridGap: 15, justifyContent: 'flex-start' }}><FiFilter /><span>Tags</span></div>,
                 },
                 {
                     key: '11',
-                    label: <div className='flexCenter' style={{gridGap: 15,justifyContent: 'flex-start'}}><FiFilter /><span>WorkFlows</span></div>,
+                    label: <div className='flexCenter' style={{ gridGap: 15, justifyContent: 'flex-start' }}><FiFilter /><span>WorkFlows</span></div>,
                 },
                 {
                     key: '12',
-                    label: <div className='flexCenter' style={{gridGap: 15,justifyContent: 'flex-start'}}><FiFilter /><span>Reminders</span></div>,
+                    label: <div className='flexCenter' style={{ gridGap: 15, justifyContent: 'flex-start' }}><FiFilter /><span>Reminders</span></div>,
                 },
                 {
                     key: '13',
-                    label: <div className='flexCenter' style={{gridGap: 15,justifyContent: 'flex-start'}}><FiFilter /><span>User Defined</span></div>,
+                    label: <div className='flexCenter' style={{ gridGap: 15, justifyContent: 'flex-start' }}><FiFilter /><span>User Defined</span></div>,
                 },
                 {
                     key: '14',
-                    label: <div className='flexCenter' style={{gridGap: 15,justifyContent: 'flex-start'}}><FiFilter /><span>Vault Entry</span></div>,
+                    label: <div className='flexCenter' style={{ gridGap: 15, justifyContent: 'flex-start' }}><FiFilter /><span>Vault Entry</span></div>,
                 },
             ]}
         />
@@ -187,24 +186,24 @@ function SearchDocket() {
             items={[
                 {
                     key: '1',
-                    label: <div className='flexCenter' style={{gridGap: 15,justifyContent: 'flex-start'}}><AiOutlineArrowDown /><span>Name</span></div>,
+                    label: <div className='flexCenter' style={{ gridGap: 15, justifyContent: 'flex-start' }}><AiOutlineArrowDown /><span>Name</span></div>,
                 },
                 {
                     key: '2',
-                    label: <div className='flexCenter' style={{gridGap: 15,justifyContent: 'flex-start'}}><AiOutlineArrowDown /><span>Size</span></div>,
+                    label: <div className='flexCenter' style={{ gridGap: 15, justifyContent: 'flex-start' }}><AiOutlineArrowDown /><span>Size</span></div>,
 
                 },
                 {
                     key: '3',
-                    label: <div className='flexCenter' style={{gridGap: 15,justifyContent: 'flex-start'}}><AiOutlineArrowDown /><span>Priority</span></div>,
+                    label: <div className='flexCenter' style={{ gridGap: 15, justifyContent: 'flex-start' }}><AiOutlineArrowDown /><span>Priority</span></div>,
                 },
                 {
                     key: '4',
-                    label: <div className='flexCenter' style={{gridGap: 15,justifyContent: 'flex-start'}}><AiOutlineArrowDown /><span>Date Created</span></div>,
+                    label: <div className='flexCenter' style={{ gridGap: 15, justifyContent: 'flex-start' }}><AiOutlineArrowDown /><span>Date Created</span></div>,
                 },
                 {
                     key: '5',
-                    label: <div className='flexCenter' style={{gridGap: 15,justifyContent: 'flex-start'}}><AiOutlineArrowDown /><span>Last Updated</span></div>,
+                    label: <div className='flexCenter' style={{ gridGap: 15, justifyContent: 'flex-start' }}><AiOutlineArrowDown /><span>Last Updated</span></div>,
                 },
             ]}
         />
@@ -235,7 +234,10 @@ function SearchDocket() {
                 </div>
             </div>
             <div className="SD-Table">
-                <Table columns={columns} dataSource={data} />
+                <Table
+                    columns={columns}
+                    dataSource={data}
+                />
             </div>
         </div>
     )

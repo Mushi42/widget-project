@@ -134,6 +134,40 @@ const Topbar = () => {
             ]}
         />
     );
+    const AddModule = [
+        {
+            key: '1',
+            label: 'WorkFlows'
+        },
+        {
+            key: "2",
+            label: 'News'
+        },
+        {
+            key: '3',
+            label: 'Newsletter'
+        },
+        {
+            key: '4',
+            label: 'Reminder'
+        },
+        {
+            key: '5',
+            label: 'Search'
+        },
+        {
+            key: '6',
+            label: 'Version'
+        },
+        {
+            key: '7',
+            label: 'Message'
+        },
+        {
+            key: '8',
+            label: 'Email'
+        },
+    ]
     const GridItems = [
         {
             key: 1,
@@ -174,24 +208,24 @@ const Topbar = () => {
 
     let ref = useRef();
 
-    useEffect(()=> {
-        document.addEventListener("mousedown", (event) =>{
-            if(!ref.current.contains(event.targer)) {
-                setShowProfile("ProfileBar DisNone")
-                setShowGrid("DotsGrid DisNone")
-            }
-        })
-    })
+    // useEffect(()=> {
+    //     document.addEventListener("mousedown", (event) =>{
+    //         if(!ref.current.contains(event.targer)) {
+    //             setShowProfile("ProfileBar DisNone")
+    //             setShowGrid("DotsGrid DisNone")
+    //         }
+    //     })
+    // },[])
 
     return (
         <div className="wrapper">
             <div className="container">
                 <div className="navbar">
-                    <div className="logo">Logo</div>
+                    <div className="logo">EPAx</div>
                     <Search />
                     <div className="links">
                         <ul ref={ref}>
-                            <li className="dropdown">
+                            {/* <li className="dropdown">
                                 Info
                                 <div className="menu">
                                     <div className="menu-container">
@@ -282,7 +316,7 @@ const Topbar = () => {
                                         </div>
                                     </div>
                                 </div>
-                            </li>
+                            </li> */}
                             <li>
                                 <Dropdown overlay={menuInfo} trigger={['click']}>
                                     <a onClick={(e) => e.preventDefault()}>
@@ -309,7 +343,13 @@ const Topbar = () => {
                                         )}
                                     </div>
                                     <div className="AddModuleBtn">
-                                        <button>Add Module</button>
+                                        <Dropdown overlay={AddModule} trigger={['click']}>
+                                            <a onClick={(e) => e.preventDefault()}>
+                                                <Space>
+                                                    <span>Add Module</span>
+                                                </Space>
+                                            </a>
+                                        </Dropdown>
                                     </div>
                                 </div>
                             </li>

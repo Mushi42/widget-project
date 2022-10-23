@@ -3,12 +3,31 @@ import { IoCaretForwardSharp } from 'react-icons/io5';
 import List from '@mui/material/List';
 import InfoPanel from './InfoPanel';
 import { AppstoreOutlined, MailOutlined, SettingOutlined } from '@ant-design/icons';
-import { Menu } from 'antd';
+import { Menu, Input, Select } from 'antd';
 import './styles.scss'
-import { AiOutlineSearch } from 'react-icons/ai';
+import { AiOutlineSearch, AiOutlineClose } from 'react-icons/ai';
 import { IoMdAdd } from 'react-icons/io';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import Modal from '@mui/material/Modal';
+const { Option } = Select;
+const { TextArea } = Input;
+
+const style = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: 400,
+  bgcolor: 'background.paper',
+  border: '2px solid #000',
+  boxShadow: 24,
+  p: 4,
+};
 
 function getItem(label, key, icon, children, type) {
+
   return {
     key,
     icon,
@@ -19,6 +38,16 @@ function getItem(label, key, icon, children, type) {
 }
 
 const Sidebar = () => {
+  const onChange = (value) => {
+    console.log(`selected ${value}`);
+  };
+  const onSearch = (value) => {
+    console.log('search:', value);
+  };
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
   const useMediaQuery = (query) => {
     const [matches, setMatches] = useState(false);
 
@@ -34,11 +63,7 @@ const Sidebar = () => {
 
     return matches;
   };
-  const [open, setOpen] = React.useState(true);
-
-  const handleClick = () => {
-    setOpen(!open);
-  };
+  const [value, setValue] = useState('');
   const [hovered, setHovered] = useState(null);
   const [active, setActive] = useState(1);
   const [animate, setAnimate] = useState(false);
@@ -120,7 +145,60 @@ const Sidebar = () => {
             <input type="text" placeholder='Look Up Taglet' />
           </div>
           <div className="SideBar-top addTaglet">
-            <span className='flexCenter GG-10'> <IoMdAdd /> Add Taglet</span>
+            <span onClick={handleOpen} className='flexCenter GG-10'> <IoMdAdd /> Add Taglet</span>
+            <Modal
+              open={open}
+              onClose={handleClose}
+              aria-labelledby="modal-modal-title"
+              aria-describedby="modal-modal-description"
+              className="TagletModel"
+            >
+              <Box sx={style}>
+                <div className="TagletModelHead flexCenter">
+                  <h2>New Taglet</h2>
+                  <AiOutlineClose onClick={handleClose} />
+                </div>
+                <div className="TagModelBox">
+                  <p>Please enter a new taglet name:</p>
+                  <Input />
+                </div>
+                <div className="TagModelBox">
+                  <p>Select Taglet type:</p>
+                  <Select
+                    showSearch
+                    placeholder="Select a person"
+                    optionFilterProp="children"
+                    onChange={onChange}
+                    onSearch={onSearch}
+                    filterOption={(input, option) => option.children.toLowerCase().includes(input.toLowerCase())}
+                  >
+                    <Option value="jack">Jack</Option>
+                    <Option value="lucy">Lucy</Option>
+                    <Option value="tom">Tom</Option>
+                  </Select>
+                </div>
+                <div className="TagModelBox DisNone">
+                  <p>Add Asset:</p>
+                  <button className="flexCenter addAssetBtn">Browse Asset</button>
+                </div>
+                <div className="TagModelBox">
+                  <p>Description:</p>
+                  <TextArea
+                    value={value}
+                    onChange={(e) => setValue(e.target.value)}
+                    placeholder="Controlled autosize"
+                    autoSize={{
+                      minRows: 3,
+                      maxRows: 5,
+                    }}
+                  />
+                </div>
+                <div className="TagModalBtns">
+                  <button className='primaryBtn'>Cancel</button>
+                  <button className='secondaryBtn'>Create</button>
+                </div>
+              </Box>
+            </Modal>
           </div>
         </div>
         {menuItems.map((item, index) => {
@@ -201,8 +279,8 @@ const Sidebar = () => {
             </div>
           );
         })}
+        <InfoPanel />
       </div>
-      <InfoPanel />
     </div>
   );
 };

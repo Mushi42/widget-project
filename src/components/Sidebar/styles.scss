@@ -4,8 +4,8 @@ $bgcolor: #f0f0f0;
     height: 100vh;
     overflow: hidden;
     background-color: black;
-    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana,
+        sans-serif;
 }
 
 .sidebar {
@@ -79,7 +79,7 @@ $bgcolor: #f0f0f0;
     border-bottom-right-radius: 1rem;
 }
 
-.boxicon-container:hover>.boxicon::after {
+.boxicon-container:hover > .boxicon::after {
     opacity: 1;
     transition: 0.1s;
 }
@@ -89,7 +89,7 @@ $bgcolor: #f0f0f0;
 //     margin-bottom: 1rem;
 // }
 
-.sidebar>*:last-child {
+.sidebar > *:nth-last-child(2) {
     // margin-top: auto;
     margin-bottom: 2rem;
 }
@@ -147,7 +147,7 @@ $bgcolor: #f0f0f0;
 }
 
 .InfoPanel {
-    position: fixed;
+    position: absolute;
     bottom: 0;
     width: 206px;
     padding: 10px 6px;
@@ -191,5 +191,66 @@ $bgcolor: #f0f0f0;
     }
     .addTaglet {
         cursor: pointer;
+    }
+}
+.MuiBox-root, .css-1wnsr1i {
+    border: none !important;
+}
+.TagletModel {
+    .TagletModelHead {
+        justify-content: space-between !important;
+        margin-bottom: 20px;
+        h2 {
+            margin-bottom: 0;
+        }
+        svg {
+            font-size: 24px;
+        }
+    }
+    .TagModelBox {
+        margin-bottom: 15px;
+        &:nth-last-child(2) {
+            margin-bottom: 70px;
+        }
+        p {
+            margin-bottom: 10px !important;
+        }
+        input {
+            width: 100%;
+        }
+        .ant-select,
+        .ant-select-single,
+        .ant-select-show-arrow,
+        .ant-select-show-search {
+            width: 100%;
+            border-radius: 6px;
+        }
+        .addAssetBtn {
+            width: 100%;
+            padding: 6px;
+            background: white;
+            color: #6750a4;
+            border: 1px solid #6750a4;
+            border-radius: 8px;
+        }
+    }
+    .TagModalBtns {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        grid-gap: 10px;
+        button {
+            padding: 6px 15px;
+        }
+    }
+}
+.MuiModal-root,
+.css-79ws1d-MuiModal-root {
+    .loginModal,
+    .MuiBox-root,
+    .css-1wnsr1i {
+        span {
+            color: rgb(206, 206, 206) !important;
+        }
     }
 }

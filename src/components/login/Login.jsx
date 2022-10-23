@@ -72,7 +72,7 @@ function Login() {
                         variant="outlined"
                         type='email'
                     />
-                    <button>Send Recovery Link</button>
+                    <button id='SignUpModalBtn'>Send Recovery Link</button>
                     <span onClick={handleClose}>Return To Login</span>
                 </Box>
             </Modal>
