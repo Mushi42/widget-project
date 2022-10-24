@@ -252,7 +252,7 @@ const Topbar = () => {
 
     return (
         <div className="wrapper">
-            <div className="container">
+            <div >
                 <div className="navbar">
                     <div className="logo">EPAx</div>
                     <Search />

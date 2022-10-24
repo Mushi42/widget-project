@@ -4,6 +4,10 @@ import { store, persistor } from './redux/configureStore';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import { BrowserRouter } from 'react-router-dom';
+// Bootstrap CSS
+import "bootstrap/dist/css/bootstrap.min.css";
+// Bootstrap Bundle JS
+import "bootstrap/dist/js/bootstrap.bundle.min";
 
 
 import App from './App';

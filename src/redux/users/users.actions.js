@@ -1,7 +1,15 @@
-export const LOAD_USERS_LOADING = 'REDUX_THUNK_LOAD_USERS_LOADING';
-export const LOAD_USERS_ERROR = 'REDUX_THUNK_LOAD_USERS_ERROR';
-export const USER_LOGIN_SUCCESS = 'REDUX_THUNK_LOGIN_SUCCESS';
-export const USER_SESSION_SUCCESS = 'REDUX_THUNK_USER_SESSION_SUCCESS';
-export const UPDATE_USER_ERROR = 'REDUX_THUNK_UPDATE_USER_ERROR';
-export const UPDATE_USER_SUCCESS = 'REDUX_THUNK_UPDATE_USER_SUCCESS';
+import { SET_USER_TEXT, SET_USER_NAME } from "./users.types";
 
+export const setUserName = (greeting) => {
+  return {
+    type: SET_USER_NAME,
+    payload: greeting,
+  };
+};
+
+export const setUserTEXT = (name) => {
+  return {
+    type: SET_USER_TEXT,
+    payload: name,
+  };
+};

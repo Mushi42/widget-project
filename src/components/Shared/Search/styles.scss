@@ -4,7 +4,7 @@ $bgcolor: #f0f0f0;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 40%;
+    width: 55%;
     background: $bgcolor;
     border: 1px solid $bgcolor;
     border-radius: 6px;
@@ -28,7 +28,7 @@ $bgcolor: #f0f0f0;
     }
     .DropdownSearch {
         position: absolute;
-        bottom: -74px;
+        bottom: -540px;
         box-shadow: 0px 0px 10px #e5e5e5;
         width: 100%;
         z-index: 11;
