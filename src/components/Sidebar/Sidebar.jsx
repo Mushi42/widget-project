@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
+import { Sidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar';
 import { IoCaretForwardSharp } from 'react-icons/io5';
 import List from '@mui/material/List';
 import InfoPanel from './InfoPanel';
 import { AppstoreOutlined, MailOutlined, SettingOutlined } from '@ant-design/icons';
-import { Menu, Input, Select } from 'antd';
+import { Input, Select } from 'antd';
 import './styles.scss'
 import { AiOutlineSearch, AiOutlineClose } from 'react-icons/ai';
 import { IoMdAdd } from 'react-icons/io';
+import { BsThreeDots } from 'react-icons/bs';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
@@ -37,7 +39,7 @@ function getItem(label, key, icon, children, type) {
   };
 }
 
-const Sidebar = () => {
+const Sidebara = () => {
   const onChange = (value) => {
     console.log(`selected ${value}`);
   };
@@ -128,12 +130,18 @@ const Sidebar = () => {
     },
   ];
 
+  // const loopitem = () => {
+  //   menuItems.map((obj,key) => {
+  //     obj.name
+  //   })
+  // }
+
   const items = [
-    getItem('menuItems', 'sub2', <IoCaretForwardSharp size={15} />, [
+    getItem('Chase Bank', 'sub2', <IoCaretForwardSharp size={15} />, [
       getItem('Option 5', '5'),
       getItem('Option 6', '6'),
       getItem('Submenu', 'sub3', null, [getItem('Option 7', '7'), getItem('Option 8', '8')]),
-    ]),
+    ])
   ];
 
   return (
@@ -229,6 +237,16 @@ const Sidebar = () => {
               }}
               key={index}
             >
+              <Sidebar>
+                <Menu>
+                  <SubMenu label="Charts">
+                    <MenuItem> Pie charts </MenuItem>
+                    <MenuItem> Line charts </MenuItem>
+                  </SubMenu>
+                  <MenuItem> Documentation </MenuItem>
+                  <MenuItem> Calendar </MenuItem>
+                </Menu>
+              </Sidebar>;
               {/* <Menu
               className={`${middle && "boxicon"} 
               ${!middle && "first-and-last-trash-fix"}
@@ -244,7 +262,7 @@ const Sidebar = () => {
               /> */}
 
 
-              <div className={`${middle && "boxicon"} 
+              {/* <div className={`${middle && "boxicon"} 
                       ${!middle && "first-and-last-trash-fix"}
                       ${active === index && "active"}
                       `}>
@@ -253,7 +271,7 @@ const Sidebar = () => {
 
                   <IoCaretForwardSharp size={15} />
                 )}
-              </div>
+              </div> */}
               {/* <box-icon
               class={`${middle && "boxicon"} 
                       ${!middle && "first-and-last-trash-fix"}
@@ -268,13 +286,14 @@ const Sidebar = () => {
               animation={active === index && animate ? "tada" : ""}
               rotate={item.rotate}
             ></box-icon> */}
-              <p
+              {/* <p
                 className={`description 
             ${expanded && "show-description"}
             ${active === index && "active-description"}`}
               >
                 {item.name}
               </p>
+              <BsThreeDots className='SidebarDotsIcon' /> */}
             </div>
           );
         })}
@@ -283,4 +302,4 @@ const Sidebar = () => {
     </div>
   );
 };
-export default Sidebar;
+export default Sidebara;

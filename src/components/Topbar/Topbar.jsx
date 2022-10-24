@@ -453,7 +453,7 @@ const Topbar = () => {
                         </div>
                         <p>Remove Reminder Module?</p>
                         <div className="TagModalBtns">
-                            <button className='primaryBtn'>Cancel</button>
+                            <button onClick={handleClose} className='primaryBtn'>Cancel</button>
                             <button className='secondaryBtn'>Create</button>
                         </div>
                     </Box>
