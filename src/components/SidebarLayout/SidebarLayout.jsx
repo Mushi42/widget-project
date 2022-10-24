@@ -22,10 +22,10 @@ const SidebarLayout = () => {
         <div className="mainContainer">
           <Sidebar />
           <TabsLayout />
-          {/* <Ad /> */}
+          <Ad />
         </div>
         <div className="lowerAd">
-          <Ads />
+          {/* <Ads /> */}
         </div>  
       </div>
     </div>

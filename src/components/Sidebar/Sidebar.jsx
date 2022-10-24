@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Sidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar';
+import { ProSidebar, Menu, MenuItem, SidebarHeader, SidebarFooter, SidebarContent, SubMenu } from "react-pro-sidebar";
+import "react-pro-sidebar/dist/css/styles.css";
 import { IoCaretForwardSharp } from 'react-icons/io5';
 import List from '@mui/material/List';
 import InfoPanel from './InfoPanel';
@@ -93,38 +94,44 @@ const Sidebara = () => {
     // },
     {
       name: "Chase Bank",
-      iconName: "compass",
+      icon: <IoCaretForwardSharp />,
       type: "solid",
+      subMenu: [
+        {
+          name: 'Chase',
+          label: 'Bank',
+        }
+      ]
     },
     {
       name: "Utilities",
-      iconName: "envelope",
+      icon: <IoCaretForwardSharp />,
       type: "solid",
     },
     {
       name: "Pending Files",
-      iconName: "spreadsheet",
+      icon: <IoCaretForwardSharp />,
       type: "solid",
     },
     {
       name: "Digital Vault",
-      iconName: "star",
+      icon: <IoCaretForwardSharp />,
       type: "solid",
     },
     {
       name: "Workflows",
-      iconName: "cog",
+      icon: <IoCaretForwardSharp />,
       type: "solid",
     },
     {
       name: "Reminders",
-      iconName: "log-out",
+      icon: <IoCaretForwardSharp />,
       color: "red",
       rotate: "180",
     },
     {
       name: "Finance",
-      iconName: "log-out",
+      icon: <IoCaretForwardSharp />,
       color: "red",
       rotate: "180",
     },
@@ -208,46 +215,59 @@ const Sidebara = () => {
             </Modal>
           </div>
         </div>
-        {menuItems.map((item, index) => {
+        {/* {menuItems.map((item, index) => {
           let middle = false;
           if (!(index === 0 || index === menuItems.length - 1)) {
             middle = true;
-          }
-          return (
-            <div
-              className={`boxicon-container ${expanded && "expanded-boxicon-container"
-                }`}
-              onMouseEnter={() => {
-                if (middle) {
-                  setHovered(index);
-                }
-              }}
-              onMouseLeave={() => {
-                if (middle) {
-                  setHovered(null);
-                }
-              }}
-              onClick={() => {
-                if (middle) {
-                  setActive(index);
-                }
-                if (index === 0) {
-                  // setExpanded(!expanded);
-                }
-              }}
-              key={index}
-            >
-              <Sidebar>
-                <Menu>
-                  <SubMenu label="Charts">
-                    <MenuItem> Pie charts </MenuItem>
-                    <MenuItem> Line charts </MenuItem>
-                  </SubMenu>
-                  <MenuItem> Documentation </MenuItem>
-                  <MenuItem> Calendar </MenuItem>
-                </Menu>
-              </Sidebar>;
-              {/* <Menu
+          } */}
+        {/* return ( */}
+        <div
+          className={`boxicon-container ${expanded && "expanded-boxicon-container"
+            }`}
+        // onMouseEnter={() => {
+        //   if (middle) {
+        //     setHovered(index);
+        //   }
+        // }}
+        // onMouseLeave={() => {
+        //   if (middle) {
+        //     setHovered(null);
+        //   }
+        // }}
+        // onClick={() => {
+        //   if (middle) {
+        //     setActive(index);
+        //   }
+        //   if (index === 0) {
+        //     setExpanded(!expanded);
+        //   }
+        // }}
+        // key={index}
+        >
+          <ProSidebar
+            className="p-0 m-0"
+            breakPoint="md">
+
+            {/* <SidebarHeader>
+                    <Row className="p-1 m-0 justify-content-center">
+                      <Image width={80} height={40} src={images.pikabulogo} className="header-logo" />
+                    </Row>
+                  </SidebarHeader> */}
+
+            <SidebarContent>
+              <Menu className="bg-transparent" iconShape="circle">
+                {menuItems.map(({name,icon}) => (
+                  <>
+                    <SubMenu icon={icon} title={name}>
+                      <MenuItem> Pie charts </MenuItem>
+                      <MenuItem> Line charts </MenuItem>
+                    </SubMenu>
+                  </>
+                ))}
+              </Menu>
+            </SidebarContent>
+          </ProSidebar>
+          {/* <Menu
               className={`${middle && "boxicon"} 
               ${!middle && "first-and-last-trash-fix"}
               ${active === index && "active"}
@@ -262,7 +282,7 @@ const Sidebara = () => {
               /> */}
 
 
-              {/* <div className={`${middle && "boxicon"} 
+          {/* <div className={`${middle && "boxicon"} 
                       ${!middle && "first-and-last-trash-fix"}
                       ${active === index && "active"}
                       `}>
@@ -272,7 +292,7 @@ const Sidebara = () => {
                   <IoCaretForwardSharp size={15} />
                 )}
               </div> */}
-              {/* <box-icon
+          {/* <box-icon
               class={`${middle && "boxicon"} 
                       ${!middle && "first-and-last-trash-fix"}
                       ${active === index && "active"}
@@ -286,7 +306,7 @@ const Sidebara = () => {
               animation={active === index && animate ? "tada" : ""}
               rotate={item.rotate}
             ></box-icon> */}
-              {/* <p
+          {/* <p
                 className={`description 
             ${expanded && "show-description"}
             ${active === index && "active-description"}`}
@@ -294,9 +314,8 @@ const Sidebara = () => {
                 {item.name}
               </p>
               <BsThreeDots className='SidebarDotsIcon' /> */}
-            </div>
-          );
-        })}
+        </div>
+        {/* })} */}
         <InfoPanel />
       </div>
     </div>
