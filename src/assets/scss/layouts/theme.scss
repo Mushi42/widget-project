@@ -4,7 +4,7 @@
     // MAIN CONTAINER
     .sidebar-main {
         .wrapper {
-            .container {
+            
                 .navbar {
                     background-color: colors.$black;
                     color: colors.$white;
@@ -31,7 +31,7 @@
                         }
                     }
                 }
-            }
+            
         }
         .mainContainer {
             background-color: colors.$black;
@@ -136,7 +136,7 @@
 .skyBlue {
     .sidebar-main {
         .wrapper {
-            .container {
+            
                 .navbar {
                     background-color: colors.$skyBlue;
                     color: colors.$textSky;
@@ -165,7 +165,7 @@
                         }
                     }
                 }
-            }
+            
         }
         .mainContainer {
             background-color: colors.$skyBlue;
@@ -265,7 +265,7 @@
 .navyBlue {
     .sidebar-main {
         .wrapper {
-            .container {
+            
                 .navbar {
                     background-color: colors.$navyBlue;
                     color: colors.$textNavy;
@@ -294,7 +294,7 @@
                         }
                     }
                 }
-            }
+            
         }
         .mainContainer {
             background-color: colors.$navyBlue;
@@ -394,7 +394,7 @@
 .sunny {
     .sidebar-main {
         .wrapper {
-            .container {
+            
                 .navbar {
                     background-color: colors.$sunny;
                     color: colors.$textSunny;
@@ -423,7 +423,7 @@
                         }
                     }
                 }
-            }
+            
         }
         .mainContainer {
             background-color: colors.$sunny;

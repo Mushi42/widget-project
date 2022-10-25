@@ -256,11 +256,12 @@ const Sidebara = () => {
 
             <SidebarContent>
               <Menu className="bg-transparent" iconShape="circle">
-                {menuItems.map(({name,icon}) => (
+                {menuItems.map(({ name, icon }) => (
                   <>
                     <SubMenu icon={icon} title={name}>
                       <MenuItem> Pie charts </MenuItem>
                       <MenuItem> Line charts </MenuItem>
+                    <BsThreeDots className='SidebarDotsIcon' />
                     </SubMenu>
                   </>
                 ))}
@@ -312,8 +313,8 @@ const Sidebara = () => {
             ${active === index && "active-description"}`}
               >
                 {item.name}
-              </p>
-              <BsThreeDots className='SidebarDotsIcon' /> */}
+              </p> */}
+
         </div>
         {/* })} */}
         <InfoPanel />

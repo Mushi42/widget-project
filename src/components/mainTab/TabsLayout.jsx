@@ -6,7 +6,7 @@ function TabsLayout() {
     return (
         <div className='TabsLayout'>
             <Tabs
-                style={{width: "100%"}}
+                // style={{width: "100%"}}
                 defaultActiveKey="1"
                 items={[
                     {
