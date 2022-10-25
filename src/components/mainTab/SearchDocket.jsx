@@ -3,6 +3,19 @@ import { BsFilterRight } from 'react-icons/bs';
 import { FiFilter } from 'react-icons/fi';
 import { BsThreeDotsVertical } from 'react-icons/bs';
 import { Space, Table, Tag, Dropdown, Menu } from 'antd';
+import Logo1 from '../../assets/images/Logo-1.svg'
+import Logo2 from '../../assets/images/Logo-2.svg'
+import Logo3 from '../../assets/images/Logo-3.svg'
+import Logo4 from '../../assets/images/Logo-4.svg'
+import Logo5 from '../../assets/images/Logo-5.svg'
+import Logo6 from '../../assets/images/Logo-6.svg'
+import Logo7 from '../../assets/images/Logo-7.svg'
+import Logo8 from '../../assets/images/Logo-8.svg'
+import Logo9 from '../../assets/images/Logo-9.svg'
+import Logo10 from '../../assets/images/Logo-10.svg'
+import Logo11 from '../../assets/images/Logo-11.svg'
+import Logo12 from '../../assets/images/Logo-12.svg'
+import Logo13 from '../../assets/images/Logo-13.svg'
 import { AiOutlineFileText, AiOutlineFileDone, AiOutlineFileExcel, AiFillCaretRight, AiOutlineArrowDown } from 'react-icons/ai';
 
 function SearchDocket() {
@@ -100,77 +113,143 @@ function SearchDocket() {
             name: 'Chase Bank',
             dataModified: '30 October 2021 at 19:24',
             size: '1.6MB',
-            option: <><BsThreeDotsVertical /></>,
+            option: <Dropdown overlay={TableEdit} trigger={['click']}>
+                <a onClick={(e) => e.preventDefault()}>
+                    <Space>
+                        <BsThreeDotsVertical />
+                    </Space>
+                </a>
+            </Dropdown>,
         },
         {
             key: '3',
             name: 'Chase Bank',
             dataModified: '21 January 2021 at 19:24',
             size: '1.4MB',
-            option: <><BsThreeDotsVertical /></>,
+            option: <Dropdown overlay={TableEdit} trigger={['click']}>
+                <a onClick={(e) => e.preventDefault()}>
+                    <Space>
+                        <BsThreeDotsVertical />
+                    </Space>
+                </a>
+            </Dropdown>,
         },
         {
             key: '3',
             name: 'Chase Bank',
             dataModified: '21 January 2021 at 19:24',
             size: '1.4MB',
-            option: <><BsThreeDotsVertical /></>,
+            option: <Dropdown overlay={TableEdit} trigger={['click']}>
+                <a onClick={(e) => e.preventDefault()}>
+                    <Space>
+                        <BsThreeDotsVertical />
+                    </Space>
+                </a>
+            </Dropdown>,
         },
         {
             key: '3',
             name: 'Chase Bank',
             dataModified: '21 January 2021 at 19:24',
             size: '1.4MB',
-            option: <><BsThreeDotsVertical /></>,
+            option: <Dropdown overlay={TableEdit} trigger={['click']}>
+                <a onClick={(e) => e.preventDefault()}>
+                    <Space>
+                        <BsThreeDotsVertical />
+                    </Space>
+                </a>
+            </Dropdown>,
         },
         {
             key: '3',
             name: 'Chase Bank',
             dataModified: '21 January 2021 at 19:24',
             size: '1.4MB',
-            option: <><BsThreeDotsVertical /></>,
+            option: <Dropdown overlay={TableEdit} trigger={['click']}>
+                <a onClick={(e) => e.preventDefault()}>
+                    <Space>
+                        <BsThreeDotsVertical />
+                    </Space>
+                </a>
+            </Dropdown>,
         },
         {
             key: '3',
             name: 'Chase Bank',
             dataModified: '21 January 2021 at 19:24',
             size: '1.4MB',
-            option: <><BsThreeDotsVertical /></>,
+            option: <Dropdown overlay={TableEdit} trigger={['click']}>
+                <a onClick={(e) => e.preventDefault()}>
+                    <Space>
+                        <BsThreeDotsVertical />
+                    </Space>
+                </a>
+            </Dropdown>,
         },
         {
             key: '3',
             name: 'Chase Bank',
             dataModified: '21 January 2021 at 19:24',
             size: '1.4MB',
-            option: <><BsThreeDotsVertical /></>,
+            option: <Dropdown overlay={TableEdit} trigger={['click']}>
+                <a onClick={(e) => e.preventDefault()}>
+                    <Space>
+                        <BsThreeDotsVertical />
+                    </Space>
+                </a>
+            </Dropdown>,
         },
         {
             key: '3',
             name: 'Chase Bank',
             dataModified: '21 January 2021 at 19:24',
             size: '1.4MB',
-            option: <><BsThreeDotsVertical /></>,
+            option: <Dropdown overlay={TableEdit} trigger={['click']}>
+                <a onClick={(e) => e.preventDefault()}>
+                    <Space>
+                        <BsThreeDotsVertical />
+                    </Space>
+                </a>
+            </Dropdown>,
         },
         {
             key: '3',
             name: 'Chase Bank',
             dataModified: '21 January 2021 at 19:24',
             size: '1.4MB',
-            option: <><BsThreeDotsVertical /></>,
+            option: <Dropdown overlay={TableEdit} trigger={['click']}>
+                <a onClick={(e) => e.preventDefault()}>
+                    <Space>
+                        <BsThreeDotsVertical />
+                    </Space>
+                </a>
+            </Dropdown>,
         },
         {
             key: '3',
             name: 'Chase Bank',
             dataModified: '21 January 2021 at 19:24',
             size: '1.4MB',
-            option: <><BsThreeDotsVertical /></>,
+            option: <Dropdown overlay={TableEdit} trigger={['click']}>
+                <a onClick={(e) => e.preventDefault()}>
+                    <Space>
+                        <BsThreeDotsVertical />
+                    </Space>
+                </a>
+            </Dropdown>,
         },
         {
             key: '3',
             name: 'Chase Bank',
             dataModified: '21 January 2021 at 19:24',
             size: '1.4MB',
-            option: <><BsThreeDotsVertical /></>,
+            option: <Dropdown overlay={TableEdit} trigger={['click']}>
+                <a onClick={(e) => e.preventDefault()}>
+                    <Space>
+                        <BsThreeDotsVertical />
+                    </Space>
+                </a>
+            </Dropdown>,
         }
     ];
     const Filter = (
@@ -178,59 +257,55 @@ function SearchDocket() {
             items={[
                 {
                     key: '1',
-                    label: <div className='flexCenter' style={{ gridGap: 15, justifyContent: 'flex-start' }}><FiFilter /><span>Taglet Collection</span></div>,
+                    label: <div className='flexCenter' style={{ gridGap: 15, justifyContent: 'flex-start' }}> <img src={Logo1} alt="img" /> <span>Taglet Collection</span></div>,
                 },
                 {
                     key: '2',
-                    label: <div className='flexCenter' style={{ gridGap: 15, justifyContent: 'flex-start' }}><FiFilter /><span>Target Shortcut</span></div>,
+                    label: <div className='flexCenter' style={{ gridGap: 15, justifyContent: 'flex-start' }}><img src={Logo2} alt="img" /><span>Target Shortcut</span></div>,
                 },
                 {
                     key: '3',
-                    label: <div className='flexCenter' style={{ gridGap: 15, justifyContent: 'flex-start' }}><FiFilter /><span>Audios</span></div>,
+                    label: <div className='flexCenter' style={{ gridGap: 15, justifyContent: 'flex-start' }}><img src={Logo3} alt="img" /><span>Audios</span></div>,
                 },
                 {
                     key: '4',
-                    label: <div className='flexCenter' style={{ gridGap: 15, justifyContent: 'flex-start' }}><FiFilter /><span>Videos</span></div>,
+                    label: <div className='flexCenter' style={{ gridGap: 15, justifyContent: 'flex-start' }}><img src={Logo4} alt="img" /><span>Videos</span></div>,
                 },
                 {
                     key: '5',
-                    label: <div className='flexCenter' style={{ gridGap: 15, justifyContent: 'flex-start' }}><FiFilter /><span>Images</span></div>,
+                    label: <div className='flexCenter' style={{ gridGap: 15, justifyContent: 'flex-start' }}><img src={Logo5} alt="img" /><span>Images</span></div>,
                 },
                 {
                     key: '6',
-                    label: <div className='flexCenter' style={{ gridGap: 15, justifyContent: 'flex-start' }}><FiFilter /><span>Repositories</span></div>,
+                    label: <div className='flexCenter' style={{ gridGap: 15, justifyContent: 'flex-start' }}><img src={Logo6} alt="img" /><span>Repositories</span></div>,
                 },
                 {
                     key: '7',
-                    label: <div className='flexCenter' style={{ gridGap: 15, justifyContent: 'flex-start' }}><FiFilter /><span>Extension</span></div>,
+                    label: <div className='flexCenter' style={{ gridGap: 15, justifyContent: 'flex-start' }}><img src={Logo7} alt="img" /><span>Extension</span></div>,
                 },
                 {
                     key: '8',
-                    label: <div className='flexCenter' style={{ gridGap: 15, justifyContent: 'flex-start' }}><FiFilter /><span>Bookmarks</span></div>,
+                    label: <div className='flexCenter' style={{ gridGap: 15, justifyContent: 'flex-start' }}><img src={Logo8} alt="img" /><span>Bookmarks</span></div>,
                 },
                 {
                     key: '9',
-                    label: <div className='flexCenter' style={{ gridGap: 15, justifyContent: 'flex-start' }}><FiFilter /><span>Vault Entry</span></div>,
+                    label: <div className='flexCenter' style={{ gridGap: 15, justifyContent: 'flex-start' }}><img src={Logo9} alt="img" /><span>Vault Entry</span></div>,
                 },
                 {
                     key: '10',
-                    label: <div className='flexCenter' style={{ gridGap: 15, justifyContent: 'flex-start' }}><FiFilter /><span>Tags</span></div>,
+                    label: <div className='flexCenter' style={{ gridGap: 15, justifyContent: 'flex-start' }}><img src={Logo10} alt="img" /><span>Tags</span></div>,
                 },
                 {
                     key: '11',
-                    label: <div className='flexCenter' style={{ gridGap: 15, justifyContent: 'flex-start' }}><FiFilter /><span>WorkFlows</span></div>,
+                    label: <div className='flexCenter' style={{ gridGap: 15, justifyContent: 'flex-start' }}><img src={Logo11} alt="img" /><span>WorkFlows</span></div>,
                 },
                 {
                     key: '12',
-                    label: <div className='flexCenter' style={{ gridGap: 15, justifyContent: 'flex-start' }}><FiFilter /><span>Reminders</span></div>,
+                    label: <div className='flexCenter' style={{ gridGap: 15, justifyContent: 'flex-start' }}><img src={Logo12} alt="img" /><span>Reminders</span></div>,
                 },
                 {
                     key: '13',
-                    label: <div className='flexCenter' style={{ gridGap: 15, justifyContent: 'flex-start' }}><FiFilter /><span>User Defined</span></div>,
-                },
-                {
-                    key: '14',
-                    label: <div className='flexCenter' style={{ gridGap: 15, justifyContent: 'flex-start' }}><FiFilter /><span>Vault Entry</span></div>,
+                    label: <div className='flexCenter' style={{ gridGap: 15, justifyContent: 'flex-start' }}><img src={Logo13} alt="img" /><span>User Defined</span></div>,
                 },
             ]}
         />

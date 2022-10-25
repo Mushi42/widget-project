@@ -291,12 +291,14 @@ const Sidebar = () => {
           <ProSidebar className="p-0 m-0" breakPoint="md">
             <SidebarContent>
               <Menu className="bg-transparent" iconShape="circle">
-                {menuItems.map(({ name }) => (
+                {menuItems.map((obj) => (
                   <>
                     <span className="hoverSet">
                       <DropDown />
-                      <SubMenu title={name}>
-                        <MenuItem className="SubDropMenuItem"> SubMenu Item </MenuItem>
+                      <SubMenu title={obj.name}>
+                        {obj.subMenu.map((pi)=> {
+                          <MenuItem className="SubDropMenuItem">{pi.name}</MenuItem>
+                        })}
                       </SubMenu>
                     </span>
                   </>
