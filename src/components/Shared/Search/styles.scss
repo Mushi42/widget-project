@@ -1,57 +1,72 @@
 $bgcolor: #f0f0f0;
 
 .search {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 55%;
+  background: $bgcolor;
+  border: 1px solid $bgcolor;
+  border-radius: 6px;
+  position: relative;
+  .search-icon {
+    padding: 10px 14px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 55%;
-    background: $bgcolor;
-    border: 1px solid $bgcolor;
-    border-radius: 6px;
-    position: relative;
-    .search-icon {
-        padding: 10px 14px;
-        display: flex;
-    }
+  }
 
-    .search-input {
-        width: 95%;
-        input {
-            outline: none;
-            border: 1px solid $bgcolor;
-            width: 100%;
-            font-size: 14px;
-            background: $bgcolor;
-            font-family: 'Poppins', sans-serif;
-            appearance: none;
-        }
+  .search-input {
+    width: 95%;
+    input {
+      outline: none;
+      border: 1px solid $bgcolor;
+      width: 100%;
+      font-size: 14px;
+      background: $bgcolor;
+      font-family: "Poppins", sans-serif;
+      appearance: none;
     }
-    .DropdownSearch {
-        position: absolute;
-        bottom: -495px;
-        box-shadow: 0px 0px 10px #e5e5e5;
-        width: 100%;
-        z-index: 11;
-        background-color: white;
-        padding: 20px 30px;
-        border-radius: inherit;
-        .SearchDropItem {
-            display: grid;
-            grid-template-columns: auto 1fr;
-            align-items: center;
-            grid-gap: 40px;
-            .ant-select, .ant-select-single, .ant-select-show-arrow, .ant-select-show-search {
-                .ant-select-selector {
-                    border: none;
-                    border-bottom: 1px solid #e5e5e5;
-                }
-            }
+  }
+  .DropdownSearch {
+    position: absolute;
+    bottom: -565px;
+    box-shadow: 0px 0px 10px #e5e5e5;
+    width: 100%;
+    z-index: 11;
+    background-color: white;
+    padding: 20px 30px;
+    border-radius: inherit;
+    .SearchDropItem {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      align-items: center;
+      grid-gap: 40px;
+      .ant-select,
+      .ant-select-single,
+      .ant-select-show-arrow,
+      .ant-select-show-search {
+        .ant-select-selector {
+          border: none;
+          border-bottom: 1px solid #e5e5e5;
         }
+      }
     }
+  }
+
+  .secondaryBtn {
+    padding: 13px 16px 13px 16px !important;
+    border-radius: 26px !important;
+    margin-left: 10px !important;
+  }
+  .primaryBtn {
+    border: 0px;
+  }
 }
 
-.fa-angle-left:before{content:"\f105"}
+.fa-angle-left:before {
+  content: "\f105";
+}
 
-.sidebar-menu li.active>a>.fa-angle-left, .sidebar-menu li.active>a>.pull-right-container>.fa-angle-left {
-    transform: rotate(90deg);
+.sidebar-menu li.active > a > .fa-angle-left,
+.sidebar-menu li.active > a > .pull-right-container > .fa-angle-left {
+  transform: rotate(90deg);
 }
