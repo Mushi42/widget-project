@@ -1,5 +1,17 @@
 import React, { useState, useEffect, useRef } from "react";
 import { IoCaretForwardSharp } from "react-icons/io5";
+import List from "@mui/material/List";
+import { AppstoreOutlined, MailOutlined, SettingOutlined } from "@ant-design/icons";
+import {
+  ProSidebar,
+  Menu,
+  MenuItem,
+  SidebarHeader,
+  SidebarFooter,
+  SidebarContent,
+  SubMenu,
+} from "react-pro-sidebar";
+import "react-pro-sidebar/dist/css/styles.css";
 import InfoPanel from "./InfoPanel";
 import { Input } from "antd";
 import "./styles.scss";
@@ -7,7 +19,7 @@ import { AiOutlineSearch, AiOutlineClose } from "react-icons/ai";
 import { IoMdAdd } from "react-icons/io";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
-import MenuItem from "@mui/material/MenuItem";
+import { default as SelectMenu } from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 const { TextArea } = Input;
@@ -96,45 +108,57 @@ const Sidebar = () => {
     // },
     {
       name: "Chase Bank",
-      iconName: "compass",
+      icon: <IoCaretForwardSharp />,
       type: "solid",
+      subMenu: [
+        {
+          name: "Chase",
+          label: "Bank",
+        },
+      ],
     },
     {
       name: "Utilities",
-      iconName: "envelope",
+      icon: <IoCaretForwardSharp />,
       type: "solid",
     },
     {
       name: "Pending Files",
-      iconName: "spreadsheet",
+      icon: <IoCaretForwardSharp />,
       type: "solid",
     },
     {
       name: "Digital Vault",
-      iconName: "star",
+      icon: <IoCaretForwardSharp />,
       type: "solid",
     },
     {
       name: "Workflows",
-      iconName: "cog",
+      icon: <IoCaretForwardSharp />,
       type: "solid",
     },
     {
       name: "Reminders",
-      iconName: "log-out",
+      icon: <IoCaretForwardSharp />,
       color: "red",
       rotate: "180",
     },
     {
       name: "Finance",
-      iconName: "log-out",
+      icon: <IoCaretForwardSharp />,
       color: "red",
       rotate: "180",
     },
   ];
 
+  // const loopitem = () => {
+  //   menuItems.map((obj,key) => {
+  //     obj.name
+  //   })
+  // }
+
   const items = [
-    getItem("menuItems", "sub2", <IoCaretForwardSharp size={15} />, [
+    getItem("Chase Bank", "sub2", <IoCaretForwardSharp size={15} />, [
       getItem("Option 5", "5"),
       getItem("Option 6", "6"),
       getItem("Submenu", "sub3", null, [getItem("Option 7", "7"), getItem("Option 8", "8")]),
@@ -177,9 +201,9 @@ const Sidebar = () => {
                       id="demo-simple-select"
                       value={selectedTaglet}
                       onChange={onChange}>
-                      <MenuItem value={"Taglet"}>Taglet</MenuItem>
-                      <MenuItem value={"Shortcut"}>Shortcut</MenuItem>
-                      <MenuItem value={"Asset"}>Asset</MenuItem>
+                      <SelectMenu value={"Taglet"}>Taglet</SelectMenu>
+                      <SelectMenu value={"Shortcut"}>Shortcut</SelectMenu>
+                      <SelectMenu value={"Asset"}>Asset</SelectMenu>
                     </Select>
                   </FormControl>
                 </div>
@@ -211,34 +235,54 @@ const Sidebar = () => {
             </Modal>
           </div>
         </div>
-        {menuItems.map((item, index) => {
+        {/* {menuItems.map((item, index) => {
           let middle = false;
           if (!(index === 0 || index === menuItems.length - 1)) {
             middle = true;
-          }
-          return (
-            <div
-              className={`boxicon-container ${expanded && "expanded-boxicon-container"}`}
-              onMouseEnter={() => {
-                if (middle) {
-                  setHovered(index);
-                }
-              }}
-              onMouseLeave={() => {
-                if (middle) {
-                  setHovered(null);
-                }
-              }}
-              onClick={() => {
-                if (middle) {
-                  setActive(index);
-                }
-                if (index === 0) {
-                  // setExpanded(!expanded);
-                }
-              }}
-              key={index}>
-              {/* <Menu
+          } */}
+        {/* return ( */}
+        <div
+          className={`boxicon-container ${expanded && "expanded-boxicon-container"}`}
+          // onMouseEnter={() => {
+          //   if (middle) {
+          //     setHovered(index);
+          //   }
+          // }}
+          // onMouseLeave={() => {
+          //   if (middle) {
+          //     setHovered(null);
+          //   }
+          // }}
+          // onClick={() => {
+          //   if (middle) {
+          //     setActive(index);
+          //   }
+          //   if (index === 0) {
+          //     setExpanded(!expanded);
+          //   }
+          // }}
+          // key={index}
+        >
+          <ProSidebar className="p-0 m-0" breakPoint="md">
+            {/* <SidebarHeader>
+                    <Row className="p-1 m-0 justify-content-center">
+                      <Image width={80} height={40} src={images.pikabulogo} className="header-logo" />
+                    </Row>
+                  </SidebarHeader> */}
+
+            <SidebarContent>
+              <Menu className="bg-transparent" iconShape="circle">
+                {menuItems.map(({ name, icon }) => (
+                  <>
+                    <SubMenu icon={icon} title={name}>
+                      <MenuItem> Line charts </MenuItem>
+                    </SubMenu>
+                  </>
+                ))}
+              </Menu>
+            </SidebarContent>
+          </ProSidebar>
+          {/* <Menu
               className={`${middle && "boxicon"} 
               ${!middle && "first-and-last-trash-fix"}
               ${active === index && "active"}
@@ -252,14 +296,17 @@ const Sidebar = () => {
                 items={items}
               /> */}
 
-              <div
-                className={`${middle && "boxicon"} 
+          {/* <div className={`${middle && "boxicon"} 
                       ${!middle && "first-and-last-trash-fix"}
                       ${active === index && "active"}
                       `}>
-                {item.name !== "Eduhance" && <IoCaretForwardSharp size={15} />}
-              </div>
-              {/* <box-icon
+
+                {item.name !== "Eduhance" && (
+
+                  <IoCaretForwardSharp size={15} />
+                )}
+              </div> */}
+          {/* <box-icon
               class={`${middle && "boxicon"} 
                       ${!middle && "first-and-last-trash-fix"}
                       ${active === index && "active"}
@@ -273,15 +320,15 @@ const Sidebar = () => {
               animation={active === index && animate ? "tada" : ""}
               rotate={item.rotate}
             ></box-icon> */}
-              <p
+          {/* <p
                 className={`description 
             ${expanded && "show-description"}
             ${active === index && "active-description"}`}>
                 {item.name}
               </p>
-            </div>
-          );
-        })}
+              <BsThreeDots className='SidebarDotsIcon' /> */}
+        </div>
+        {/* })} */}
         <InfoPanel />
       </div>
     </div>

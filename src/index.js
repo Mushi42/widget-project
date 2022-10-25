@@ -14,14 +14,16 @@ import App from './App';
 import 'antd/dist/antd.min.css';
 import './assets/scss/style.scss';
 import 'react-toastify/dist/ReactToastify.css';
+import { ProSidebarProvider } from 'react-pro-sidebar';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Provider store={store}>
     <PersistGate loading={null} persistor={persistor}>
       <BrowserRouter>
-        <App />
+          <App />
       </BrowserRouter>
     </PersistGate>
   </Provider>
+
 );
