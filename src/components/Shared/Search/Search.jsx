@@ -201,20 +201,48 @@ const Search = () => {
           <div className="row mt-2">
             <div className="col-4 pt-3 d-flex align-items-center">Date Created Between:</div>
             <div className="col-4">
-              <TextField type="date" id="standard-basic" className="pt-2 w-100" variant="standard" size="small" />
+              <TextField
+                type="date"
+                id="standard-basic"
+                className="pt-2 w-100"
+                variant="standard"
+                size="small"
+              />
             </div>
             <div className="col-4">
-              <TextField type="date" id="standard-basic" className="pt-2 w-100" variant="standard" size="small" />
+              <TextField
+                type="date"
+                id="standard-basic"
+                className="pt-2 w-100"
+                variant="standard"
+                size="small"
+              />
             </div>
           </div>
           <div className="row mt-2">
             <div className="col-4 pt-3 d-flex align-items-center">Last Updated Between:</div>
             <div className="col-4">
-              <TextField type="date" id="standard-basic" className="pt-2 w-100" variant="standard" size="small" />
+              <TextField
+                type="date"
+                id="standard-basic"
+                className="pt-2 w-100"
+                variant="standard"
+                size="small"
+              />
             </div>
             <div className="col-4">
-              <TextField type="date" id="standard-basic" className="pt-2 w-100" variant="standard" size="small" />
+              <TextField
+                type="date"
+                id="standard-basic"
+                className="pt-2 w-100"
+                variant="standard"
+                size="small"
+              />
             </div>
+          </div>
+          <div className="d-flex justify-content-end mt-4">
+            <button className="primaryBtn ml-3">Reset</button>
+            <button className="secondaryBtn">Apply</button>
           </div>
           <SearchDropdown />
         </div>
