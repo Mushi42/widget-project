@@ -28,7 +28,7 @@ $bgcolor: #f0f0f0;
     }
     .DropdownSearch {
         position: absolute;
-        bottom: -540px;
+        bottom: -495px;
         box-shadow: 0px 0px 10px #e5e5e5;
         width: 100%;
         z-index: 11;
@@ -48,4 +48,10 @@ $bgcolor: #f0f0f0;
             }
         }
     }
+}
+
+.fa-angle-left:before{content:"\f105"}
+
+.sidebar-menu li.active>a>.fa-angle-left, .sidebar-menu li.active>a>.pull-right-container>.fa-angle-left {
+    transform: rotate(90deg);
 }
