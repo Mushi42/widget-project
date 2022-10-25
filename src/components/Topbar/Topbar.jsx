@@ -262,7 +262,7 @@ const Topbar = ({setTheme}) => {
     <div className="wrapper">
       <div>
         <div className="navbar">
-          <div className="logo">EPAx</div>
+          <div className="logo">EPaX</div>
           <Search />
           <div className="links">
             <ul ref={ref}>

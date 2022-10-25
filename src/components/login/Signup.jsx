@@ -34,7 +34,7 @@ function Signup() {
                 <Link to='/dashboard'>
                     <button className="signupBtn">Sign Up</button>
                 </Link>
-                <p className="loginHere">Already have an EPAx account? <Link to='/login'>
+                <p className="loginHere">Already have an EPaX account? <Link to='/login'>
                     <span>Login in</span>
                 </Link>
                 </p>

@@ -39,7 +39,7 @@ const Search = () => {
                 <Select
                   labelId="demo-simple-select-standard-label"
                   id="demo-simple-select-standard"
-                  value={""}
+                  value={"11"}
                   label="Age">
                   <MenuItem value="">Any </MenuItem>
                   <MenuItem value={"Text"}>Text</MenuItem>
@@ -57,26 +57,7 @@ const Search = () => {
                 <Select
                   labelId="demo-simple-select-standard-label"
                   id="demo-simple-select-standard"
-                  value={""}
-                  label="Age">
-                  <MenuItem value="">
-                    <em>None</em>
-                  </MenuItem>
-                  <MenuItem value={10}>Ten</MenuItem>
-                  <MenuItem value={20}>Twenty</MenuItem>
-                  <MenuItem value={30}>Thirty</MenuItem>
-                </Select>
-              </FormControl>
-            </div>
-          </div>
-          <div className="row">
-            <div className="col-4 pt-3 d-flex align-items-center">Context:</div>
-            <div className="col-6">
-              <FormControl variant="standard" sx={{ m: 1, minWidth: 120, width: "100%" }} size="small">
-                <Select
-                  labelId="demo-simple-select-standard-label"
-                  id="demo-simple-select-standard"
-                  value={""}
+                  value={"11"}
                   label="Age">
                   <MenuItem value="">Any </MenuItem>
                   <MenuItem value={"Bookmark"}>Bookmark</MenuItem>
@@ -99,7 +80,7 @@ const Search = () => {
                 <Select
                   labelId="demo-simple-select-standard-label"
                   id="demo-simple-select-standard"
-                  value={""}
+                  value={"1"}
                   label="Age">
                   <MenuItem value="">Any </MenuItem>
                   <MenuItem value={"Bookmark"}>Active</MenuItem>
@@ -117,7 +98,7 @@ const Search = () => {
                 <Select
                   labelId="demo-simple-select-standard-label"
                   id="demo-simple-select-standard"
-                  value={""}
+                  value={"1"}
                   label="Age">
                   <MenuItem value="">Any </MenuItem>
                   <MenuItem value={"0"}>Gene</MenuItem>
@@ -133,9 +114,9 @@ const Search = () => {
                 <Select
                   labelId="demo-simple-select-standard-label"
                   id="demo-simple-select-standard"
-                  value={""}
+                  value={"11"}
                   label="Age">
-                  <MenuItem value="">Any </MenuItem>
+                  <MenuItem value="1">Any </MenuItem>
                   <MenuItem value={"Bookmark"}>Read</MenuItem>
                   <MenuItem value={""}>Execute</MenuItem>
                 </Select>
@@ -149,9 +130,9 @@ const Search = () => {
                 <Select
                   labelId="demo-simple-select-standard-label"
                   id="demo-simple-select-standard"
-                  value={""}
+                  value={"11"}
                   label="Age">
-                  <MenuItem value="">Any </MenuItem>
+                  <MenuItem value="1">Any </MenuItem>
                   <MenuItem value={"Bookmark"}>Aws Cloud</MenuItem>
                   <MenuItem value={""}>Google Cloud</MenuItem>
                   <MenuItem value={""}>Azure Cloud</MenuItem>
@@ -170,9 +151,9 @@ const Search = () => {
                 <Select
                   labelId="demo-simple-select-standard-label"
                   id="demo-simple-select-standard"
-                  value={""}
+                  value={"11"}
                   label="Age">
-                  <MenuItem value="">Any </MenuItem>
+                  <MenuItem value="1">Any </MenuItem>
                   <MenuItem value={""}>Permission 1</MenuItem>
                   <MenuItem value={""}>Permission 2</MenuItem>
                   <MenuItem value={""}>Permission 3</MenuItem>
@@ -191,7 +172,7 @@ const Search = () => {
                 <Select
                   labelId="demo-simple-select-standard-label"
                   id="demo-simple-select-standard"
-                  value={""}
+                  value={"11"}
                   label="Age">
                   <MenuItem value={""}>Greater Than</MenuItem>
                   <MenuItem value={""}>Less Than</MenuItem>
@@ -206,9 +187,9 @@ const Search = () => {
                 <Select
                   labelId="demo-simple-select-standard-label"
                   id="demo-simple-select-standard"
-                  value={""}
+                  value={"11"}
                   label="Age">
-                  <MenuItem value="">Any </MenuItem>
+                  <MenuItem value="1">Any </MenuItem>
                   <MenuItem value={""}>Bit</MenuItem>
                   <MenuItem value={""}>Byte</MenuItem>
                   <MenuItem value={""}>MB</MenuItem>
