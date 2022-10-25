@@ -1,36 +1,42 @@
-import React, { useState, useEffect } from 'react';
-import { ProSidebar, Menu, MenuItem, SidebarHeader, SidebarFooter, SidebarContent, SubMenu } from "react-pro-sidebar";
+import React, { useState, useEffect, useRef } from "react";
+import { IoCaretForwardSharp } from "react-icons/io5";
+import List from "@mui/material/List";
+import { AppstoreOutlined, MailOutlined, SettingOutlined } from "@ant-design/icons";
+import {
+  ProSidebar,
+  Menu,
+  MenuItem,
+  SidebarHeader,
+  SidebarFooter,
+  SidebarContent,
+  SubMenu,
+} from "react-pro-sidebar";
 import "react-pro-sidebar/dist/css/styles.css";
-import { IoCaretForwardSharp } from 'react-icons/io5';
-import List from '@mui/material/List';
-import InfoPanel from './InfoPanel';
-import { AppstoreOutlined, MailOutlined, SettingOutlined } from '@ant-design/icons';
-import { Input, Select } from 'antd';
-import './styles.scss'
-import { AiOutlineSearch, AiOutlineClose } from 'react-icons/ai';
-import { IoMdAdd } from 'react-icons/io';
-import { BsThreeDots } from 'react-icons/bs';
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-import Modal from '@mui/material/Modal';
-const { Option } = Select;
+import InfoPanel from "./InfoPanel";
+import { Input } from "antd";
+import "./styles.scss";
+import { AiOutlineSearch, AiOutlineClose } from "react-icons/ai";
+import { IoMdAdd } from "react-icons/io";
+import Box from "@mui/material/Box";
+import Modal from "@mui/material/Modal";
+import { default as SelectMenu } from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
+import Select from "@mui/material/Select";
 const { TextArea } = Input;
 
 const style = {
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
   width: 400,
-  bgcolor: 'background.paper',
-  border: '2px solid #000',
+  bgcolor: "background.paper",
+  border: "2px solid #000",
   boxShadow: 24,
   p: 4,
 };
 
 function getItem(label, key, icon, children, type) {
-
   return {
     key,
     icon,
@@ -40,16 +46,21 @@ function getItem(label, key, icon, children, type) {
   };
 }
 
-const Sidebara = () => {
-  const onChange = (value) => {
-    console.log(`selected ${value}`);
+const Sidebar = () => {
+  const onChange = (event) => {
+    setSelectedTaglet(event.target.value);
   };
   const onSearch = (value) => {
-    console.log('search:', value);
+    console.log("search:", value);
   };
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+
+  const handleClick = () => {
+    // 👇️ open file input box on click of other element
+    inputRef.current.click();
+  };
 
   const useMediaQuery = (query) => {
     const [matches, setMatches] = useState(false);
@@ -66,12 +77,15 @@ const Sidebara = () => {
 
     return matches;
   };
-  const [value, setValue] = useState('');
+  const [value, setValue] = useState("");
+  const [selectedTaglet, setSelectedTaglet] = useState("Taglet");
   const [hovered, setHovered] = useState(null);
   const [active, setActive] = useState(1);
   const [animate, setAnimate] = useState(false);
   const [expanded, setExpanded] = useState(true);
   const changeSmall = useMediaQuery("(max-height: 550px)");
+  const inputRef = useRef(null);
+
   let delay = 1;
   useEffect(() => {
     setAnimate(true);
@@ -98,10 +112,10 @@ const Sidebara = () => {
       type: "solid",
       subMenu: [
         {
-          name: 'Chase',
-          label: 'Bank',
-        }
-      ]
+          name: "Chase",
+          label: "Bank",
+        },
+      ],
     },
     {
       name: "Utilities",
@@ -144,30 +158,32 @@ const Sidebara = () => {
   // }
 
   const items = [
-    getItem('Chase Bank', 'sub2', <IoCaretForwardSharp size={15} />, [
-      getItem('Option 5', '5'),
-      getItem('Option 6', '6'),
-      getItem('Submenu', 'sub3', null, [getItem('Option 7', '7'), getItem('Option 8', '8')]),
-    ])
+    getItem("Chase Bank", "sub2", <IoCaretForwardSharp size={15} />, [
+      getItem("Option 5", "5"),
+      getItem("Option 6", "6"),
+      getItem("Submenu", "sub3", null, [getItem("Option 7", "7"), getItem("Option 8", "8")]),
+    ]),
   ];
 
   return (
-    <div className=''>
+    <div className="">
       <div className={`sidebar ${expanded && "expanded"}`}>
         <div className="sideBarSearchbar">
           <div className="SideBar-top">
             <AiOutlineSearch />
-            <input type="text" placeholder='Look Up Taglet' />
+            <input type="text" placeholder="Look Up Taglet" />
           </div>
           <div className="SideBar-top addTaglet">
-            <span onClick={handleOpen} className='flexCenter GG-10'> <IoMdAdd /> Add Taglet</span>
+            <span onClick={handleOpen} className="flexCenter GG-10">
+              {" "}
+              <IoMdAdd /> Add Taglet
+            </span>
             <Modal
               open={open}
               onClose={handleClose}
               aria-labelledby="modal-modal-title"
               aria-describedby="modal-modal-description"
-              className="TagletModel"
-            >
+              className="TagletModel">
               <Box sx={style}>
                 <div className="TagletModelHead flexCenter">
                   <h2>New Taglet</h2>
@@ -179,23 +195,27 @@ const Sidebara = () => {
                 </div>
                 <div className="TagModelBox">
                   <p>Select Taglet type:</p>
-                  <Select
-                    showSearch
-                    placeholder="Select a person"
-                    optionFilterProp="children"
-                    onChange={onChange}
-                    onSearch={onSearch}
-                    filterOption={(input, option) => option.children.toLowerCase().includes(input.toLowerCase())}
-                  >
-                    <Option value="jack">Jack</Option>
-                    <Option value="lucy">Lucy</Option>
-                    <Option value="tom">Tom</Option>
-                  </Select>
+                  <FormControl fullWidth size="small">
+                    <Select
+                      labelId="demo-simple-select-label"
+                      id="demo-simple-select"
+                      value={selectedTaglet}
+                      onChange={onChange}>
+                      <SelectMenu value={"Taglet"}>Taglet</SelectMenu>
+                      <SelectMenu value={"Shortcut"}>Shortcut</SelectMenu>
+                      <SelectMenu value={"Asset"}>Asset</SelectMenu>
+                    </Select>
+                  </FormControl>
                 </div>
-                <div className="TagModelBox DisNone">
-                  <p>Add Asset:</p>
-                  <button className="flexCenter addAssetBtn">Browse Asset</button>
-                </div>
+                {selectedTaglet === "Asset" && (
+                  <div className="TagModelBox">
+                    <p>Add Asset</p>
+                    <button className="browse-button w-100" onClick={handleClick}>
+                      Browse Assets
+                    </button>
+                    <input style={{ display: "none" }} ref={inputRef} type="file" />
+                  </div>
+                )}
                 <div className="TagModelBox">
                   <p>Description:</p>
                   <TextArea
@@ -208,8 +228,8 @@ const Sidebara = () => {
                   />
                 </div>
                 <div className="TagModalBtns">
-                  <button className='primaryBtn'>Cancel</button>
-                  <button className='secondaryBtn'>Create</button>
+                  <button className="primaryBtn">Cancel</button>
+                  <button className="secondaryBtn">Create</button>
                 </div>
               </Box>
             </Modal>
@@ -222,32 +242,28 @@ const Sidebara = () => {
           } */}
         {/* return ( */}
         <div
-          className={`boxicon-container ${expanded && "expanded-boxicon-container"
-            }`}
-        // onMouseEnter={() => {
-        //   if (middle) {
-        //     setHovered(index);
-        //   }
-        // }}
-        // onMouseLeave={() => {
-        //   if (middle) {
-        //     setHovered(null);
-        //   }
-        // }}
-        // onClick={() => {
-        //   if (middle) {
-        //     setActive(index);
-        //   }
-        //   if (index === 0) {
-        //     setExpanded(!expanded);
-        //   }
-        // }}
-        // key={index}
+          className={`boxicon-container ${expanded && "expanded-boxicon-container"}`}
+          // onMouseEnter={() => {
+          //   if (middle) {
+          //     setHovered(index);
+          //   }
+          // }}
+          // onMouseLeave={() => {
+          //   if (middle) {
+          //     setHovered(null);
+          //   }
+          // }}
+          // onClick={() => {
+          //   if (middle) {
+          //     setActive(index);
+          //   }
+          //   if (index === 0) {
+          //     setExpanded(!expanded);
+          //   }
+          // }}
+          // key={index}
         >
-          <ProSidebar
-            className="p-0 m-0"
-            breakPoint="md">
-
+          <ProSidebar className="p-0 m-0" breakPoint="md">
             {/* <SidebarHeader>
                     <Row className="p-1 m-0 justify-content-center">
                       <Image width={80} height={40} src={images.pikabulogo} className="header-logo" />
@@ -259,7 +275,6 @@ const Sidebara = () => {
                 {menuItems.map(({ name, icon }) => (
                   <>
                     <SubMenu icon={icon} title={name}>
-                      <MenuItem> Pie charts </MenuItem>
                       <MenuItem> Line charts </MenuItem>
                     <BsThreeDots className='SidebarDotsIcon' />
                     </SubMenu>
@@ -281,7 +296,6 @@ const Sidebara = () => {
                 mode="inline"
                 items={items}
               /> */}
-
 
           {/* <div className={`${middle && "boxicon"} 
                       ${!middle && "first-and-last-trash-fix"}
@@ -310,8 +324,7 @@ const Sidebara = () => {
           {/* <p
                 className={`description 
             ${expanded && "show-description"}
-            ${active === index && "active-description"}`}
-              >
+            ${active === index && "active-description"}`}>
                 {item.name}
               </p> */}
 
@@ -322,4 +335,4 @@ const Sidebara = () => {
     </div>
   );
 };
-export default Sidebara;
+export default Sidebar;

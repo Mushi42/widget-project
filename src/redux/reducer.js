@@ -1,11 +1,11 @@
-import { combineReducers } from 'redux';
+import { combineReducers } from "redux";
 
-import usersReducer from './users/users.reducer';
+import layoutReducer from "./layout/layout.reducer";
 
 // import filtersReducer from './features/filters/filtersSlice';
 
 const rootReducer = combineReducers({
-  users: usersReducer
+  layout: layoutReducer,
 });
 
 export default rootReducer;
