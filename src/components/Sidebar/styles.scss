@@ -41,13 +41,6 @@ $bgcolor: #f0f0f0;
     z-index: 2;
 }
 
-.SidebarDotsIcon {
-    display: none;
-    position: absolute;
-    right: 12px;
-    top: 17px;
-}
-
 .first-and-last-trash-fix {
     margin: 0.8rem;
 }
@@ -156,6 +149,56 @@ $bgcolor: #f0f0f0;
 .pro-sidebar-inner {
     background-color: white !important;
     color: black !important;
+    width: 13rem;
+    .pro-menu {
+        ul {
+            .hoverSet {
+                position: relative;
+                .SidebarDotsIcon {
+                    display: none;
+                    position: absolute;
+                    right: 15px;
+                    top: 8px;
+                    z-index: 9999;
+                }
+                &:hover {
+                    .SidebarDotsIcon {
+                        display: block !important;
+                    }
+                }
+            }
+            .pro-menu-item {
+                .pro-inner-item {
+                    padding: 8px 35px 8px 40px;
+                    &:focus {
+                        color: #6750a4;
+                    }
+                    &:hover {
+                        background-color: rgba(152, 145, 168, 0.2);
+                        border-radius: 0 26px 26px 0px;
+                        .pro-item-content {
+                            color: #6750a4;
+                        }
+                    }
+                    .pro-arrow-wrapper {
+                        left: 18px;
+                        right: 0px;
+                    }
+                }
+            }
+            .react-slidedown, .pro-inner-list-item {
+                padding-left: 0 !important;
+                .SubDropMenuItem {
+                    padding: 8px 20px 8px 30px;
+                    .pro-inner-item {
+                        &:hover {
+                            background-color: #f5f5f5;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 .pro-inner-item {
@@ -171,17 +214,10 @@ $bgcolor: #f0f0f0;
     height: 20px !important;
 }
 
-.react-slidedown, .pro-inner-list-item {
+.react-slidedown,
+.pro-inner-list-item {
     background-color: #f5f5f5 !important;
     color: black !important;
-}
-
-.pro-inner-item {
-    &:hover {
-        .SidebarDotsIcon {
-            display: block !important;
-        }
-    }   
 }
 
 .InfoPanel {
@@ -192,6 +228,7 @@ $bgcolor: #f0f0f0;
     grid-gap: 10px;
     background: white;
     z-index: 9999;
+    border-top: 1px solid #e5e5e5;
     .panel-item {
         font-size: 10px;
         grid-gap: 4px;
@@ -238,7 +275,8 @@ $bgcolor: #f0f0f0;
         cursor: pointer;
     }
 }
-.MuiBox-root, .css-1wnsr1i {
+.MuiBox-root,
+.css-1wnsr1i {
     border: none !important;
     border-radius: 8px;
 }

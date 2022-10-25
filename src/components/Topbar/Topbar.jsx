@@ -388,7 +388,7 @@ const Topbar = ({setTheme}) => {
                     ))}
                   </div>
                   <div className="AddModuleBtn">
-                    <Dropdown overlay={AddModule} trigger={["click"]}>
+                    <Dropdown placement="bottomLeft" overlay={AddModule}  trigger={["click"]}>
                       <a onClick={(e) => e.preventDefault()}>
                         <Space>
                           <span>Add Module</span>

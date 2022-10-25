@@ -4,34 +4,32 @@
     // MAIN CONTAINER
     .sidebar-main {
         .wrapper {
-            
-                .navbar {
-                    background-color: colors.$black;
+            .navbar {
+                background-color: colors.$black;
+                color: colors.$white;
+                border-bottom: 1px solid colors.$border-100;
+                .logo {
                     color: colors.$white;
-                    border-bottom: 1px solid colors.$border-100;
-                    .logo {
-                        color: colors.$white;
-                    }
-                    .search {
+                }
+                .search {
+                    background-color: colors.$black;
+                    border: 1px solid colors.$border-100;
+                    input {
                         background-color: colors.$black;
-                        border: 1px solid colors.$border-100;
-                        input {
-                            background-color: colors.$black;
-                            border-color: colors.$black;
-                        }
+                        border-color: colors.$black;
                     }
-                    .links {
-                        ul {
-                            li {
+                }
+                .links {
+                    ul {
+                        li {
+                            color: colors.$white;
+                            svg {
                                 color: colors.$white;
-                                svg {
-                                    color: colors.$white;
-                                }
                             }
                         }
                     }
                 }
-            
+            }
         }
         .mainContainer {
             background-color: colors.$black;
@@ -49,15 +47,28 @@
                             color: colors.$white;
                             &::placeholder {
                                 color: colors.$white;
-                            } 
+                            }
                         }
                     }
                 }
                 .boxicon-container {
+                    .pro-sidebar-layout {
+                        background-color: colors.$black;
+                        color: colors.$white;
+                        .pro-arrow-wrapper {
+                            .pro-arrow {
+                                border-color: colors.$white
+                            }
+                        }
+                        .react-slidedown,
+                        .pro-inner-list-item {
+                            background-color: colors.$dim-black !important;
+                            color: colors.$white !important; 
+                        }
+                    }
                     .description {
                         color: colors.$white;
                     }
-                    
                 }
             }
             .InfoPanel {
@@ -76,7 +87,8 @@
                                         color: colors.$white;
                                     }
                                 }
-                                .ant-tabs-ink-bar, .ant-tabs-ink-bar-animated {
+                                .ant-tabs-ink-bar,
+                                .ant-tabs-ink-bar-animated {
                                     background-color: colors.$white;
                                 }
                             }
@@ -136,36 +148,34 @@
 .skyBlue {
     .sidebar-main {
         .wrapper {
-            
-                .navbar {
-                    background-color: colors.$skyBlue;
+            .navbar {
+                background-color: colors.$skyBlue;
+                color: colors.$textSky;
+                border-bottom: 1px solid colors.$borderSky;
+                .logo {
                     color: colors.$textSky;
-                    border-bottom: 1px solid colors.$borderSky;
-                    .logo {
-                        color: colors.$textSky;
-                    }
-                    .search {
+                }
+                .search {
+                    background-color: colors.$skyBlue;
+                    input {
                         background-color: colors.$skyBlue;
-                        input {
-                            background-color: colors.$skyBlue;
-                            border-color: colors.$skyBlue;
-                            &::placeholder {
-                                color: colors.$textSky;
-                            }
+                        border-color: colors.$skyBlue;
+                        &::placeholder {
+                            color: colors.$textSky;
                         }
                     }
-                    .links {
-                        ul {
-                            li {
+                }
+                .links {
+                    ul {
+                        li {
+                            color: colors.$textSky;
+                            svg {
                                 color: colors.$textSky;
-                                svg {
-                                    color: colors.$textSky;
-                                }
                             }
                         }
                     }
                 }
-            
+            }
         }
         .mainContainer {
             background-color: colors.$skyBlue;
@@ -182,15 +192,28 @@
                             color: colors.$textSky;
                             &::placeholder {
                                 color: colors.$textSky;
-                            } 
+                            }
                         }
                     }
                 }
                 .boxicon-container {
+                    .pro-sidebar-layout {
+                        background-color: colors.$skyBlue;
+                        color: colors.$textSky;
+                        .pro-arrow-wrapper {
+                            .pro-arrow {
+                                border-color: colors.$textSky;
+                            }
+                        }
+                        .react-slidedown,
+                        .pro-inner-list-item {
+                            background-color: colors.$dim-skyBlue !important;
+                            color: colors.$textSky !important; 
+                        }
+                    }
                     .description {
                         color: colors.$textSky;
                     }
-                    
                 }
             }
             .InfoPanel {
@@ -208,7 +231,8 @@
                                         color: colors.$textSky;
                                     }
                                 }
-                                .ant-tabs-ink-bar, .ant-tabs-ink-bar-animated {
+                                .ant-tabs-ink-bar,
+                                .ant-tabs-ink-bar-animated {
                                     background-color: colors.$textSky;
                                 }
                             }
@@ -265,36 +289,34 @@
 .navyBlue {
     .sidebar-main {
         .wrapper {
-            
-                .navbar {
-                    background-color: colors.$navyBlue;
+            .navbar {
+                background-color: colors.$navyBlue;
+                color: colors.$textNavy;
+                border-bottom: 1px solid colors.$borderSky;
+                .logo {
                     color: colors.$textNavy;
-                    border-bottom: 1px solid colors.$borderSky;
-                    .logo {
-                        color: colors.$textNavy;
-                    }
-                    .search {
+                }
+                .search {
+                    background-color: colors.$navyBlue;
+                    input {
                         background-color: colors.$navyBlue;
-                        input {
-                            background-color: colors.$navyBlue;
-                            border-color: colors.$navyBlue;
-                            &::placeholder {
-                                color: colors.$textNavy;
-                            }
+                        border-color: colors.$navyBlue;
+                        &::placeholder {
+                            color: colors.$textNavy;
                         }
                     }
-                    .links {
-                        ul {
-                            li {
+                }
+                .links {
+                    ul {
+                        li {
+                            color: colors.$textNavy;
+                            svg {
                                 color: colors.$textNavy;
-                                svg {
-                                    color: colors.$textNavy;
-                                }
                             }
                         }
                     }
                 }
-            
+            }
         }
         .mainContainer {
             background-color: colors.$navyBlue;
@@ -311,15 +333,28 @@
                             color: colors.$textNavy;
                             &::placeholder {
                                 color: colors.$textNavy;
-                            } 
+                            }
                         }
                     }
                 }
                 .boxicon-container {
+                    .pro-sidebar-layout {
+                        background-color: colors.$navyBlue;
+                        color: colors.$textNavy;
+                        .pro-arrow-wrapper {
+                            .pro-arrow {
+                                border-color: colors.$textNavy
+                            }
+                        }
+                        .react-slidedown,
+                        .pro-inner-list-item {
+                            background-color: colors.$dim-navyBlue!important;
+                            color: colors.$textNavy!important; 
+                        }
+                    }
                     .description {
                         color: colors.$textNavy;
                     }
-                    
                 }
             }
             .InfoPanel {
@@ -337,7 +372,8 @@
                                         color: colors.$textNavy;
                                     }
                                 }
-                                .ant-tabs-ink-bar, .ant-tabs-ink-bar-animated {
+                                .ant-tabs-ink-bar,
+                                .ant-tabs-ink-bar-animated {
                                     background-color: colors.$textNavy;
                                 }
                             }
@@ -394,36 +430,34 @@
 .sunny {
     .sidebar-main {
         .wrapper {
-            
-                .navbar {
-                    background-color: colors.$sunny;
+            .navbar {
+                background-color: colors.$sunny;
+                color: colors.$textSunny;
+                border-bottom: 1px solid colors.$borderSky;
+                .logo {
                     color: colors.$textSunny;
-                    border-bottom: 1px solid colors.$borderSky;
-                    .logo {
-                        color: colors.$textSunny;
-                    }
-                    .search {
+                }
+                .search {
+                    background-color: colors.$sunny;
+                    input {
                         background-color: colors.$sunny;
-                        input {
-                            background-color: colors.$sunny;
-                            border-color: colors.$sunny;
-                            &::placeholder {
-                                color: colors.$textSunny;
-                            }
+                        border-color: colors.$sunny;
+                        &::placeholder {
+                            color: colors.$textSunny;
                         }
                     }
-                    .links {
-                        ul {
-                            li {
+                }
+                .links {
+                    ul {
+                        li {
+                            color: colors.$textSunny;
+                            svg {
                                 color: colors.$textSunny;
-                                svg {
-                                    color: colors.$textSunny;
-                                }
                             }
                         }
                     }
                 }
-            
+            }
         }
         .mainContainer {
             background-color: colors.$sunny;
@@ -440,15 +474,28 @@
                             color: colors.$textSunny;
                             &::placeholder {
                                 color: colors.$textSunny;
-                            } 
+                            }
                         }
                     }
                 }
                 .boxicon-container {
+                    .pro-sidebar-layout {
+                        background-color: colors.$sunny;
+                        color: colors.$textSunny;
+                        .pro-arrow-wrapper {
+                            .pro-arrow {
+                                border-color: colors.$textSunny;
+                            }
+                        }
+                        .react-slidedown,
+                        .pro-inner-list-item {
+                            background-color: colors.$dim-sunny !important;
+                            color: colors.$textSunny !important; 
+                        }
+                    }
                     .description {
                         color: colors.$textSunny;
                     }
-                    
                 }
             }
             .InfoPanel {
@@ -466,7 +513,8 @@
                                         color: colors.$textSunny;
                                     }
                                 }
-                                .ant-tabs-ink-bar, .ant-tabs-ink-bar-animated {
+                                .ant-tabs-ink-bar,
+                                .ant-tabs-ink-bar-animated {
                                     background-color: colors.$textSunny;
                                 }
                             }

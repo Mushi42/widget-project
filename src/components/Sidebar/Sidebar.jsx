@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { IoCaretForwardSharp } from "react-icons/io5";
 import List from "@mui/material/List";
+import { Dropdown, Space } from "antd";
 import { AppstoreOutlined, MailOutlined, SettingOutlined } from "@ant-design/icons";
 import {
   ProSidebar,
@@ -22,6 +23,7 @@ import Modal from "@mui/material/Modal";
 import { default as SelectMenu } from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
+import DropDown from './DropDown'
 const { TextArea } = Input;
 
 const style = {
@@ -113,7 +115,6 @@ const Sidebar = () => {
       subMenu: [
         {
           name: "Chase",
-          label: "Bank",
         },
       ],
     },
@@ -121,41 +122,65 @@ const Sidebar = () => {
       name: "Utilities",
       icon: <IoCaretForwardSharp />,
       type: "solid",
+      subMenu: [
+        {
+          name: "Chase",
+        },
+      ],
     },
     {
       name: "Pending Files",
       icon: <IoCaretForwardSharp />,
       type: "solid",
+      subMenu: [
+        {
+          name: "Chase",
+        },
+      ],
     },
     {
       name: "Digital Vault",
       icon: <IoCaretForwardSharp />,
       type: "solid",
+      subMenu: [
+        {
+          name: "Chase",
+        },
+      ],
     },
     {
       name: "Workflows",
       icon: <IoCaretForwardSharp />,
       type: "solid",
+      subMenu: [
+        {
+          name: "Chase",
+        },
+      ],
     },
     {
       name: "Reminders",
       icon: <IoCaretForwardSharp />,
       color: "red",
       rotate: "180",
+      subMenu: [
+        {
+          name: "Chase",
+        },
+      ],
     },
     {
       name: "Finance",
       icon: <IoCaretForwardSharp />,
       color: "red",
       rotate: "180",
+      subMenu: [
+        {
+          name: "Chase",
+        },
+      ],
     },
   ];
-
-  // const loopitem = () => {
-  //   menuItems.map((obj,key) => {
-  //     obj.name
-  //   })
-  // }
 
   const items = [
     getItem("Chase Bank", "sub2", <IoCaretForwardSharp size={15} />, [
@@ -243,41 +268,37 @@ const Sidebar = () => {
         {/* return ( */}
         <div
           className={`boxicon-container ${expanded && "expanded-boxicon-container"}`}
-          // onMouseEnter={() => {
-          //   if (middle) {
-          //     setHovered(index);
-          //   }
-          // }}
-          // onMouseLeave={() => {
-          //   if (middle) {
-          //     setHovered(null);
-          //   }
-          // }}
-          // onClick={() => {
-          //   if (middle) {
-          //     setActive(index);
-          //   }
-          //   if (index === 0) {
-          //     setExpanded(!expanded);
-          //   }
-          // }}
-          // key={index}
+        // onMouseEnter={() => {
+        //   if (middle) {
+        //     setHovered(index);
+        //   }
+        // }}
+        // onMouseLeave={() => {
+        //   if (middle) {
+        //     setHovered(null);
+        //   }
+        // }}
+        // onClick={() => {
+        //   if (middle) {
+        //     setActive(index);
+        //   }
+        //   if (index === 0) {
+        //     setExpanded(!expanded);
+        //   }
+        // }}
+        // key={index}
         >
           <ProSidebar className="p-0 m-0" breakPoint="md">
-            {/* <SidebarHeader>
-                    <Row className="p-1 m-0 justify-content-center">
-                      <Image width={80} height={40} src={images.pikabulogo} className="header-logo" />
-                    </Row>
-                  </SidebarHeader> */}
-
             <SidebarContent>
               <Menu className="bg-transparent" iconShape="circle">
-                {menuItems.map(({ name, icon }) => (
+                {menuItems.map(({ name }) => (
                   <>
-                    <SubMenu icon={icon} title={name}>
-                      <MenuItem> Line charts </MenuItem>
-                    <BsThreeDots className='SidebarDotsIcon' />
-                    </SubMenu>
+                    <span className="hoverSet">
+                      <DropDown />
+                      <SubMenu title={name}>
+                        <MenuItem className="SubDropMenuItem"> SubMenu Item </MenuItem>
+                      </SubMenu>
+                    </span>
                   </>
                 ))}
               </Menu>
