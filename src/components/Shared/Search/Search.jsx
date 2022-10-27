@@ -241,8 +241,8 @@ const Search = () => {
             </div>
           </div>
           <div className="d-flex justify-content-end mt-4">
-            <button className="primaryBtn ml-3">Reset</button>
-            <button className="secondaryBtn">Apply</button>
+            <button className="secondaryBtn ml-3">Reset</button>
+            <button className="primaryBtn">Apply</button>
           </div>
           <SearchDropdown />
         </div>

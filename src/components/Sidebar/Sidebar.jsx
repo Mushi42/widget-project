@@ -48,7 +48,7 @@ function getItem(label, key, icon, children, type) {
   };
 }
 
-const Sidebar = () => {
+const Sidebar = ({ ShowPin }) => {
   const onChange = (event) => {
     setSelectedTaglet(event.target.value);
   };
@@ -113,6 +113,9 @@ const Sidebar = () => {
       icon: <IoCaretForwardSharp />,
       type: "solid",
       subMenu: [
+        {
+          name: "Chase",
+        },
         {
           name: "Chase",
         },
@@ -253,7 +256,7 @@ const Sidebar = () => {
                   />
                 </div>
                 <div className="TagModalBtns">
-                  <button className="primaryBtn">Cancel</button>
+                  <button onClick={handleClose} className="primaryBtn">Cancel</button>
                   <button className="secondaryBtn">Create</button>
                 </div>
               </Box>
@@ -266,8 +269,7 @@ const Sidebar = () => {
             middle = true;
           } */}
         {/* return ( */}
-        <div
-          className={`boxicon-container ${expanded && "expanded-boxicon-container"}`}
+        <div className={`boxicon-container ${expanded && "expanded-boxicon-container"}`}
         // onMouseEnter={() => {
         //   if (middle) {
         //     setHovered(index);
@@ -296,9 +298,8 @@ const Sidebar = () => {
                     <span className="hoverSet">
                       <DropDown />
                       <SubMenu title={obj.name}>
-                        {obj.subMenu.map((pi)=> {
-                          <MenuItem className="SubDropMenuItem">{pi.name}</MenuItem>
-                        })}
+                        {obj.subMenu.map((pi) => <MenuItem className="SubDropMenuItem">{pi.name}</MenuItem>
+                        )}
                       </SubMenu>
                     </span>
                   </>

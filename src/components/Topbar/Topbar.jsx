@@ -4,6 +4,7 @@ import { Dropdown, Menu, Space } from "antd";
 import Search from "../Shared/Search/Search";
 import { FaRegUserCircle } from "react-icons/fa";
 import { AiOutlineQuestionCircle, AiOutlineClose, AiOutlineCheck } from "react-icons/ai";
+import { GrAdd } from "react-icons/gr";
 import { TbGridDots } from "react-icons/tb";
 import { BiUser, BiImageAdd, BiUserPlus } from "react-icons/bi";
 import { FiSettings, FiMessageSquare, FiBell } from "react-icons/fi";
@@ -15,258 +16,261 @@ import Fade from "@mui/material/Fade";
 import { setTheme } from "../../redux/layout/layout.actions";
 
 const style = {
-  position: "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  width: 400,
-  bgcolor: "background.paper",
-  border: "2px solid #000",
-  boxShadow: 24,
-  p: 4,
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    width: 400,
+    bgcolor: "background.paper",
+    border: "2px solid #000",
+    boxShadow: 24,
+    p: 4,
 };
-const Topbar = ({setTheme}) => {
-  const [open, setOpen] = React.useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+const Topbar = ({ setTheme }) => {
+    const [open, setOpen] = React.useState(false);
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
+    const [Profile, setProfile] = React.useState(false);
+    const handleProfileOpen = () => setProfile(true);
+    const handleProfileClose = () => setProfile(false);
 
-  const menu = (
-    <Menu
-      items={[
+    const menu = (
+        <Menu
+            items={[
+                {
+                    key: "1",
+                    label: "Repository",
+                },
+                {
+                    key: "2",
+                    label: "Indexer",
+                    trigger: "click",
+                    children: [
+                        {
+                            key: "2-1",
+                            label: "Code Indexer",
+                        },
+                        {
+                            key: "2-2",
+                            label: "Joe Indexer",
+                        },
+                        {
+                            key: "2-3",
+                            label: "New",
+                        },
+                    ],
+                },
+                {
+                    key: "3",
+                    label: "Theme",
+                    children: [
+                        {
+                            key: "3-1",
+                            label: <div onClick={() => onOpenSettingMenue("light")}>Light</div>,
+                        },
+                        {
+                            key: "3-2",
+                            label: <div onClick={() => onOpenSettingMenue("dark")}>Dark</div>,
+                        },
+                        {
+                            key: "3-3",
+                            label: <div onClick={() => onOpenSettingMenue("navyBlue")}>Navy Blue</div>
+                        },
+                        {
+                            key: "3-4",
+                            label: <div onClick={() => onOpenSettingMenue("skyBlue")}>Sky Blue</div>
+                        },
+                        {
+                            key: "3-5",
+                            label: <div onClick={() => onOpenSettingMenue("sunny")}>Sunny</div>
+                        },
+                    ],
+                },
+                {
+                    key: "4",
+                    label: "Language",
+                    children: [
+                        {
+                            key: "4-1",
+                            label: "English",
+                        },
+                        {
+                            key: "4-2",
+                            label: "French",
+                        },
+                    ],
+                },
+            ]}
+        />
+    );
+    const menuInfo = (
+        <Menu
+            items={[
+                {
+                    key: "1",
+                    label: "Tags",
+                },
+                {
+                    key: "2",
+                    label: "Search",
+                },
+                {
+                    key: "3",
+                    label: "WorkFlow",
+                },
+                {
+                    key: "4",
+                    label: "Reminder",
+                },
+                {
+                    key: "5",
+                    label: "Browse All Articles",
+                },
+                {
+                    key: "6",
+                    label: "Training",
+                },
+                {
+                    key: "7",
+                    label: "Updates",
+                },
+                {
+                    key: "8",
+                    label: "Send FeedBack to us",
+                },
+                {
+                    type: "divider",
+                },
+                {
+                    key: "9",
+                    label: "About",
+                },
+            ]}
+        />
+    );
+    const GridBoxItems = (
+        <Menu
+            items={[
+                {
+                    key: "1",
+                    label: "Config",
+                },
+                {
+                    key: "2",
+                    label: "Disable",
+                },
+            ]}
+        />
+    );
+    const AddModule = (
+        <Menu
+            onClick={handleOpen}
+            items={[
+                {
+                    key: "1",
+                    icon: <AiOutlineCheck />,
+                    label: "WorkFlows",
+                },
+                {
+                    key: "2",
+                    icon: <AiOutlineCheck />,
+                    label: "News",
+                },
+                {
+                    key: "3",
+                    icon: <AiOutlineCheck />,
+                    label: "Newsletter",
+                },
+                {
+                    key: "4",
+                    icon: <AiOutlineCheck />,
+                    label: "Reminder",
+                },
+                {
+                    key: "5",
+                    icon: "",
+                    label: "Search",
+                },
+                {
+                    key: "6",
+                    icon: "",
+                    label: "Version",
+                },
+                {
+                    key: "7",
+                    icon: "",
+                    label: "Message",
+                },
+                {
+                    key: "8",
+                    icon: <AiOutlineCheck />,
+                    label: "Email",
+                },
+            ]}
+        />
+    );
+    const GridItems = [
         {
-          key: "1",
-          label: "Repository",
+            key: 1,
+            label: "WorkFlows",
         },
         {
-          key: "2",
-          label: "Indexer",
-          trigger: "click",
-          children: [
-            {
-              key: "2-1",
-              label: "Code Indexer",
-            },
-            {
-              key: "2-2",
-              label: "Joe Indexer",
-            },
-            {
-              key: "2-3",
-              label: "New",
-            },
-          ],
+            key: 2,
+            label: "News",
         },
         {
-          key: "3",
-          label: "Theme",
-          children: [
-            {
-              key: "3-1",
-              label: <div onClick={() => onOpenSettingMenue("light")}>Light</div>,
-            },
-            {
-              key: "3-1",
-              label: <div onClick={() => onOpenSettingMenue("dark")}>Dark</div>,
-            },
-            {
-              key: "3-2",
-              label: <div onClick={() => onOpenSettingMenue("navyBlue")}>Navy Blue</div>
-            },
-            {
-              key: "3-3",
-              label: <div onClick={() => onOpenSettingMenue("skyBlue")}>Sky Blue</div>
-            },
-            {
-              key: "3-4",
-              label: <div onClick={() => onOpenSettingMenue("sunny")}>Sunny</div>
-            },
-          ],
+            key: 3,
+            label: "Newsletter",
         },
         {
-          key: "4",
-          label: "Language",
-          children: [
-            {
-              key: "4-1",
-              label: "English",
-            },
-            {
-              key: "4-2",
-              label: "French",
-            },
-          ],
-        },
-      ]}
-    />
-  );
-  const menuInfo = (
-    <Menu
-      items={[
-        {
-          key: "1",
-          label: "Tags",
+            key: 4,
+            label: "Reminder",
         },
         {
-          key: "2",
-          label: "Search",
+            key: 5,
+            label: "Search",
         },
         {
-          key: "3",
-          label: "WorkFlow",
+            key: 6,
+            label: "Version",
         },
         {
-          key: "4",
-          label: "Reminder",
+            key: 7,
+            label: "Message",
         },
         {
-          key: "5",
-          label: "Browse All Articles",
+            key: 8,
+            label: "Email",
         },
-        {
-          key: "6",
-          label: "Training",
-        },
-        {
-          key: "7",
-          label: "Updates",
-        },
-        {
-          key: "8",
-          label: "Send FeedBack to us",
-        },
-        {
-          type: "divider",
-        },
-        {
-          key: "9",
-          label: "About",
-        },
-      ]}
-    />
-  );
-  const GridBoxItems = (
-    <Menu
-      items={[
-        {
-          key: "1",
-          label: "Config",
-        },
-        {
-          key: "2",
-          label: "Disable",
-        },
-      ]}
-    />
-  );
-  const AddModule = (
-    <Menu
-      onClick={handleOpen}
-      items={[
-        {
-          key: "1",
-          icon: <AiOutlineCheck />,
-          label: "WorkFlows",
-        },
-        {
-          key: "2",
-          icon: <AiOutlineCheck />,
-          label: "News",
-        },
-        {
-          key: "3",
-          icon: <AiOutlineCheck />,
-          label: "Newsletter",
-        },
-        {
-          key: "4",
-          icon: <AiOutlineCheck />,
-          label: "Reminder",
-        },
-        {
-          key: "5",
-          icon: "",
-          label: "Search",
-        },
-        {
-          key: "6",
-          icon: "",
-          label: "Version",
-        },
-        {
-          key: "7",
-          icon: "",
-          label: "Message",
-        },
-        {
-          key: "8",
-          icon: <AiOutlineCheck />,
-          label: "Email",
-        },
-      ]}
-    />
-  );
-  const GridItems = [
-    {
-      key: 1,
-      label: "WorkFlows",
-    },
-    {
-      key: 2,
-      label: "News",
-    },
-    {
-      key: 3,
-      label: "Newsletter",
-    },
-    {
-      key: 4,
-      label: "Reminder",
-    },
-    {
-      key: 5,
-      label: "Search",
-    },
-    {
-      key: 6,
-      label: "Version",
-    },
-    {
-      key: 7,
-      label: "Message",
-    },
-    {
-      key: 8,
-      label: "Email",
-    },
-  ];
+    ];
 
-  const [showGrid, setShowGrid] = useState("DotsGrid DisNone");
-  const [showProfile, setShowProfile] = useState("ProfileBar DisNone");
+    const [showGrid, setShowGrid] = useState("DotsGrid DisNone");
+    const [showProfile, setShowProfile] = useState("ProfileBar DisNone");
 
-  let ref = useRef();
+    let ref = useRef();
 
-  const onOpenSettingMenue = (theme) => {
-    setTheme(theme);
-  };
+    const onOpenSettingMenue = (theme) => {
+        setTheme(theme);
+    };
 
-  // useEffect(()=> {
-  //     document.addEventListener("mousedown", (event) =>{
-  //         if(!ref.current.contains(event.targer)) {
-  //             setShowProfile("ProfileBar DisNone")
-  //             setShowGrid("DotsGrid DisNone")
-  //         }
-  //     })
-  // },[])
+    // useEffect(()=> {
+    //     document.addEventListener("mousedown", (event) =>{
+    //         if(!ref.current.contains(event.targer)) {
+    //             setShowProfile("ProfileBar DisNone")
+    //             setShowGrid("DotsGrid DisNone")
+    //         }
+    //     })
+    // },[])
 
-  return (
-    <div className="wrapper">
-      <div>
-        <div className="navbar">
-          <div className="logo">EPaX</div>
-          <Search />
-          <div className="links">
-            <ul ref={ref}>
-              {/* <li className="dropdown">
+    return (
+        <div className="wrapper">
+            <div>
+                <div className="navbar">
+                    <div className="logo">EPaX</div>
+                    <Search />
+                    <div className="links">
+                        <ul ref={ref}>
+                            {/* <li className="dropdown">
                                 Info
                                 <div className="menu">
                                     <div className="menu-container">
@@ -358,126 +362,152 @@ const Topbar = ({setTheme}) => {
                                     </div>
                                 </div>
                             </li> */}
-              <li>
-                <Dropdown overlay={menuInfo} trigger={["click"]}>
-                  <a onClick={(e) => e.preventDefault()}>
-                    <Space>
-                      <AiOutlineQuestionCircle />
-                    </Space>
-                  </a>
-                </Dropdown>
-              </li>
-              <li className="GridsLi">
-                <TbGridDots
-                  onClick={() =>
-                    setShowGrid(showGrid === "DotsGrid DisNone" ? "DotsGrid DisBlock" : "DotsGrid DisNone")
-                  }
-                />
-                <div className={showGrid}>
-                  <div className="GridBoxes">
-                    {GridItems.map((obj, index) => (
-                      <Dropdown overlay={GridBoxItems} trigger={["click"]}>
-                        <a onClick={(e) => e.preventDefault()}>
-                          <Space>
-                            <div className="GridBox flexCenter">
-                              <span>{obj.label}</span>
-                            </div>
-                          </Space>
-                        </a>
-                      </Dropdown>
-                    ))}
-                  </div>
-                  <div className="AddModuleBtn">
-                    <Dropdown placement="bottomLeft" overlay={AddModule}  trigger={["click"]}>
-                      <a onClick={(e) => e.preventDefault()}>
-                        <Space>
-                          <span>Add Module</span>
-                        </Space>
-                      </a>
-                    </Dropdown>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <FiBell />
-              </li>
-              <li>
-                <FiMessageSquare />
-              </li>
-              <li>
-                <Dropdown overlay={menu} trigger={["click"]}>
-                  <a onClick={(e) => e.preventDefault()}>
-                    <Space>
-                      <FiSettings />
-                    </Space>
-                  </a>
-                </Dropdown>
-              </li>
-              <li className="ProfileLi">
-                <FaRegUserCircle
-                  onClick={() =>
-                    setShowProfile(
-                      showProfile === "ProfileBar DisNone" ? "ProfileBar DisBlock" : "ProfileBar DisNone"
-                    )
-                  }
-                />
-                <div className={showProfile}>
-                  <div className="UserProfileDrop">
-                    <div className="userImg flexCenter">
-                      <BiUser className="UserIcon" />
-                      <BiImageAdd className="AddUserIcon" />
+                            <li>
+                                <Dropdown overlay={menuInfo} trigger={["click"]}>
+                                    <a onClick={(e) => e.preventDefault()}>
+                                        <Space>
+                                            <AiOutlineQuestionCircle />
+                                        </Space>
+                                    </a>
+                                </Dropdown>
+                            </li>
+                            <li>
+                                <FiBell />
+                            </li>
+                            <li>
+                                <FiMessageSquare />
+                            </li>
+                            <li className="GridsLi">
+                                <TbGridDots
+                                    onClick={() =>
+                                        setShowGrid(showGrid === "DotsGrid DisNone" ? "DotsGrid DisBlock" : "DotsGrid DisNone")
+                                    }
+                                />
+                                <div className={showGrid}>
+                                    <div className="GridBoxes">
+                                        {GridItems.map((obj, index) => (
+                                            <Dropdown overlay={GridBoxItems} trigger={["click"]}>
+                                                <a onClick={(e) => e.preventDefault()}>
+                                                    <Space>
+                                                        <div className="GridBox flexCenter">
+                                                            <span>{obj.label}</span>
+                                                        </div>
+                                                    </Space>
+                                                </a>
+                                            </Dropdown>
+                                        ))}
+                                    </div>
+                                    <div className="AddModuleBtn">
+                                        <Dropdown placement="bottomLeft" overlay={AddModule} trigger={["click"]}>
+                                            <a onClick={(e) => e.preventDefault()}>
+                                                <Space>
+                                                    <span>Add Module</span>
+                                                </Space>
+                                            </a>
+                                        </Dropdown>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <Dropdown overlay={menu} trigger={["click"]}>
+                                    <a onClick={(e) => e.preventDefault()}>
+                                        <Space>
+                                            <FiSettings />
+                                        </Space>
+                                    </a>
+                                </Dropdown>
+                            </li>
+                            <li className="ProfileLi">
+                                <FaRegUserCircle
+                                    onClick={() =>
+                                        setShowProfile(
+                                            showProfile === "ProfileBar DisNone" ? "ProfileBar DisBlock" : "ProfileBar DisNone"
+                                        )
+                                    }
+                                />
+                                <div className={showProfile}>
+                                    <div className="UserProfileDrop">
+                                        <div onClick={handleProfileOpen} className="userImg flexCenter">
+                                            <BiUser className="UserIcon" />
+                                            <BiImageAdd className="AddUserIcon" />
+                                        </div>
+                                        <h2>Joe Doe</h2>
+                                        <button>Manage Your Epax Users</button>
+                                    </div>
+                                    <div className="profileUsers">
+                                        <BiUser className="AccountUserIcon" />
+                                        <p>Joe Doe</p>
+                                    </div>
+                                    <div className="profileUsers">
+                                        <BiUser className="AccountUserIcon" />
+                                        <p>Jane Doe</p>
+                                    </div>
+                                    <div className="profileUsers">
+                                        <BiUser className="AccountUserIcon" />
+                                        <p>Smith Doe</p>
+                                    </div>
+                                    <div className="profileUsers">
+                                        <BiUserPlus />
+                                        <p>Add Another Account</p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
-                    <h2>Joe Doe</h2>
-                    <button>Manage Your Epax Users</button>
-                  </div>
-                  <div className="profileUsers">
-                    <BiUser className="AccountUserIcon" />
-                    <p>Joe Doe</p>
-                  </div>
-                  <div className="profileUsers">
-                    <BiUser className="AccountUserIcon" />
-                    <p>Jane Doe</p>
-                  </div>
-                  <div className="profileUsers">
-                    <BiUser className="AccountUserIcon" />
-                    <p>Smith Doe</p>
-                  </div>
-                  <div className="profileUsers">
-                    <BiUserPlus />
-                    <p>Add Another Account</p>
-                  </div>
                 </div>
-              </li>
-            </ul>
-          </div>
+            </div>
+            <Modal
+                open={Profile}
+                onClose={handleProfileClose}
+                aria-labelledby="modal-modal-title"
+                aria-describedby="modal-modal-description"
+            >
+                <Box className='ChangeProfModal' sx={style}>
+                    <div className="TagletModelHead flexCenter">
+                        <h2>Change Picture</h2>
+                        <AiOutlineClose onClick={handleProfileClose} />
+                    </div>
+                    <div className="flexCenter">
+                        <div onClick={handleProfileOpen} className="userImg changeProfImg flexCenter">
+                            <BiUser className="UserIcon" />
+                        </div>
+                    </div>
+                    <div className="changeProfilePicBtns">
+                        <button className='flexCenter GG-10'><GrAdd />Upload Image</button>
+                        <button>Drag and drop Image</button>
+                    </div>
+                    <div className="canSaveBtns">
+                        <span>Cancel</span>
+                        <span>Save</span>
+                    </div>
+                </Box>
+            </Modal>
+            <Modal
+                aria-labelledby="transition-modal-title"
+                aria-describedby="transition-modal-description"
+                open={open}
+                onClose={handleClose}
+                closeAfterTransition
+                BackdropComponent={Backdrop}
+                BackdropProps={{
+                    timeout: 500,
+                }}>
+                <Fade in={open}>
+                    <Box sx={style} className="TagletModel">
+                        <div className="TagletModelHead flexCenter">
+                            <h2>Uninstalling Module</h2>
+                            <AiOutlineClose onClick={handleClose} />
+                        </div>
+                        <p>Remove Reminder Module?</p>
+                        <div className="TagModalBtns">
+                            <button onClick={handleProfileClose} className="primaryBtn">Cancel</button>
+                            <button onClick={handleProfileClose} className="secondaryBtn">Create</button>
+                        </div>
+                    </Box>
+                </Fade>
+            </Modal>
         </div>
-      </div>
-      <Modal
-        aria-labelledby="transition-modal-title"
-        aria-describedby="transition-modal-description"
-        open={open}
-        onClose={handleClose}
-        closeAfterTransition
-        BackdropComponent={Backdrop}
-        BackdropProps={{
-          timeout: 500,
-        }}>
-        <Fade in={open}>
-          <Box sx={style} className="TagletModel">
-            <div className="TagletModelHead flexCenter">
-              <h2>Uninstalling Module</h2>
-              <AiOutlineClose onClick={handleClose} />
-            </div>
-            <p>Remove Reminder Module?</p>
-            <div className="TagModalBtns">
-              <button className="primaryBtn">Cancel</button>
-              <button className="secondaryBtn">Create</button>
-            </div>
-          </Box>
-        </Fade>
-      </Modal>
-    </div>
-  );
+    );
 };
 
 const mapStateToProps = ({ layout }) => ({ ...layout });

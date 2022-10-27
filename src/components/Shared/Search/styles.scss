@@ -28,10 +28,10 @@ $bgcolor: #f0f0f0;
   }
   .DropdownSearch {
     position: absolute;
-    bottom: -565px;
+    top: 52px;
     box-shadow: 0px 0px 10px #e5e5e5;
     width: 100%;
-    z-index: 11;
+    z-index: 1111;
     background-color: white;
     padding: 20px 30px;
     border-radius: inherit;
@@ -53,12 +53,15 @@ $bgcolor: #f0f0f0;
   }
 
   .secondaryBtn {
-    padding: 13px 16px 13px 16px !important;
-    border-radius: 26px !important;
-    margin-left: 10px !important;
+    padding: 13px 16px 13px 16px;
+    border-radius: 26px;
+    margin-left: 10px;
   }
   .primaryBtn {
     border: 0px;
+    padding: 13px 16px 13px 16px;
+    border-radius: 26px;
+    margin-left: 10px;
   }
 }
 

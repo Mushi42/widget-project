@@ -18,6 +18,42 @@
                         background-color: colors.$black;
                         border-color: colors.$black;
                     }
+                    .DropdownSearch {
+                        background-color: colors.$black;
+                        color: colors.$white;
+                        .row,
+                        .mt-2 {
+                            .css-1ptx2yq-MuiInputBase-root-MuiInput-root {
+                                &::before {
+                                    border-bottom: 1px solid colors.$white;
+                                }
+                            }
+                            .MuiFormControl-root,
+                            .css-1bgcehk-MuiFormControl-root {
+                                svg {
+                                    color: colors.$white;
+                                }
+                                .css-a3l6o-MuiInputBase-root-MuiInput-root-MuiSelect-root {
+                                    &::before {
+                                        border-bottom: 1px solid colors.$white;
+                                    }
+                                }
+                                input {
+                                    color: colors.$white;
+                                }
+                            }
+                        }
+                    }
+                    .secondaryBtn {
+                        background-color: colors.$black;
+                        color: colors.$white;
+                        border: none;
+                    }
+                    .primaryBtn {
+                        background-color: colors.$black;
+                        color: colors.$white;
+                        border: 1px solid colors.$white;
+                    }
                 }
                 .links {
                     ul {
@@ -25,6 +61,36 @@
                             color: colors.$white;
                             svg {
                                 color: colors.$white;
+                            }
+                        }
+                        .ProfileBar {
+                            background-color: colors.$black;
+                            box-shadow: 0px 0px 10px #585858;
+                            .UserProfileDrop {
+                                h2 {
+                                    color: colors.$white;
+                                }
+                                button {
+                                    background-color: colors.$black;
+                                    color: colors.$white;
+                                    border-color: colors.$white;
+                                }
+                            }
+                            .profileUsers {
+                                p {
+                                    color: colors.$white;
+                                }
+                            }
+                        }
+                        .DotsGrid {
+                            box-shadow: 0px 0px 10px #585858;
+                            background-color: colors.$black;
+                            .AddModuleBtn {
+                                span {
+                                    background-color: colors.$black;
+                                    color: colors.$white;
+                                    border-color: colors.$white;
+                                }
                             }
                         }
                     }
@@ -57,13 +123,13 @@
                         color: colors.$white;
                         .pro-arrow-wrapper {
                             .pro-arrow {
-                                border-color: colors.$white
+                                border-color: colors.$white;
                             }
                         }
                         .react-slidedown,
                         .pro-inner-list-item {
                             background-color: colors.$dim-black !important;
-                            color: colors.$white !important; 
+                            color: colors.$white !important;
                         }
                     }
                     .description {
@@ -127,6 +193,9 @@
                                             span {
                                                 color: colors.$white;
                                             }
+                                            svg {
+                                                color: colors.$white;
+                                            }
                                         }
                                     }
                                 }
@@ -164,6 +233,42 @@
                             color: colors.$textSky;
                         }
                     }
+                    .DropdownSearch {
+                        background-color: colors.$black;
+                        color: colors.$textSky;
+                        .row,
+                        .mt-2 {
+                            .css-1ptx2yq-MuiInputBase-root-MuiInput-root {
+                                &::before {
+                                    border-bottom: 1px solid colors.$textSky;
+                                }
+                            }
+                            .MuiFormControl-root,
+                            .css-1bgcehk-MuiFormControl-root {
+                                svg {
+                                    color: colors.$textSky;
+                                }
+                                .css-a3l6o-MuiInputBase-root-MuiInput-root-MuiSelect-root {
+                                    &::before {
+                                        border-bottom: 1px solid colors.$textSky;
+                                    }
+                                }
+                                input {
+                                    color: colors.$textSky;
+                                }
+                            }
+                        }
+                    }
+                    .secondaryBtn {
+                        background-color: colors.$skyBlue;
+                        color: colors.$textSky;
+                        border: none;
+                    }
+                    .primaryBtn {
+                        background-color: colors.$skyBlue;
+                        color: colors.$textSky;
+                        border: 1px solid colors.$textSky;
+                    }
                 }
                 .links {
                     ul {
@@ -171,6 +276,34 @@
                             color: colors.$textSky;
                             svg {
                                 color: colors.$textSky;
+                            }
+                        }
+                    }
+                    .ProfileBar {
+                        background-color: colors.$skyBlue;
+                        .UserProfileDrop {
+                            h2 {
+                                color: colors.$textSky;
+                            }
+                            button {
+                                background-color: colors.$skyBlue;
+                                color: colors.$textSky;
+                                border-color: colors.$textSky;
+                            }
+                        }
+                        .profileUsers {
+                            p {
+                                color: colors.$textSky;
+                            }
+                        }
+                    }
+                    .DotsGrid {
+                        background-color: colors.$skyBlue;
+                        .AddModuleBtn {
+                            span {
+                                background-color: colors.$skyBlue;
+                                color: colors.$textSky;
+                                border-color: colors.$textSky;
                             }
                         }
                     }
@@ -208,7 +341,7 @@
                         .react-slidedown,
                         .pro-inner-list-item {
                             background-color: colors.$dim-skyBlue !important;
-                            color: colors.$textSky !important; 
+                            color: colors.$textSky !important;
                         }
                     }
                     .description {
@@ -268,6 +401,9 @@
                                             span {
                                                 color: colors.$textSky;
                                             }
+                                            svg {
+                                                color: colors.$textSky;
+                                            }
                                         }
                                     }
                                 }
@@ -305,6 +441,42 @@
                             color: colors.$textNavy;
                         }
                     }
+                    .DropdownSearch {
+                        background-color: colors.$navyBlue;
+                        color: colors.$textNavy;
+                        .row,
+                        .mt-2 {
+                            .css-1ptx2yq-MuiInputBase-root-MuiInput-root {
+                                &::before {
+                                    border-bottom: 1px solid colors.$textNavy;
+                                }
+                            }
+                            .MuiFormControl-root,
+                            .css-1bgcehk-MuiFormControl-root {
+                                svg {
+                                    color: colors.$textNavy;
+                                }
+                                .css-a3l6o-MuiInputBase-root-MuiInput-root-MuiSelect-root {
+                                    &::before {
+                                        border-bottom: 1px solid colors.$textNavy;
+                                    }
+                                }
+                                input {
+                                    color: colors.$textNavy;
+                                }
+                            }
+                        }
+                    }
+                    .secondaryBtn {
+                        background-color: colors.$navyBlue;
+                        color: colors.$textNavy;
+                        border: none;
+                    }
+                    .primaryBtn {
+                        background-color: colors.$navyBlue;
+                        color: colors.$textNavy;
+                        border: 1px solid colors.$textNavy;
+                    }
                 }
                 .links {
                     ul {
@@ -312,6 +484,35 @@
                             color: colors.$textNavy;
                             svg {
                                 color: colors.$textNavy;
+                            }
+                        }
+                        .ProfileBar {
+                            background-color: colors.$navyBlue;
+
+                            .UserProfileDrop {
+                                h2 {
+                                    color: colors.$textNavy;
+                                }
+                                button {
+                                    background-color: colors.$navyBlue;
+                                    color: colors.$textNavy;
+                                    border-color: colors.$textNavy;
+                                }
+                            }
+                            .profileUsers {
+                                p {
+                                    color: colors.$textNavy;
+                                }
+                            }
+                        }
+                        .DotsGrid {
+                            background-color: colors.$navyBlue;
+                            .AddModuleBtn {
+                                span {
+                                    background-color: colors.$navyBlue;
+                                    color: colors.$textNavy;
+                                    border-color: colors.$textNavy;
+                                }
                             }
                         }
                     }
@@ -343,13 +544,13 @@
                         color: colors.$textNavy;
                         .pro-arrow-wrapper {
                             .pro-arrow {
-                                border-color: colors.$textNavy
+                                border-color: colors.$textNavy;
                             }
                         }
                         .react-slidedown,
                         .pro-inner-list-item {
-                            background-color: colors.$dim-navyBlue!important;
-                            color: colors.$textNavy!important; 
+                            background-color: colors.$dim-navyBlue !important;
+                            color: colors.$textNavy !important;
                         }
                     }
                     .description {
@@ -409,6 +610,9 @@
                                             span {
                                                 color: colors.$textNavy;
                                             }
+                                            svg {
+                                                color: colors.$textNavy;
+                                            }
                                         }
                                     }
                                 }
@@ -446,6 +650,42 @@
                             color: colors.$textSunny;
                         }
                     }
+                    .DropdownSearch {
+                        background-color: colors.$sunny;
+                        color: colors.$textSunny;
+                        .row,
+                        .mt-2 {
+                            .css-1ptx2yq-MuiInputBase-root-MuiInput-root {
+                                &::before {
+                                    border-bottom: 1px solid colors.$textSunny;
+                                }
+                            }
+                            .MuiFormControl-root,
+                            .css-1bgcehk-MuiFormControl-root {
+                                svg {
+                                    color: colors.$textSunny;
+                                }
+                                .css-a3l6o-MuiInputBase-root-MuiInput-root-MuiSelect-root {
+                                    &::before {
+                                        border-bottom: 1px solid colors.$textSunny;
+                                    }
+                                }
+                                input {
+                                    color: colors.$textSunny;
+                                }
+                            }
+                        }
+                    }
+                    .secondaryBtn {
+                        background-color: colors.$sunny;
+                        color: colors.$textSunny;
+                        border: none;
+                    }
+                    .primaryBtn {
+                        background-color: colors.$sunny;
+                        color: colors.$textSunny;
+                        border: 1px solid colors.$textSunny;
+                    }
                 }
                 .links {
                     ul {
@@ -453,6 +693,35 @@
                             color: colors.$textSunny;
                             svg {
                                 color: colors.$textSunny;
+                            }
+                        }
+                        .ProfileBar {
+                            background-color: colors.$sunny;
+
+                            .UserProfileDrop {
+                                h2 {
+                                    color: colors.$textSunny;
+                                }
+                                button {
+                                    background-color: colors.$sunny;
+                                    color: colors.$textSunny;
+                                    border-color: colors.$textSunny;
+                                }
+                            }
+                            .profileUsers {
+                                p {
+                                    color: colors.$textSunny;
+                                }
+                            }
+                        }
+                        .DotsGrid {
+                            background-color: colors.$sunny;
+                            .AddModuleBtn {
+                                span {
+                                    background-color: colors.$sunny;
+                                    color: colors.$textSunny;
+                                    border-color: colors.$textSunny;
+                                }
                             }
                         }
                     }
@@ -490,7 +759,7 @@
                         .react-slidedown,
                         .pro-inner-list-item {
                             background-color: colors.$dim-sunny !important;
-                            color: colors.$textSunny !important; 
+                            color: colors.$textSunny !important;
                         }
                     }
                     .description {
@@ -548,6 +817,9 @@
                                             background-color: colors.$sunny;
                                             color: colors.$textSunny;
                                             span {
+                                                color: colors.$textSunny;
+                                            }
+                                            svg {
                                                 color: colors.$textSunny;
                                             }
                                         }

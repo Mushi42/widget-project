@@ -160,6 +160,7 @@ $bgcolor: #f0f0f0;
                     right: 15px;
                     top: 8px;
                     z-index: 9999;
+                    color: black;
                 }
                 &:hover {
                     .SidebarDotsIcon {
@@ -275,22 +276,28 @@ $bgcolor: #f0f0f0;
         cursor: pointer;
     }
 }
+
 .MuiBox-root,
 .css-1wnsr1i {
     border: none !important;
     border-radius: 8px;
+    z-index: 99999;
+}
+.TagletModelHead {
+    justify-content: space-between !important;
+    margin-bottom: 30px;
+    h2 {
+        margin-bottom: 0;
+        font-size: 22px;
+    }
+    svg {
+        font-size: 24px;
+    }
+}
+.MuiModal-root, .css-79ws1d-MuiModal-root {
+    z-index: 99999 !important;
 }
 .TagletModel {
-    .TagletModelHead {
-        justify-content: space-between !important;
-        margin-bottom: 30px;
-        h2 {
-            margin-bottom: 0;
-        }
-        svg {
-            font-size: 24px;
-        }
-    }
     .TagModelBox {
         margin-bottom: 15px;
         &:nth-last-child(2) {
