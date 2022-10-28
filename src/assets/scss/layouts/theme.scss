@@ -135,6 +135,24 @@
                     .description {
                         color: colors.$white;
                     }
+                    .react-slidedown,
+                    .pro-inner-list-item {
+                        .SubDropMenuItem {
+                            .pro-inner-item {
+                                &:hover {
+                                    background-color: colors.$dim-black;
+                                }
+                            }
+                        }
+                    }
+                    .hoverSet {
+                        .PinIcon {
+                            color: colors.$white;
+                        }
+                        .ant-dropdown-trigger, .SidebarDotsIcon {
+                            color: colors.$white;
+                        }
+                    }
                 }
             }
             .InfoPanel {
@@ -347,6 +365,24 @@
                     .description {
                         color: colors.$textSky;
                     }
+                    .react-slidedown,
+                    .pro-inner-list-item {
+                        .SubDropMenuItem {
+                            .pro-inner-item {
+                                &:hover {
+                                    background-color: colors.$dim-skyBlue;
+                                }
+                            }
+                        }
+                    }
+                    .hoverSet {
+                        .PinIcon {
+                            color: colors.$textSky;
+                        }
+                        .ant-dropdown-trigger, .SidebarDotsIcon {
+                            color: colors.$textSky
+                        }
+                    }
                 }
             }
             .InfoPanel {
@@ -556,6 +592,24 @@
                     .description {
                         color: colors.$textNavy;
                     }
+                    .react-slidedown,
+                    .pro-inner-list-item {
+                        .SubDropMenuItem {
+                            .pro-inner-item {
+                                &:hover {
+                                    background-color: colors.$dim-navyBlue;
+                                }
+                            }
+                        }
+                    }
+                    .hoverSet {
+                        .PinIcon {
+                            color: colors.$textNavy;
+                        }
+                        .ant-dropdown-trigger, .SidebarDotsIcon {
+                            color: colors.$textNavy;
+                        }
+                    }
                 }
             }
             .InfoPanel {
@@ -764,6 +818,24 @@
                     }
                     .description {
                         color: colors.$textSunny;
+                    }
+                    .react-slidedown,
+                    .pro-inner-list-item {
+                        .SubDropMenuItem {
+                            .pro-inner-item {
+                                &:hover {
+                                    background-color: colors.$dim-sunny;
+                                }
+                            }
+                        }
+                    }
+                    .hoverSet {
+                        .PinIcon {
+                            color: colors.$textSunny;
+                        }
+                        .ant-dropdown-trigger, .SidebarDotsIcon {
+                            color: colors.$textSunny;
+                        }
                     }
                 }
             }

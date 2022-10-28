@@ -8,6 +8,7 @@ import Ads from "../ad/Ads";
 import { connect } from "react-redux";
 
 const SidebarLayout = ({ theme }) => {
+  
   return (
     <div className={theme}>
       <div className="sidebar-main">

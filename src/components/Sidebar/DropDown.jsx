@@ -33,8 +33,8 @@ const DropDown = () => {
                     label: <span
                         style={{ justifyContent: 'flex-start' }}
                         className='flexCenter GG-10'
-                        onClick={() => setShowPin(showPin === StylePinHide ? StylePin : StylePinHide)}>
-                        <BsCheck2 style={showPin} /> <span>Pin</span>
+                        onClick={() => setShowPin(!showPin.hasOwnProperty('top') ? StylePin : StylePinHide)}>{console.log(showPin)}
+                        <span>Pin</span> <BsCheck2 style={showPin} />
                     </span>,
                 },
                 {
