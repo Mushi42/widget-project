@@ -1,14 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
 import { IoCaretForwardSharp } from "react-icons/io5";
-import List from "@mui/material/List";
-import { Dropdown, Space } from "antd";
-import { AppstoreOutlined, MailOutlined, SettingOutlined } from "@ant-design/icons";
 import {
   ProSidebar,
   Menu,
   MenuItem,
-  SidebarHeader,
-  SidebarFooter,
   SidebarContent,
   SubMenu,
 } from "react-pro-sidebar";
@@ -16,27 +11,8 @@ import "react-pro-sidebar/dist/css/styles.css";
 import InfoPanel from "./InfoPanel";
 import { Input } from "antd";
 import "./styles.scss";
-import { AiOutlineSearch, AiOutlineClose } from "react-icons/ai";
-import { IoMdAdd } from "react-icons/io";
-import Box from "@mui/material/Box";
-import Modal from "@mui/material/Modal";
-import { default as SelectMenu } from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
-import Select from "@mui/material/Select";
 import DropDown from './DropDown'
-const { TextArea } = Input;
-
-const style = {
-  position: "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  width: 400,
-  bgcolor: "background.paper",
-  border: "2px solid #000",
-  boxShadow: 24,
-  p: 4,
-};
+import AddTaglet from "./AddTaglet";
 
 function getItem(label, key, icon, children, type) {
   return {
@@ -49,21 +25,6 @@ function getItem(label, key, icon, children, type) {
 }
 
 const Sidebar = ({ ShowPin }) => {
-  const onChange = (event) => {
-    setSelectedTaglet(event.target.value);
-  };
-  const onSearch = (value) => {
-    console.log("search:", value);
-  };
-  const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
-
-  const handleClick = () => {
-    // 👇️ open file input box on click of other element
-    inputRef.current.click();
-  };
-
   const useMediaQuery = (query) => {
     const [matches, setMatches] = useState(false);
 
@@ -79,14 +40,11 @@ const Sidebar = ({ ShowPin }) => {
 
     return matches;
   };
-  const [value, setValue] = useState("");
-  const [selectedTaglet, setSelectedTaglet] = useState("Taglet");
   const [hovered, setHovered] = useState(null);
   const [active, setActive] = useState(1);
   const [animate, setAnimate] = useState(false);
   const [expanded, setExpanded] = useState(true);
   const changeSmall = useMediaQuery("(max-height: 550px)");
-  const inputRef = useRef(null);
 
   let delay = 1;
   useEffect(() => {
@@ -99,15 +57,6 @@ const Sidebar = ({ ShowPin }) => {
   }, [active, delay]);
 
   let menuItems = [
-    // {
-    //   name: "Look Up Taglet",
-    //   iconName: "menu",
-    // },
-    // {
-    //   name: "Add Taglet",
-    //   iconName: "home",
-    //   type: "solid",
-    // },
     {
       name: "Chase Bank",
       icon: <IoCaretForwardSharp />,
@@ -197,100 +146,11 @@ const Sidebar = ({ ShowPin }) => {
     <div className="">
       <div className={`sidebar ${expanded && "expanded"}`}>
         <div className="sideBarSearchbar">
-          <div className="SideBar-top">
-            <AiOutlineSearch />
-            <input type="text" placeholder="Look Up Taglet" />
-          </div>
-          <div className="SideBar-top addTaglet">
-            <span onClick={handleOpen} className="flexCenter GG-10">
-              {" "}
-              <IoMdAdd /> Add Taglet
-            </span>
-            <Modal
-              open={open}
-              onClose={handleClose}
-              aria-labelledby="modal-modal-title"
-              aria-describedby="modal-modal-description"
-              className="TagletModel">
-              <Box sx={style}>
-                <div className="TagletModelHead flexCenter">
-                  <h2>New Taglet</h2>
-                  <AiOutlineClose onClick={handleClose} />
-                </div>
-                <div className="TagModelBox">
-                  <p>Please enter a new taglet name:</p>
-                  <Input />
-                </div>
-                <div className="TagModelBox">
-                  <p>Select Taglet type:</p>
-                  <FormControl fullWidth size="small">
-                    <Select
-                      labelId="demo-simple-select-label"
-                      id="demo-simple-select"
-                      value={selectedTaglet}
-                      onChange={onChange}>
-                      <SelectMenu value={"Taglet"}>Taglet</SelectMenu>
-                      <SelectMenu value={"Shortcut"}>Shortcut</SelectMenu>
-                      <SelectMenu value={"Asset"}>Asset</SelectMenu>
-                    </Select>
-                  </FormControl>
-                </div>
-                {selectedTaglet === "Asset" && (
-                  <div className="TagModelBox">
-                    <p>Add Asset</p>
-                    <button className="browse-button w-100" onClick={handleClick}>
-                      Browse Assets
-                    </button>
-                    <input style={{ display: "none" }} ref={inputRef} type="file" />
-                  </div>
-                )}
-                <div className="TagModelBox">
-                  <p>Description:</p>
-                  <TextArea
-                    value={value}
-                    onChange={(e) => setValue(e.target.value)}
-                    autoSize={{
-                      minRows: 3,
-                      maxRows: 5,
-                    }}
-                  />
-                </div>
-                <div className="TagModalBtns">
-                  <button onClick={handleClose} className="primaryBtn">Cancel</button>
-                  <button className="secondaryBtn">Create</button>
-                </div>
-              </Box>
-            </Modal>
-          </div>
+          <AddTaglet />
         </div>
-        {/* {menuItems.map((item, index) => {
-          let middle = false;
-          if (!(index === 0 || index === menuItems.length - 1)) {
-            middle = true;
-          } */}
-        {/* return ( */}
-        <div className={`boxicon-container ${expanded && "expanded-boxicon-container"}`}
-        // onMouseEnter={() => {
-        //   if (middle) {
-        //     setHovered(index);
-        //   }
-        // }}
-        // onMouseLeave={() => {
-        //   if (middle) {
-        //     setHovered(null);
-        //   }
-        // }}
-        // onClick={() => {
-        //   if (middle) {
-        //     setActive(index);
-        //   }
-        //   if (index === 0) {
-        //     setExpanded(!expanded);
-        //   }
-        // }}
-        // key={index}
-        >
-          <ProSidebar className="p-0 m-0" breakPoint="md">
+        <div className={`boxicon-container ${expanded && "expanded-boxicon-container"}`}>
+          <div className="PinnedSideBarItems">
+          <ProSidebar width={"13rem"} className="p-0 m-0" breakPoint="md">
             <SidebarContent>
               <Menu className="bg-transparent" iconShape="circle">
                 {menuItems.map((obj) => (
@@ -307,53 +167,25 @@ const Sidebar = ({ ShowPin }) => {
               </Menu>
             </SidebarContent>
           </ProSidebar>
-          {/* <Menu
-              className={`${middle && "boxicon"} 
-              ${!middle && "first-and-last-trash-fix"}
-              ${active === index && "active"}
-              `}
-                style={{
-                  width: 256,
-                }}
-                defaultSelectedKeys={['1']}
-                defaultOpenKeys={['sub1']}
-                mode="inline"
-                items={items}
-              /> */}
-
-          {/* <div className={`${middle && "boxicon"} 
-                      ${!middle && "first-and-last-trash-fix"}
-                      ${active === index && "active"}
-                      `}>
-
-                {item.name !== "Eduhance" && (
-
-                  <IoCaretForwardSharp size={15} />
-                )}
-              </div> */}
-          {/* <box-icon
-              class={`${middle && "boxicon"} 
-                      ${!middle && "first-and-last-trash-fix"}
-                      ${active === index && "active"}
-                      `}
-              size={changeSmall ? "sm" : "md"}
-              name={item.iconName}
-              type={item.type}
-              color={
-                hovered === index || active === index ? "white" : item.color
-              }
-              animation={active === index && animate ? "tada" : ""}
-              rotate={item.rotate}
-            ></box-icon> */}
-          {/* <p
-                className={`description 
-            ${expanded && "show-description"}
-            ${active === index && "active-description"}`}>
-                {item.name}
-              </p> */}
-
+          </div>
+          <ProSidebar width={"13rem"} className="p-0 m-0" breakPoint="md">
+            <SidebarContent>
+              <Menu className="bg-transparent" iconShape="circle">
+                {menuItems.map((obj) => (
+                  <>
+                    <span className="hoverSet">
+                      <DropDown />
+                      <SubMenu title={obj.name}>
+                        {obj.subMenu.map((pi) => <MenuItem className="SubDropMenuItem">{pi.name}</MenuItem>
+                        )}
+                      </SubMenu>
+                    </span>
+                  </>
+                ))}
+              </Menu>
+            </SidebarContent>
+          </ProSidebar>
         </div>
-        {/* })} */}
         <InfoPanel />
       </div>
     </div>

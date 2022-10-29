@@ -222,11 +222,14 @@
                     }
                 }
             }
-            .ads {
-                background-color: colors.$black;
-                h2 {
-                    color: colors.$white;
-                }
+        }
+        .ads {
+            background-color: colors.$black;
+            h2 {
+                color: colors.$white;
+            }
+            svg {
+                color: colors.$white;
             }
         }
     }
@@ -911,3 +914,11 @@
         }
     }
 }
+// .ant-dropdown-menu, .ant-dropdown-menu-root, .ant-dropdown-menu-vertical, .ant-dropdown-menu-light {
+//     background-color: colors.$black;
+//     .ant-dropdown-menu-item, .ant-dropdown-menu-item-only-child {
+//         span {
+//             color: colors.$white;
+//         }
+//     }
+// }

@@ -8,7 +8,11 @@ import Ads from "../ad/Ads";
 import { connect } from "react-redux";
 
 const SidebarLayout = ({ theme }) => {
-  
+  const [layout, setLayout] = useState("DisNone")
+  const handleClick = change => {
+    setLayout(layout === change ? "DisNone" : change)
+    console.log(change)
+  }
   return (
     <div className={theme}>
       <div className="sidebar-main">
@@ -16,9 +20,13 @@ const SidebarLayout = ({ theme }) => {
         <div className="mainContainer">
           <Sidebar />
           <TabsLayout />
-          <Ad />
+          <div className={layout === "DisBlock" ? "DisNone" : null}>
+            <Ad handleClick={handleClick} />
+          </div>
         </div>
-        <div className="lowerAd">{/* <Ads /> */}</div>
+        <div className={layout}>
+          <Ads handleClick={handleClick} />
+        </div>
       </div>
     </div>
   );
