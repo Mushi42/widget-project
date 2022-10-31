@@ -14,4 +14,46 @@
     .ant-tabs-nav {
         margin-bottom: 0;
     }
+
+    .Edits {
+        .editsHeader {
+            display: flex;
+            grid-gap: 20px;
+            height: 50px;
+            align-items: center;
+            background-color: rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            #backIcon {
+                font-size: 26px;
+                padding: 0 10px;
+            }
+            h2 {
+                margin-bottom: 0;
+            }
+        }
+        .EditsInputs {
+            padding-left: 66px;
+            .InputLabel {
+                display: grid;
+                grid-template-columns: 80px 1fr;
+                grid-gap: 20px;
+                align-items: center;
+                margin-bottom: 10px;
+                &:last-child {
+                    margin-bottom: 20px;
+                }
+                span {
+                    font-size: 12px;
+                }
+                input {
+                    height: 40px;
+                    border: 1px solid #d1d1d1;
+                    width: 100%;
+                    border-radius: 5px;
+                    padding: 0 15px;
+                    outline: none;
+                }
+            }
+        }
+    }
 }

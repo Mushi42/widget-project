@@ -1,4 +1,4 @@
-@use '../layouts/colors';
+@use "../layouts/colors";
 
 .SearchDocket {
     .SD-FilterPanel {
@@ -14,7 +14,6 @@
             grid-gap: 10px;
             svg {
                 color: black;
-
             }
         }
     }
@@ -22,15 +21,50 @@
         overflow-y: scroll;
         height: 81vh;
         scrollbar-color: black;
+        .ant-table-row,
+        .ant-table-row-level-0 {
+            position: relative;
+            &:hover {
+                .DescpBox {
+                    display: block;
+                }
+            }
+            .ant-table-cell {
+                position: static;
+            }
+        }
+        .DescpBox {
+            display: none;
+            background-color: white;
+            padding: 20px;
+            max-width: 100%;
+            width: max-content;
+            border-radius: 8px;
+            position: absolute;
+            top: 58px;
+            left: 0;
+            z-index: 1;
+            p {
+                padding: 10px;
+                border: 1px solid rgb(27, 27, 27);
+                margin-bottom: 0;
+                color: black;
+                font-style: italic;
+                font-size: 12px;
+                text-overflow: ellipsis;
+            }
+        }
     }
     .SD-Table::-webkit-scrollbar {
         display: none;
     }
-    
+
     svg {
         font-size: 18px;
     }
-    .ant-pagination, .ant-table-pagination, .ant-table-pagination-right {
+    .ant-pagination,
+    .ant-table-pagination,
+    .ant-table-pagination-right {
         display: none;
     }
     .ant-table-thead {

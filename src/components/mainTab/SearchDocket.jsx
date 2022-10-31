@@ -44,6 +44,11 @@ function SearchDocket() {
             dataIndex: 'option',
             key: 'option',
         },
+        {
+            title: '',
+            dataIndex: 'description',
+            key: 'description',
+        },
     ];
     const TableEdit = (
         <Menu
@@ -107,6 +112,9 @@ function SearchDocket() {
                         </Space>
                     </a>
                 </Dropdown>,
+            description: <div className="DescpBox">
+                <p>Approve Prcurser Order for Copy Machine for Building A</p>
+            </div>,
         },
         {
             key: '2',
@@ -120,6 +128,9 @@ function SearchDocket() {
                     </Space>
                 </a>
             </Dropdown>,
+            description: <div className="DescpBox">
+                <p>Approve Prcurser Order for Copy Machine for Building A</p>
+            </div>,
         },
         {
             key: '3',
@@ -133,9 +144,12 @@ function SearchDocket() {
                     </Space>
                 </a>
             </Dropdown>,
+            description: <div className="DescpBox">
+                <p>Approve Prcurser Order for Copy Machine for Building A</p>
+            </div>,
         },
         {
-            key: '3',
+            key: '4',
             name: 'Chase Bank',
             dataModified: '21 January 2021 at 19:24',
             size: '1.4MB',
@@ -146,9 +160,12 @@ function SearchDocket() {
                     </Space>
                 </a>
             </Dropdown>,
+            description: <div className="DescpBox">
+                <p>Approve Prcurser Order for Copy Machine for Building A</p>
+            </div>,
         },
         {
-            key: '3',
+            key: '5',
             name: 'Chase Bank',
             dataModified: '21 January 2021 at 19:24',
             size: '1.4MB',
@@ -159,9 +176,12 @@ function SearchDocket() {
                     </Space>
                 </a>
             </Dropdown>,
+            description: <div className="DescpBox">
+                <p>Approve Prcurser Order for Copy Machine for Building A</p>
+            </div>,
         },
         {
-            key: '3',
+            key: '6',
             name: 'Chase Bank',
             dataModified: '21 January 2021 at 19:24',
             size: '1.4MB',
@@ -172,9 +192,12 @@ function SearchDocket() {
                     </Space>
                 </a>
             </Dropdown>,
+            description: <div className="DescpBox">
+                <p>Approve Prcurser Order for Copy Machine for Building A</p>
+            </div>,
         },
         {
-            key: '3',
+            key: '7',
             name: 'Chase Bank',
             dataModified: '21 January 2021 at 19:24',
             size: '1.4MB',
@@ -185,9 +208,12 @@ function SearchDocket() {
                     </Space>
                 </a>
             </Dropdown>,
+            description: <div className="DescpBox">
+                <p>Approve Prcurser Order for Copy Machine for Building A</p>
+            </div>,
         },
         {
-            key: '3',
+            key: '8',
             name: 'Chase Bank',
             dataModified: '21 January 2021 at 19:24',
             size: '1.4MB',
@@ -198,9 +224,12 @@ function SearchDocket() {
                     </Space>
                 </a>
             </Dropdown>,
+            description: <div className="DescpBox">
+                <p>Approve Prcurser Order for Copy Machine for Building A</p>
+            </div>,
         },
         {
-            key: '3',
+            key: '9',
             name: 'Chase Bank',
             dataModified: '21 January 2021 at 19:24',
             size: '1.4MB',
@@ -211,9 +240,12 @@ function SearchDocket() {
                     </Space>
                 </a>
             </Dropdown>,
+            description: <div className="DescpBox">
+                <p>Approve Prcurser Order for Copy Machine for Building A</p>
+            </div>,
         },
         {
-            key: '3',
+            key: '10',
             name: 'Chase Bank',
             dataModified: '21 January 2021 at 19:24',
             size: '1.4MB',
@@ -224,9 +256,12 @@ function SearchDocket() {
                     </Space>
                 </a>
             </Dropdown>,
+            description: <div className="DescpBox">
+                <p>Approve Prcurser Order for Copy Machine for Building A</p>
+            </div>,
         },
         {
-            key: '3',
+            key: '11',
             name: 'Chase Bank',
             dataModified: '21 January 2021 at 19:24',
             size: '1.4MB',
@@ -237,9 +272,12 @@ function SearchDocket() {
                     </Space>
                 </a>
             </Dropdown>,
+            description: <div className="DescpBox">
+                <p>Approve Prcurser Order for Copy Machine for Building A</p>
+            </div>,
         },
         {
-            key: '3',
+            key: '12',
             name: 'Chase Bank',
             dataModified: '21 January 2021 at 19:24',
             size: '1.4MB',
@@ -250,6 +288,9 @@ function SearchDocket() {
                     </Space>
                 </a>
             </Dropdown>,
+            description: <div className="DescpBox">
+                <p>Approve Prcurser Order for Copy Machine for Building A</p>
+            </div>,
         }
     ];
     const Filter = (

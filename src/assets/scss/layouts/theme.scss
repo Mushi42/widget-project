@@ -149,7 +149,8 @@
                         .PinIcon {
                             color: colors.$white;
                         }
-                        .ant-dropdown-trigger, .SidebarDotsIcon {
+                        .ant-dropdown-trigger,
+                        .SidebarDotsIcon {
                             color: colors.$white;
                         }
                     }
@@ -223,13 +224,15 @@
                 }
             }
         }
-        .ads {
-            background-color: colors.$black;
-            h2 {
-                color: colors.$white;
-            }
-            svg {
-                color: colors.$white;
+        .DisBlock {
+            .ads {
+                background-color: colors.$black;
+                h2 {
+                    color: colors.$white;
+                }
+                svg {
+                    color: colors.$white;
+                }
             }
         }
     }
@@ -255,7 +258,7 @@
                         }
                     }
                     .DropdownSearch {
-                        background-color: colors.$black;
+                        background-color: colors.$skyBlue;
                         color: colors.$textSky;
                         .row,
                         .mt-2 {
@@ -382,8 +385,9 @@
                         .PinIcon {
                             color: colors.$textSky;
                         }
-                        .ant-dropdown-trigger, .SidebarDotsIcon {
-                            color: colors.$textSky
+                        .ant-dropdown-trigger,
+                        .SidebarDotsIcon {
+                            color: colors.$textSky;
                         }
                     }
                 }
@@ -451,9 +455,14 @@
                     }
                 }
             }
+        }
+        .DisBlock {
             .ads {
-                background-color: colors.$skyBlue;
+                background-color: colors.$skyBlue; 
                 h2 {
+                    color: colors.$textSky;
+                }
+                svg {
                     color: colors.$textSky;
                 }
             }
@@ -609,7 +618,8 @@
                         .PinIcon {
                             color: colors.$textNavy;
                         }
-                        .ant-dropdown-trigger, .SidebarDotsIcon {
+                        .ant-dropdown-trigger,
+                        .SidebarDotsIcon {
                             color: colors.$textNavy;
                         }
                     }
@@ -678,9 +688,14 @@
                     }
                 }
             }
+        }
+        .DisBlock {
             .ads {
                 background-color: colors.$navyBlue;
                 h2 {
+                    color: colors.$textNavy;
+                }
+                svg {
                     color: colors.$textNavy;
                 }
             }
@@ -836,7 +851,8 @@
                         .PinIcon {
                             color: colors.$textSunny;
                         }
-                        .ant-dropdown-trigger, .SidebarDotsIcon {
+                        .ant-dropdown-trigger,
+                        .SidebarDotsIcon {
                             color: colors.$textSunny;
                         }
                     }
@@ -905,20 +921,17 @@
                     }
                 }
             }
+        }
+        .DisBlock {
             .ads {
                 background-color: colors.$sunny;
                 h2 {
+                    color: colors.$textSunny;
+                }
+                svg {
                     color: colors.$textSunny;
                 }
             }
         }
     }
 }
-// .ant-dropdown-menu, .ant-dropdown-menu-root, .ant-dropdown-menu-vertical, .ant-dropdown-menu-light {
-//     background-color: colors.$black;
-//     .ant-dropdown-menu-item, .ant-dropdown-menu-item-only-child {
-//         span {
-//             color: colors.$white;
-//         }
-//     }
-// }

@@ -3,24 +3,23 @@ import { IoCaretForwardSharp } from "react-icons/io5";
 import { ProSidebar, Menu, MenuItem, SidebarContent, SubMenu } from "react-pro-sidebar";
 import "react-pro-sidebar/dist/css/styles.css";
 import InfoPanel from "./InfoPanel";
-import { Input } from "antd";
 import "./styles.scss";
 import DropDown from "./DropDown";
 import AddTaglet from "./AddTaglet";
 import { connect } from "react-redux";
 import { setSideBarPinnedList } from "../../redux/layout/layout.actions";
 
-function getItem(label, key, icon, children, type) {
-  return {
-    key,
-    icon,
-    children,
-    label,
-    type,
-  };
-}
+// function getItem(label, key, icon, children, type) {
+//   return {
+//     key,
+//     icon,
+//     children,
+//     label,
+//     type,
+//   };
+// }
 
-const Sidebar = ({ ShowPin, sideBarPinnedList, setSideBarPinnedList }) => {
+const Sidebar = ({ sideBarPinnedList, setSideBarPinnedList }) => {
   const useMediaQuery = (query) => {
     const [matches, setMatches] = useState(false);
 
@@ -36,6 +35,7 @@ const Sidebar = ({ ShowPin, sideBarPinnedList, setSideBarPinnedList }) => {
 
     return matches;
   };
+  
   const [hovered, setHovered] = useState(null);
   const [active, setActive] = useState(1);
   const [animate, setAnimate] = useState(false);
@@ -141,7 +141,12 @@ const Sidebar = ({ ShowPin, sideBarPinnedList, setSideBarPinnedList }) => {
     }
     setSideBarPinnedList(pinnedList);
   };
-
+  const style = {
+    backgroundColor: 'rgba(152, 145, 168, 0.2)',
+    borderTopRightRadius: "26px",
+    borderBottomRightRadius: "26px",
+  }
+  const [activeItem,setActiveItem] = useState()
   return (
     <div className="">
       <div className={`sidebar ${expanded && "expanded"}`}>
@@ -164,9 +169,11 @@ const Sidebar = ({ ShowPin, sideBarPinnedList, setSideBarPinnedList }) => {
                           cb={onPinned}
                           name={obj.name}
                         />
-                        <SubMenu title={obj.name}>
+                        <SubMenu className="SubMenuTitle"
+                        // onClick={()=> setActiveItem(!style.hasOwnProperty('top')?style:null)} style={activeItem} 
+                        title={obj.name}>
                           {obj.subMenu.map((pi) => (
-                            <MenuItem className="SubDropMenuItem">{pi.name}</MenuItem>
+                            <MenuItem className='SubDropMenuItem'>{pi.name}</MenuItem>
                           ))}
                         </SubMenu>
                       </span>

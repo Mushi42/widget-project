@@ -171,6 +171,8 @@ $bgcolor: #f0f0f0;
           padding: 8px 35px 8px 40px;
           &:focus {
             color: #6750a4;
+            background-color: rgba(152, 145, 168, 0.2);
+            border-radius: 0 26px 26px 0px;
           }
           &:hover {
             background-color: rgba(152, 145, 168, 0.2);
@@ -367,5 +369,39 @@ $bgcolor: #f0f0f0;
 
   li:hover {
     background-color: transparent !important;
+  }
+}
+
+.MuiBox-root, .css-1wnsr1i {
+  background-color: var(--primary) !important;
+  color: var(--primary-text) !important;
+  h2 {
+    color: var(--primary-text) !important;
+  }
+  input {
+    background-color: var(--primary) !important;
+    border: 1px solid var(--primary-text);
+  }
+  textarea {
+    background-color: var(--primary) !important;
+    border: 1px solid var(--primary-text);
+  }
+  .MuiSelect-select {
+    border: 1px solid var(--primary-text);
+    color: var(--primary-text) !important;
+    svg {
+      border: 1px solid var(--primary-text);
+    }
+  }
+  .TagModalBtns {
+    .primaryBtn {
+      background-color: var(--primary) !important;
+      color: var(--primary-text) !important;
+    }
+    .secondaryBtn {
+      background-color: var(--primary-text) !important;
+      color: var(--primary) !important;
+      border: var(--primary);
+    }
   }
 }
