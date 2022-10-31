@@ -1,8 +1,9 @@
-import { SET_LAYOUT_THEME, SET_ADVERTISEMENT_POSITION } from "./layout.types";
+import { SET_LAYOUT_THEME, SET_ADVERTISEMENT_POSITION, SIDE_BAR_PINED_LIST } from "./layout.types";
 
 const initialState = {
   theme: "light",
   adevertisementPosition: "",
+  sideBarPinnedList: [],
 };
 
 export default function reduxThunkReducer(state = initialState, action) {
@@ -17,6 +18,13 @@ export default function reduxThunkReducer(state = initialState, action) {
       return {
         ...state,
         adevertisementPosition: action.payload,
+      };
+    }
+    case SIDE_BAR_PINED_LIST: {
+      console.log("hello", action.payload);
+      return {
+        ...state,
+        sideBarPinnedList: action.payload,
       };
     }
     default: {

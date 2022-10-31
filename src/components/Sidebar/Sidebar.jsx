@@ -1,18 +1,14 @@
 import React, { useState, useEffect, useRef } from "react";
 import { IoCaretForwardSharp } from "react-icons/io5";
-import {
-  ProSidebar,
-  Menu,
-  MenuItem,
-  SidebarContent,
-  SubMenu,
-} from "react-pro-sidebar";
+import { ProSidebar, Menu, MenuItem, SidebarContent, SubMenu } from "react-pro-sidebar";
 import "react-pro-sidebar/dist/css/styles.css";
 import InfoPanel from "./InfoPanel";
 import { Input } from "antd";
 import "./styles.scss";
-import DropDown from './DropDown'
+import DropDown from "./DropDown";
 import AddTaglet from "./AddTaglet";
+import { connect } from "react-redux";
+import { setSideBarPinnedList } from "../../redux/layout/layout.actions";
 
 function getItem(label, key, icon, children, type) {
   return {
@@ -24,7 +20,7 @@ function getItem(label, key, icon, children, type) {
   };
 }
 
-const Sidebar = ({ ShowPin }) => {
+const Sidebar = ({ ShowPin, sideBarPinnedList, setSideBarPinnedList }) => {
   const useMediaQuery = (query) => {
     const [matches, setMatches] = useState(false);
 
@@ -55,6 +51,7 @@ const Sidebar = ({ ShowPin }) => {
       clearTimeout(timer);
     };
   }, [active, delay]);
+  
 
   let menuItems = [
     {
@@ -134,13 +131,16 @@ const Sidebar = ({ ShowPin }) => {
     },
   ];
 
-  const items = [
-    getItem("Chase Bank", "sub2", <IoCaretForwardSharp size={15} />, [
-      getItem("Option 5", "5"),
-      getItem("Option 6", "6"),
-      getItem("Submenu", "sub3", null, [getItem("Option 7", "7"), getItem("Option 8", "8")]),
-    ]),
-  ];
+  const onPinned = ({ pinned, name }) => {
+    let pinnedList = sideBarPinnedList || [];
+    if (pinned && !pinnedList.includes(name)) {
+      pinnedList = [...pinnedList, name];
+    }
+    if (!pinned && pinnedList.includes(name)) {
+      pinnedList = pinnedList.filter((el) => el !== name);
+    }
+    setSideBarPinnedList(pinnedList);
+  };
 
   return (
     <div className="">
@@ -150,45 +150,39 @@ const Sidebar = ({ ShowPin }) => {
         </div>
         <div className={`boxicon-container ${expanded && "expanded-boxicon-container"}`}>
           <div className="PinnedSideBarItems">
-          <ProSidebar width={"13rem"} className="p-0 m-0" breakPoint="md">
-            <SidebarContent>
-              <Menu className="bg-transparent" iconShape="circle">
-                {menuItems.map((obj) => (
-                  <>
-                    <span className="hoverSet">
-                      <DropDown />
-                      <SubMenu title={obj.name}>
-                        {obj.subMenu.map((pi) => <MenuItem className="SubDropMenuItem">{pi.name}</MenuItem>
-                        )}
-                      </SubMenu>
-                    </span>
-                  </>
-                ))}
-              </Menu>
-            </SidebarContent>
-          </ProSidebar>
+            <ProSidebar width={"13rem"} className="p-0 m-0" breakPoint="md">
+              <SidebarContent>
+                <Menu className="bg-transparent" iconShape="circle">
+                  {[
+                    ...menuItems.filter((item) => sideBarPinnedList.includes(item.name)),
+                    ...menuItems.filter((item) => !sideBarPinnedList.includes(item.name)),
+                  ].map((obj) => (
+                    <>
+                      <span className="hoverSet">
+                        <DropDown
+                          pinned={sideBarPinnedList.includes(obj.name)}
+                          cb={onPinned}
+                          name={obj.name}
+                        />
+                        <SubMenu title={obj.name}>
+                          {obj.subMenu.map((pi) => (
+                            <MenuItem className="SubDropMenuItem">{pi.name}</MenuItem>
+                          ))}
+                        </SubMenu>
+                      </span>
+                    </>
+                  ))}
+                </Menu>
+              </SidebarContent>
+            </ProSidebar>
           </div>
-          <ProSidebar width={"13rem"} className="p-0 m-0" breakPoint="md">
-            <SidebarContent>
-              <Menu className="bg-transparent" iconShape="circle">
-                {menuItems.map((obj) => (
-                  <>
-                    <span className="hoverSet">
-                      <DropDown />
-                      <SubMenu title={obj.name}>
-                        {obj.subMenu.map((pi) => <MenuItem className="SubDropMenuItem">{pi.name}</MenuItem>
-                        )}
-                      </SubMenu>
-                    </span>
-                  </>
-                ))}
-              </Menu>
-            </SidebarContent>
-          </ProSidebar>
         </div>
         <InfoPanel />
       </div>
     </div>
   );
 };
-export default Sidebar;
+
+const mapStateToProps = ({ layout }) => layout;
+
+export default connect(mapStateToProps, { setSideBarPinnedList })(Sidebar);

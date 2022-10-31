@@ -1,7 +1,7 @@
-import { ToastContainer } from 'react-toastify';
-import PrivateRoute from './components/Routing/PrivateRoute';
-import PublicRoute from './components/Routing/PublicRoute';
-
+import { ToastContainer } from "react-toastify";
+import PrivateRoute from "./components/Routing/PrivateRoute";
+import PublicRoute from "./components/Routing/PublicRoute";
+import "./assets/scss/layouts/dynamic.css";
 
 function App() {
   const user = true;

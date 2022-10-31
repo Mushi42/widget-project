@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Topbar from "../Topbar/Topbar";
 import Sidebar from "../Sidebar/Sidebar";
 import Login from "../login/Login";
@@ -8,11 +8,38 @@ import Ads from "../ad/Ads";
 import { connect } from "react-redux";
 
 const SidebarLayout = ({ theme }) => {
-  const [layout, setLayout] = useState("DisNone")
-  const handleClick = change => {
-    setLayout(layout === change ? "DisNone" : change)
-    console.log(change)
-  }
+  const [layout, setLayout] = useState("DisNone");
+
+  useEffect(() => {
+    let root = document.documentElement;
+    switch (theme) {
+      case "light":
+        root.style.setProperty("--primary", "white");
+        root.style.setProperty("--primary-text", "black");
+        break;
+      case "dark":
+        root.style.setProperty("--primary", "#232427");
+        root.style.setProperty("--primary-text", "white");
+        break;
+      case "navyBlue":
+        root.style.setProperty("--primary", "#151965");
+        root.style.setProperty("--primary-text", "white");
+        break;
+      case "skyBlue":
+        root.style.setProperty("--primary", "#79dae8");
+        root.style.setProperty("--primary-text", "black");
+        break;
+      case "sunny":
+        root.style.setProperty("--primary", "#fd841f");
+        root.style.setProperty("--primary-text", "white");
+        break;
+    }
+  }, [theme]);
+
+  const handleClick = (change) => {
+    setLayout(layout === change ? "DisNone" : change);
+    console.log(change);
+  };
   return (
     <div className={theme}>
       <div className="sidebar-main">
