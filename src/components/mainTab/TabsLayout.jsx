@@ -7,8 +7,6 @@ function TabsLayout() {
     return (
         <div className='TabsLayout'>
             <Tabs
-                // style={{width: "100%"}}
-                // className='DisNone'
                 defaultActiveKey="1"
                 items={[
                     {
@@ -20,7 +18,6 @@ function TabsLayout() {
                         label: `MESSAGES`,
                         key: '2',
                         children: `Content of Tab Pane 2`,
-                        disabled: true,
                     },
                 ]}
             />

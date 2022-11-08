@@ -129,27 +129,27 @@ const Topbar = ({ setTheme }) => {
   const onOpenSettingMenue = (theme) => {
     let root = document.documentElement;
     switch (theme) {
-        case "light":
-          root.style.setProperty("--primary", "white");
-          root.style.setProperty("--primary-text", "black");
-          break;
-        case "dark":
-          root.style.setProperty("--primary", "#232427");
-          root.style.setProperty("--primary-text", "white");
-          break;
-        case "navyBlue":
-          root.style.setProperty("--primary", "#151965");
-          root.style.setProperty("--primary-text", "white");
-          break;
-        case "skyBlue":
-          root.style.setProperty("--primary", "#79dae8");
-          root.style.setProperty("--primary-text", "black");
-          break;
-        case "sunny":
-          root.style.setProperty("--primary", "#fd841f");
-          root.style.setProperty("--primary-text", "white");
-          break;
-      }
+      case "light":
+        root.style.setProperty("--primary", "white");
+        root.style.setProperty("--primary-text", "black");
+        break;
+      case "dark":
+        root.style.setProperty("--primary", "#232427");
+        root.style.setProperty("--primary-text", "white");
+        break;
+      case "navyBlue":
+        root.style.setProperty("--primary", "#151965");
+        root.style.setProperty("--primary-text", "white");
+        break;
+      case "skyBlue":
+        root.style.setProperty("--primary", "#79dae8");
+        root.style.setProperty("--primary-text", "black");
+        break;
+      case "sunny":
+        root.style.setProperty("--primary", "#fd841f");
+        root.style.setProperty("--primary-text", "white");
+        break;
+    }
     setTheme(theme);
   };
 
